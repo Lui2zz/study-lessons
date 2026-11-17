@@ -1,0 +1,278 @@
+{
+  "format": 1,
+  "id": "calc",
+  "title": "Calculus",
+  "updated": "2026-11-17",
+  "resources": [
+    {
+      "title": "Khan Academy · AP Calculus AB",
+      "url": "https://www.khanacademy.org/math/ap-calculus-ab",
+      "subtitle": "Every unit: videos and practice"
+    }
+  ],
+  "units": [
+    {
+      "id": "calc-u5",
+      "number": 5,
+      "title": "Analyzing functions",
+      "subtitle": "MVT, extrema, increasing/decreasing, concavity, optimization",
+      "color": "orange",
+      "resources": [
+        {
+          "title": "Khan Academy · Unit 5",
+          "url": "https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-analytical-applications-new",
+          "subtitle": "Analytical applications of differentiation"
+        }
+      ],
+      "lessons": [
+        {
+          "id": "calc-u5-mvt",
+          "title": "Mean Value Theorem",
+          "symbol": "chart.xyaxis.line",
+          "steps": [
+            {
+              "type": "read",
+              "title": "Mean Value Theorem",
+              "text": "If f is **continuous on [a, b]** and **differentiable on (a, b)**, then there is at least one c in (a, b) where\n\nf′(c) = (f(b) − f(a)) / (b − a)\n\nIn words: somewhere, the instantaneous rate of change equals the average rate of change."
+            },
+            {
+              "type": "number",
+              "prompt": "f(x) = x² on [1, 3]. What is the average rate of change of f on this interval?",
+              "value": 4,
+              "tolerance": 0.001,
+              "explain": "(f(3) − f(1)) / (3 − 1) = (9 − 1) / 2 = 4."
+            },
+            {
+              "type": "number",
+              "prompt": "For the same f(x) = x² on [1, 3], find the value c that the MVT guarantees.",
+              "value": 2,
+              "tolerance": 0.001,
+              "explain": "f′(c) = 2c = 4, so c = 2, which is inside (1, 3)."
+            },
+            {
+              "type": "choice",
+              "prompt": "On [−1, 1], for which function is the MVT **not** guaranteed to apply?",
+              "choices": ["f(x) = x³", "f(x) = |x|", "f(x) = sin x", "f(x) = x² + 1"],
+              "correct": 1,
+              "explain": "|x| has a sharp corner at x = 0, so it isn't differentiable on (−1, 1)."
+            },
+            {
+              "type": "truefalse",
+              "prompt": "A car drives 120 miles in 2 hours. By the MVT, at some moment its speed was exactly 60 mph.",
+              "isTrue": true,
+              "explain": "Position is continuous and differentiable, so at some instant the velocity equals the average velocity, 120 / 2 = 60 mph."
+            },
+            {
+              "type": "free",
+              "prompt": "Find every value c that satisfies the MVT for f(x) = x³ − x on [0, 2].",
+              "solution": "Average rate: (f(2) − f(0)) / (2 − 0) = (6 − 0) / 2 = 3\n\nf′(x) = 3x² − 1, so set 3c² − 1 = 3 → c² = 4/3 → c = ±2/√3\n\nOnly the positive one is in (0, 2):\n\n**c = 2/√3 ≈ 1.155**"
+            }
+          ]
+        },
+        {
+          "id": "calc-u5-extrema",
+          "title": "Critical points & extrema",
+          "symbol": "mountain.2",
+          "steps": [
+            {
+              "type": "read",
+              "title": "Critical points",
+              "text": "A **critical point** is an x in the domain of f where f′(x) = 0 or f′(x) doesn't exist.\n\nLocal maximums and minimums can only happen at critical points (or at endpoints)."
+            },
+            {
+              "type": "read",
+              "title": "Extreme Value Theorem",
+              "text": "If f is **continuous on a closed interval [a, b]**, it has an absolute maximum and an absolute minimum there.\n\n**Candidates test:** to find them, evaluate f at every critical point in the interval and at both endpoints. The biggest value is the absolute max, the smallest the absolute min."
+            },
+            {
+              "type": "number",
+              "prompt": "Find the critical point of f(x) = x² − 6x + 5.",
+              "value": 3,
+              "tolerance": 0.001,
+              "explain": "f′(x) = 2x − 6 = 0 → x = 3."
+            },
+            {
+              "type": "multi",
+              "prompt": "Which are critical points of f(x) = x³ − 3x?",
+              "choices": ["x = −3", "x = −1", "x = 0", "x = 1", "x = 3"],
+              "answers": [1, 3],
+              "explain": "f′(x) = 3x² − 3 = 3(x − 1)(x + 1) = 0 → x = ±1."
+            },
+            {
+              "type": "number",
+              "prompt": "What is the absolute **maximum value** of f(x) = x³ − 3x on [0, 2]?",
+              "value": 2,
+              "tolerance": 0.001,
+              "explain": "Candidates: f(0) = 0, f(1) = −2 (critical point), f(2) = 8 − 6 = 2. The largest is 2."
+            },
+            {
+              "type": "number",
+              "prompt": "What is the absolute **minimum value** of f(x) = x³ − 3x on [0, 2]?",
+              "value": -2,
+              "tolerance": 0.001,
+              "explain": "From the same candidates, the smallest is f(1) = −2."
+            },
+            {
+              "type": "truefalse",
+              "prompt": "Every critical point is a local maximum or a local minimum.",
+              "isTrue": false,
+              "explain": "f(x) = x³ has f′(0) = 0, but it keeps increasing through x = 0, so there's no max or min there."
+            }
+          ]
+        },
+        {
+          "id": "calc-u5-increasing",
+          "title": "First derivative test",
+          "symbol": "arrow.up.right",
+          "steps": [
+            {
+              "type": "read",
+              "title": "Increasing and decreasing",
+              "text": "If f′(x) > 0 on an interval, f is **increasing** there.\nIf f′(x) < 0, f is **decreasing**.\n\nTo find the intervals: find the critical points, then test the sign of f′ between them."
+            },
+            {
+              "type": "read",
+              "title": "First derivative test",
+              "text": "At a critical point c:\n\n• f′ changes from **+ to −** → local **max**\n• f′ changes from **− to +** → local **min**\n• f′ doesn't change sign → neither"
+            },
+            {
+              "type": "choice",
+              "prompt": "f′(x) = (x − 2)(x + 1). On which interval is f decreasing?",
+              "choices": ["(−∞, −1)", "(−1, 2)", "(2, ∞)", "(−∞, 2)"],
+              "correct": 1,
+              "explain": "Test x = 0: (0 − 2)(0 + 1) = −2 < 0. f′ is negative only between the roots, on (−1, 2)."
+            },
+            {
+              "type": "number",
+              "prompt": "With f′(x) = (x − 2)(x + 1), at what x does f have a local **maximum**?",
+              "value": -1,
+              "tolerance": 0.001,
+              "explain": "f′ goes from + (left of −1) to − (between −1 and 2), so there's a local max at x = −1."
+            },
+            {
+              "type": "number",
+              "prompt": "With the same f′(x) = (x − 2)(x + 1), at what x does f have a local **minimum**?",
+              "value": 2,
+              "tolerance": 0.001,
+              "explain": "f′ goes from − to + at x = 2."
+            },
+            {
+              "type": "blank",
+              "prompt": "If f′ changes from negative to positive at x = c, then f has a local ___ at c.",
+              "accept": ["minimum", "min", "local minimum", "relative minimum", "local min", "relative min"],
+              "explain": "Decreasing then increasing makes a valley: a local minimum."
+            }
+          ]
+        },
+        {
+          "id": "calc-u5-concavity",
+          "title": "Concavity & 2nd derivative test",
+          "symbol": "point.topleft.down.to.point.bottomright.curvepath",
+          "steps": [
+            {
+              "type": "read",
+              "title": "Concavity",
+              "text": "If f″(x) > 0, f is **concave up** (f′ is increasing, shaped like ∪).\nIf f″(x) < 0, f is **concave down** (shaped like ∩).\n\nAn **inflection point** is where f″ changes sign (and f is continuous)."
+            },
+            {
+              "type": "read",
+              "title": "Second derivative test",
+              "text": "If f′(c) = 0:\n\n• f″(c) > 0 → local **min**\n• f″(c) < 0 → local **max**\n• f″(c) = 0 → the test tells you nothing; use the first derivative test"
+            },
+            {
+              "type": "number",
+              "prompt": "Find the x-coordinate of the inflection point of f(x) = x³ − 6x² + 5.",
+              "value": 2,
+              "tolerance": 0.001,
+              "explain": "f′ = 3x² − 12x, f″ = 6x − 12 = 0 → x = 2, and f″ changes sign there."
+            },
+            {
+              "type": "choice",
+              "prompt": "For f(x) = x³ − 6x² + 5, on x < 2 the graph is…",
+              "choices": ["Concave up", "Concave down", "Linear", "Can't tell"],
+              "correct": 1,
+              "explain": "f″(x) = 6x − 12 < 0 when x < 2."
+            },
+            {
+              "type": "choice",
+              "prompt": "f′(3) = 0 and f″(3) = −4. At x = 3, f has…",
+              "choices": ["A local minimum", "A local maximum", "An inflection point", "Not enough information"],
+              "correct": 1,
+              "explain": "Second derivative test: f′(3) = 0 and f″(3) < 0 (concave down) → local max."
+            },
+            {
+              "type": "truefalse",
+              "prompt": "If f″(c) = 0, then f has an inflection point at c.",
+              "isTrue": false,
+              "explain": "f(x) = x⁴ has f″(0) = 0, but it's concave up on both sides, so no inflection point. f″ has to change sign."
+            },
+            {
+              "type": "free",
+              "prompt": "Find and classify the critical points of f(x) = 2x³ − 3x² − 12x using the second derivative test.",
+              "solution": "f′(x) = 6x² − 6x − 12 = 6(x − 2)(x + 1) → critical points x = 2 and x = −1\n\nf″(x) = 12x − 6\n\nf″(2) = 18 > 0 → **local min** at x = 2, f(2) = 16 − 12 − 24 = −20\n\nf″(−1) = −18 < 0 → **local max** at x = −1, f(−1) = −2 − 3 + 12 = 7"
+            }
+          ]
+        },
+        {
+          "id": "calc-u5-quiz",
+          "title": "Unit 5 quiz",
+          "kind": "quiz",
+          "steps": [
+            {
+              "type": "number",
+              "prompt": "f(x) = √x on [0, 4]. Find the value c guaranteed by the Mean Value Theorem.",
+              "value": 1,
+              "tolerance": 0.001,
+              "explain": "Average rate = (2 − 0)/4 = ½. f′(c) = 1/(2√c) = ½ → √c = 1 → c = 1."
+            },
+            {
+              "type": "multi",
+              "prompt": "Which conditions guarantee that f has an absolute max and min on the interval (Extreme Value Theorem)?",
+              "choices": ["f is continuous on [0, 5]", "f is continuous on (0, 5)", "f is differentiable on [0, 5]", "f is defined on [0, 5]"],
+              "answers": [0, 2],
+              "explain": "EVT needs continuity on a closed interval. Differentiable on [0, 5] implies continuous there, so it works too."
+            },
+            {
+              "type": "number",
+              "prompt": "f(x) = x⁴ − 8x². At what x does f have a local maximum?",
+              "value": 0,
+              "tolerance": 0.001,
+              "explain": "f′ = 4x³ − 16x = 4x(x − 2)(x + 2). The sign goes −, +, −, + across −2, 0, 2, so + to − at x = 0 → local max."
+            },
+            {
+              "type": "choice",
+              "prompt": "If f′ is increasing on an interval, then f is…",
+              "choices": ["Concave up", "Concave down", "Increasing", "Decreasing"],
+              "correct": 0,
+              "explain": "f′ increasing means f″ > 0, which means concave up. (f itself could be going up or down.)"
+            },
+            {
+              "type": "number",
+              "prompt": "What is the absolute minimum value of f(x) = x² − 4x + 1 on [0, 5]?",
+              "value": -3,
+              "tolerance": 0.001,
+              "explain": "Critical point: 2x − 4 = 0 → x = 2. Candidates: f(0) = 1, f(2) = −3, f(5) = 6. Minimum = −3."
+            },
+            {
+              "type": "truefalse",
+              "prompt": "If f′(c) = 0 and f″(c) = 0, then f cannot have a local extremum at c.",
+              "isTrue": false,
+              "explain": "f(x) = x⁴ has f′(0) = f″(0) = 0 and still has a local min at 0. The second derivative test just fails there."
+            },
+            {
+              "type": "blank",
+              "prompt": "A point where a graph changes concavity is called a point of ___.",
+              "accept": ["inflection", "inflexion", "inflection point"],
+              "explain": "Points of inflection are where f″ changes sign."
+            },
+            {
+              "type": "free",
+              "prompt": "A rectangle has a perimeter of 40 m. What dimensions give the largest area, and what is that area?",
+              "solution": "Let the sides be x and y: 2x + 2y = 40 → y = 20 − x\n\nA(x) = x(20 − x) = 20x − x², for 0 ≤ x ≤ 20\n\nA′(x) = 20 − 2x = 0 → x = 10\n\nA″(x) = −2 < 0 → maximum (and the endpoints give A = 0)\n\n**10 m × 10 m, area 100 m²**"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

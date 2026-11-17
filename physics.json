@@ -1,0 +1,292 @@
+{
+  "format": 1,
+  "id": "physics",
+  "title": "Physics",
+  "updated": "2026-11-16",
+  "units": [
+    {
+      "id": "motion",
+      "title": "Motion",
+      "subtitle": "Speed, velocity and acceleration",
+      "color": "purple",
+      "lessons": [
+        {
+          "id": "motion-speed",
+          "title": "Speed",
+          "symbol": "speedometer",
+          "xp": 10,
+          "steps": [
+            {
+              "type": "read",
+              "title": "How fast?",
+              "text": "Speed tells you how much distance something covers in a certain time.\n\nspeed = distance ÷ time\n\nIn physics we measure distance in meters (m) and time in seconds (s), so speed is in meters per second (m/s)."
+            },
+            {
+              "type": "choice",
+              "prompt": "A runner covers 100 m in 20 s. What is their average speed?",
+              "choices": ["2 m/s", "5 m/s", "20 m/s", "2000 m/s"],
+              "correct": 1,
+              "explain": "100 m ÷ 20 s = 5 m/s."
+            },
+            {
+              "type": "number",
+              "prompt": "A car drives 150 m in 6 s. What is its average speed?",
+              "value": 25,
+              "tolerance": 0.01,
+              "unit": "m/s",
+              "explain": "150 ÷ 6 = 25 m/s."
+            },
+            {
+              "type": "read",
+              "title": "Speed vs. velocity",
+              "text": "Velocity is speed with a direction.\n\n\"20 m/s\" is a speed. \"20 m/s north\" is a velocity.\n\nTwo cars at the same speed going opposite ways have different velocities."
+            },
+            {
+              "type": "truefalse",
+              "prompt": "A car going around a roundabout at a steady 10 m/s has a constant velocity.",
+              "isTrue": false,
+              "explain": "Its speed stays the same, but its direction keeps changing, so its velocity changes."
+            },
+            {
+              "type": "number",
+              "prompt": "How far does a cyclist travel in 8 s at a steady 4 m/s?",
+              "value": 32,
+              "tolerance": 0.01,
+              "unit": "m",
+              "explain": "distance = speed × time = 4 × 8 = 32 m."
+            }
+          ]
+        },
+        {
+          "id": "motion-acceleration",
+          "title": "Acceleration",
+          "symbol": "gauge.with.dots.needle.67percent",
+          "xp": 10,
+          "steps": [
+            {
+              "type": "read",
+              "title": "Speeding up",
+              "text": "Acceleration is how quickly velocity changes.\n\nacceleration = change in velocity ÷ time\n\nIts unit is meters per second squared (m/s²): how many m/s you gain every second."
+            },
+            {
+              "type": "number",
+              "prompt": "A bike goes from 0 to 12 m/s in 4 s. What is its acceleration?",
+              "value": 3,
+              "tolerance": 0.01,
+              "unit": "m/s²",
+              "explain": "(12 − 0) ÷ 4 = 3 m/s²."
+            },
+            {
+              "type": "choice",
+              "prompt": "A car slows from 20 m/s to 10 m/s in 5 s. What is its acceleration?",
+              "choices": ["2 m/s²", "−2 m/s²", "4 m/s²", "−10 m/s²"],
+              "correct": 1,
+              "explain": "(10 − 20) ÷ 5 = −2 m/s². Negative means it is slowing down (in the direction it moves)."
+            },
+            {
+              "type": "read",
+              "title": "Falling",
+              "text": "Near Earth's surface, things in free fall accelerate downward at about 9.8 m/s², ignoring air resistance.\n\nThis is called g."
+            },
+            {
+              "type": "truefalse",
+              "prompt": "Without air resistance, a hammer and a feather dropped together hit the ground at the same time.",
+              "isTrue": true,
+              "explain": "Gravity gives every object the same acceleration g. Astronauts showed this on the Moon with a hammer and a feather."
+            },
+            {
+              "type": "number",
+              "prompt": "A rock is dropped from rest. Using g = 9.8 m/s², how fast is it falling after 2 s?",
+              "value": 19.6,
+              "tolerance": 0.05,
+              "unit": "m/s",
+              "explain": "v = g × t = 9.8 × 2 = 19.6 m/s."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "forces",
+      "title": "Forces",
+      "subtitle": "Newton's laws",
+      "color": "blue",
+      "lessons": [
+        {
+          "id": "forces-first-law",
+          "title": "Inertia",
+          "symbol": "cart",
+          "xp": 10,
+          "steps": [
+            {
+              "type": "read",
+              "title": "Newton's first law",
+              "text": "An object keeps doing what it's doing (staying still, or moving at a steady velocity) unless a net force acts on it.\n\nThis tendency is called inertia."
+            },
+            {
+              "type": "choice",
+              "prompt": "A bus brakes suddenly. Why do standing passengers lurch forward?",
+              "choices": [
+                "The brakes push them forward",
+                "Their bodies keep moving forward due to inertia",
+                "Gravity pulls them forward",
+                "The air in the bus pushes them"
+              ],
+              "correct": 1,
+              "explain": "The bus slows, but nothing has slowed the passengers yet, so they keep moving forward."
+            },
+            {
+              "type": "truefalse",
+              "prompt": "A hockey puck sliding on perfectly frictionless ice would eventually stop on its own.",
+              "isTrue": false,
+              "explain": "With no friction there is no net force, so it would keep sliding at the same velocity."
+            },
+            {
+              "type": "read",
+              "title": "Net force",
+              "text": "Forces have size and direction. The net force is what's left after they combine.\n\n10 N right + 4 N left = 6 N right.\n\nForces are measured in newtons (N)."
+            },
+            {
+              "type": "number",
+              "prompt": "Two people push a box: 30 N to the right and 18 N to the left. What is the net force (in N, to the right)?",
+              "value": 12,
+              "tolerance": 0.01,
+              "unit": "N",
+              "explain": "30 − 18 = 12 N to the right."
+            }
+          ]
+        },
+        {
+          "id": "forces-second-law",
+          "title": "F = ma",
+          "symbol": "scalemass",
+          "xp": 10,
+          "steps": [
+            {
+              "type": "read",
+              "title": "Newton's second law",
+              "text": "The net force on an object equals its mass times its acceleration.\n\nF = m × a\n\nMore force means more acceleration. More mass means less acceleration for the same force."
+            },
+            {
+              "type": "number",
+              "prompt": "What net force accelerates a 2 kg ball at 5 m/s²?",
+              "value": 10,
+              "tolerance": 0.01,
+              "unit": "N",
+              "explain": "F = 2 × 5 = 10 N."
+            },
+            {
+              "type": "number",
+              "prompt": "A 40 N net force acts on an 8 kg cart. What is its acceleration?",
+              "value": 5,
+              "tolerance": 0.01,
+              "unit": "m/s²",
+              "explain": "a = F ÷ m = 40 ÷ 8 = 5 m/s²."
+            },
+            {
+              "type": "choice",
+              "prompt": "You push an empty and a full shopping cart with the same force. Which accelerates more?",
+              "choices": ["The empty cart", "The full cart", "They accelerate equally"],
+              "correct": 0,
+              "explain": "Same force, less mass → more acceleration."
+            },
+            {
+              "type": "read",
+              "title": "Weight",
+              "text": "Weight is the force of gravity on a mass.\n\nW = m × g, with g ≈ 9.8 m/s² on Earth.\n\nMass (kg) stays the same everywhere; weight (N) depends on gravity."
+            },
+            {
+              "type": "number",
+              "prompt": "What does a 50 kg person weigh on Earth? Use g = 9.8 m/s².",
+              "value": 490,
+              "tolerance": 0.5,
+              "unit": "N",
+              "explain": "W = 50 × 9.8 = 490 N."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "energy",
+      "title": "Energy",
+      "subtitle": "Kinetic and potential energy",
+      "color": "orange",
+      "lessons": [
+        {
+          "id": "energy-kinetic",
+          "title": "Kinetic energy",
+          "symbol": "bolt",
+          "xp": 10,
+          "steps": [
+            {
+              "type": "read",
+              "title": "Energy of motion",
+              "text": "Moving things have kinetic energy.\n\nKE = ½ × m × v²\n\nEnergy is measured in joules (J)."
+            },
+            {
+              "type": "number",
+              "prompt": "What is the kinetic energy of a 2 kg ball moving at 3 m/s?",
+              "value": 9,
+              "tolerance": 0.01,
+              "unit": "J",
+              "explain": "½ × 2 × 3² = 1 × 9 = 9 J."
+            },
+            {
+              "type": "choice",
+              "prompt": "If you double a car's speed, its kinetic energy becomes…",
+              "choices": ["2× as much", "4× as much", "the same", "½ as much"],
+              "correct": 1,
+              "explain": "KE depends on v². (2v)² = 4v², so the energy is 4× as much. That's why speed matters so much in crashes."
+            },
+            {
+              "type": "truefalse",
+              "prompt": "A parked car has kinetic energy.",
+              "isTrue": false,
+              "explain": "v = 0, so KE = 0."
+            }
+          ]
+        },
+        {
+          "id": "energy-potential",
+          "title": "Potential energy",
+          "symbol": "arrow.up.to.line",
+          "xp": 10,
+          "steps": [
+            {
+              "type": "read",
+              "title": "Stored by height",
+              "text": "Lifting something stores gravitational potential energy.\n\nPE = m × g × h\n\nh is the height in meters."
+            },
+            {
+              "type": "number",
+              "prompt": "How much potential energy does a 3 kg box gain when lifted 2 m? Use g = 9.8 m/s².",
+              "value": 58.8,
+              "tolerance": 0.05,
+              "unit": "J",
+              "explain": "3 × 9.8 × 2 = 58.8 J."
+            },
+            {
+              "type": "read",
+              "title": "Energy is conserved",
+              "text": "Energy isn't created or destroyed, only changed from one form to another.\n\nAs a ball falls, potential energy turns into kinetic energy."
+            },
+            {
+              "type": "choice",
+              "prompt": "A ball is dropped from 10 m. Ignoring air resistance, where is its kinetic energy greatest?",
+              "choices": ["At the top", "Halfway down", "Just before it hits the ground", "It stays the same"],
+              "correct": 2,
+              "explain": "By then almost all its potential energy has turned into kinetic energy."
+            },
+            {
+              "type": "truefalse",
+              "prompt": "On a frictionless track, a roller coaster can never rise higher than the point it started from (at rest).",
+              "isTrue": true,
+              "explain": "It can't have more energy than it started with, so it can't gain more height."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
