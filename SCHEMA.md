@@ -53,9 +53,14 @@ When given a new packet or chapter (photos or PDF):
    reference it with `image` plus a short `alt`. Redrawing a simple diagram is fine
    too.
 5. Add a **Khan Academy link** for the unit in `resources` (see "Resources").
-6. End every unit with a **chapter quiz** (`"kind": "quiz"`): 8–20 mixed questions
+6. **Start every unit with a diagnostic** (`"kind": "diagnostic"`, first in `lessons`):
+   6–12 questions, at least one per skill in the unit, new ones (not copies of lesson
+   questions). It's always open, sits above the path, and ends with a per-skill breakdown.
+7. End every unit with a **chapter quiz** (`"kind": "quiz"`): 8–20 mixed questions
    covering the whole chapter, packet-style, no `read` steps.
-7. Update `updated` to today's date, run the validator, then push the course file and
+8. Give every question a **`skill`** and the harder ones a **`hint`** (see "Skills and hints").
+9. Add the unit's must-know formulas, rules and definitions to **`fundamentals`** (see below).
+10. Update `updated` to today's date, run the validator, then push the course file and
    the new images together.
 
 ## Shape
@@ -92,9 +97,54 @@ When given a new packet or chapter (photos or PDF):
 | `units[].resources` | no | Extra practice links shown under the unit, e.g. the matching Khan Academy unit. See "Resources". |
 | `resources` (top level) | no | Links for the whole course, shown at the bottom. If missing, the app shows Khan Academy's course page. |
 | `units[].color` | no | `blue`, `green`, `orange`, `purple`, `teal` or `pink`. Default `blue`. Vary it between units. |
-| `lessons[].kind` | no | `lesson` (default) or `quiz`. In a lesson, missed questions repeat at the end. A quiz doesn't repeat them; it ends with a score and a review of the misses. |
+| `lessons[].kind` | no | `lesson` (default), `quiz` or `diagnostic`. In a lesson, missed questions repeat at the end. A quiz doesn't repeat them; it ends with a score and a review of the misses. A diagnostic works like a quiz but is always open (not on the unlock path) and ends with a score per skill plus which lesson to study. |
 | `lessons[].symbol` | no | An [SF Symbol](https://developer.apple.com/sf-symbols/) name, e.g. `atom`, `bolt`, `scalemass`, `waveform`, `function`, `chart.xyaxis.line`, `chart.bar`, `sum`, `lightbulb`, `arrow.right`. Wrong names show nothing, so stick to common ones. Quizzes default to a checkered flag. |
 | `lessons[].xp` | no | Default 10 (quiz 20). Replays earn half. |
+
+## Fundamentals (spaced repetition)
+
+```json
+"fundamentals": [
+  { "id": "calc-f-chain-rule", "type": "choice", "skill": "Derivative rules",
+    "prompt": "d/dx [f(g(x))] = ?", "choices": ["f′(g(x))·g′(x)", "f′(x)·g′(x)", "f′(g′(x))"], "correct": 0,
+    "explain": "Outside derivative × inside derivative." }
+]
+```
+
+A top-level list of short **drill cards** for things that must be automatic: formulas,
+derivative rules, definitions, units, constants. They show in the course's
+**Fundamentals** section, where the learner "reps" them. A missed card comes back the same
+day; each correct answer pushes it further out (1, 2, 4, 8, 16, 32 days). A card is
+**locked in** once it has been remembered over about two weeks.
+
+- Same step types as questions (`choice`, `multi`, `truefalse`, `number`, `blank`).
+  **Not `read`.** Avoid `free`, which is slow to rep.
+- **Every card needs a unique, permanent `id`** (`calc-f-…` in Calculus, e.g.
+  `phys-f-…` in Physics). Its schedule is saved by id, so never rename or reuse one.
+- One fact per card, answerable in a few seconds. Give each a `skill` and an `explain`.
+- Mix up which position the right choice is in (the app doesn't shuffle choices).
+- Add new cards to the end of the list as each unit introduces new formulas or rules.
+
+## Skills and hints
+
+```json
+{ "type": "number", "skill": "Mean Value Theorem",
+  "prompt": "f(x) = x² on [1, 3]. Find c from the MVT.", "value": 2,
+  "hint": "Set f′(c) equal to the average rate of change." }
+```
+
+- **`skill`** (any question): what it practices. The app tracks your first-try
+  results per skill, shows your weakest ones as **Focus areas** with a one-tap practice
+  set, and lists everything under **All skills**.
+  - Use **the title of the lesson that teaches the skill** as the skill name, spelled
+    exactly the same, so the app can point you to that lesson. (Questions in a regular
+    lesson without a `skill` count toward that lesson's title.)
+  - Questions in quizzes and diagnostics **must** have a `skill`.
+  - A skill that isn't taught by one lesson (like "Optimization") is fine. Just reuse
+    the same spelling everywhere.
+- **`hint`** (any question): a nudge shown when the learner taps **Hint**. It must not
+  give the answer (the validator warns if it seems to). Point to the first step instead,
+  e.g. "Factor f′(x) first." Using a hint counts as half credit for skill tracking.
 
 ## Resources (Khan Academy links)
 

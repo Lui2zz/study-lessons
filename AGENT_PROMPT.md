@@ -30,6 +30,10 @@ If you can run Python and I've given you `validate.py`, run `python3 validate.py
   - a word or short phrase → `blank`
   - true/false → `truefalse`
   - multi-step problems, explanations, derivations, drawing → `free`, with a full step-by-step worked `solution`
+- **Start every unit with a diagnostic:** a lesson with `"kind": "diagnostic"`, placed **first** in the unit's `lessons`. Give it 6–12 new questions (not copies of lesson questions), with at least one per skill in the unit, mixed types. It lets me test what I already know and shows which lessons to study.
+- **Tag every question with a `skill`.** Use the exact title of the lesson that teaches it (e.g. `"skill": "Mean Value Theorem"`), spelled identically everywhere: in lessons, the quiz and the diagnostic. The app uses this to track what I struggle with and to build practice sets. Questions in quizzes and diagnostics must always have one.
+- **Add a `hint` to harder questions** (most `number`, `free` and multi-step questions). A hint is a nudge toward the first step, like "Factor f′(x) first" or "What's the average rate of change?". It must never contain the answer.
+- **Add fundamentals.** For every unit, append 5–15 drill cards to the course's top-level `"fundamentals"` list: the formulas, rules, definitions, units and constants I need to know by heart (e.g. power rule, F = ma, units of energy). These are short questions I rep on a spaced schedule until they're locked in. Each card needs a permanent unique `id` (`calc-f-…` for Calculus, `phys-f-…` for Physics), a `skill`, an `explain`, and a type of `choice`, `blank`, `number` or `truefalse` (never `read`). Vary which position the correct choice is in. Don't remove or rename existing cards.
 - **End every unit with a chapter quiz:** a lesson with `"kind": "quiz"`, 8–20 mixed questions covering the whole chapter, packet-style, with no `read` steps.
 - Write explanations simply and briefly. Text is read on a phone. Give every question (except `free`) an `explain` that shows *why*, including the worked math for calculations.
 - **Calculus:** write math in Unicode (f′(x), f″(x), x², √x, ∫, Σ, Δx, ≤, ≥, →, ∞, π). Put limits and integrals in plain text, like `lim x→0 (sin x)/x` and `∫₀² x² dx`, or use a picture for anything complex. For questions about graphs of f, f′ or f″, include the graph as a picture.
@@ -66,6 +70,10 @@ If you can run Python and I've given you `validate.py`, run `python3 validate.py
 Any step can have `"image": "images/<unit-id>/<name>.png"` plus `"alt": "short description of the picture"`. `choice` and `multi` can have `"choiceImages": [...]`, one picture per choice in the same order (use choices like "A", "B", "C", "D" for picture answers).
 
 Text supports `**bold**`, `*italic*` and `\n` line breaks (`\n\n` = new paragraph). **No LaTeX.** Write math with Unicode (v², Δp = F·Δt, θ, μ, ≈, ×, ÷, √, ½). If a formula can't be written that way, make it a picture.
+
+Any question can also have `"skill": "Lesson title it practices"` and `"hint": "a nudge, not the answer"`.
+
+Fundamentals are the same question objects plus an `"id"`, in a top-level `"fundamentals": [ ... ]` list next to `"units"`.
 
 ### Step types
 ```json
@@ -109,6 +117,8 @@ I work it out on paper, then compare with your `solution` and grade myself. It c
 - [ ] Every number answer was recalculated, and its tolerance is sensible.
 - [ ] Every image path in the JSON matches a file I'm uploading.
 - [ ] Valid JSON: no trailing commas, no comments, straight quotes.
-- [ ] The unit ends with a quiz.
+- [ ] The unit starts with a diagnostic covering every skill, and ends with a quiz.
+- [ ] New fundamentals cards were appended (unique ids, no read/free cards, varied correct positions); old cards unchanged.
+- [ ] Every quiz and diagnostic question has a `skill` matching a lesson title (or a consistent name); harder questions have hints that don't reveal the answer.
 - [ ] The unit has a Khan Academy link in `resources`.
 - [ ] Calculus only: every id starts with `calc-`, and `number` matches the class's unit.

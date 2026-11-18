@@ -2,7 +2,142 @@
   "format": 1,
   "id": "physics",
   "title": "Physics",
-  "updated": "2026-11-17",
+  "updated": "2026-11-18",
+  "fundamentals": [
+    {
+      "id": "phys-f-speed",
+      "type": "choice",
+      "skill": "Speed",
+      "prompt": "speed = ?",
+      "choices": [
+        "time ÷ distance",
+        "distance ÷ time",
+        "distance × time",
+        "mass × time"
+      ],
+      "correct": 1,
+      "explain": "speed = distance ÷ time, in m/s."
+    },
+    {
+      "id": "phys-f-velocity",
+      "type": "blank",
+      "skill": "Speed",
+      "prompt": "Velocity is speed with a ___.",
+      "accept": [
+        "direction",
+        "a direction"
+      ],
+      "explain": "Velocity = speed + direction."
+    },
+    {
+      "id": "phys-f-acceleration",
+      "type": "choice",
+      "skill": "Acceleration",
+      "prompt": "acceleration = ?",
+      "choices": [
+        "change in velocity ÷ time",
+        "velocity × time",
+        "distance ÷ time²",
+        "force × mass"
+      ],
+      "correct": 0,
+      "explain": "a = Δv ÷ t, in m/s²."
+    },
+    {
+      "id": "phys-f-newton2",
+      "type": "choice",
+      "skill": "F = ma",
+      "prompt": "Newton's second law:",
+      "choices": [
+        "F = m/a",
+        "F = m + a",
+        "F = a/m",
+        "F = ma"
+      ],
+      "correct": 3,
+      "explain": "Net force = mass × acceleration."
+    },
+    {
+      "id": "phys-f-weight",
+      "type": "choice",
+      "skill": "F = ma",
+      "prompt": "Weight W = ?",
+      "choices": [
+        "m/g",
+        "mg",
+        "½mg²",
+        "g/m"
+      ],
+      "correct": 1,
+      "explain": "Weight is the force of gravity: W = m × g."
+    },
+    {
+      "id": "phys-f-ke",
+      "type": "choice",
+      "skill": "Kinetic energy",
+      "prompt": "Kinetic energy KE = ?",
+      "choices": [
+        "mgh",
+        "mv",
+        "½mv²",
+        "ma"
+      ],
+      "correct": 2,
+      "explain": "KE = ½ × m × v²."
+    },
+    {
+      "id": "phys-f-pe",
+      "type": "choice",
+      "skill": "Potential energy",
+      "prompt": "Gravitational potential energy PE = ?",
+      "choices": [
+        "mgh",
+        "½mv²",
+        "mv",
+        "Fd"
+      ],
+      "correct": 0,
+      "explain": "PE = m × g × h."
+    },
+    {
+      "id": "phys-f-g",
+      "type": "number",
+      "skill": "Units & constants",
+      "prompt": "Near Earth's surface, g ≈ ?",
+      "value": 9.8,
+      "tolerance": 0.05,
+      "unit": "m/s²",
+      "explain": "g ≈ 9.8 m/s² (often rounded to 10)."
+    },
+    {
+      "id": "phys-f-unit-force",
+      "type": "choice",
+      "skill": "Units & constants",
+      "prompt": "The unit of force is the…",
+      "choices": [
+        "joule",
+        "watt",
+        "newton",
+        "pascal"
+      ],
+      "correct": 2,
+      "explain": "1 newton (N) = 1 kg·m/s²."
+    },
+    {
+      "id": "phys-f-unit-energy",
+      "type": "choice",
+      "skill": "Units & constants",
+      "prompt": "The unit of energy is the…",
+      "choices": [
+        "joule",
+        "newton",
+        "watt",
+        "kg·m/s"
+      ],
+      "correct": 0,
+      "explain": "1 joule (J) = 1 N·m."
+    }
+  ],
   "units": [
     {
       "id": "motion",
@@ -24,7 +159,12 @@
             {
               "type": "choice",
               "prompt": "A runner covers 100 m in 20 s. What is their average speed?",
-              "choices": ["2 m/s", "5 m/s", "20 m/s", "2000 m/s"],
+              "choices": [
+                "2 m/s",
+                "5 m/s",
+                "20 m/s",
+                "2000 m/s"
+              ],
               "correct": 1,
               "explain": "100 m ÷ 20 s = 5 m/s."
             },
@@ -79,7 +219,12 @@
             {
               "type": "choice",
               "prompt": "A car slows from 20 m/s to 10 m/s in 5 s. What is its acceleration?",
-              "choices": ["2 m/s²", "−2 m/s²", "4 m/s²", "−10 m/s²"],
+              "choices": [
+                "2 m/s²",
+                "−2 m/s²",
+                "4 m/s²",
+                "−10 m/s²"
+              ],
               "correct": 1,
               "explain": "(10 − 20) ÷ 5 = −2 m/s². Negative means it is slowing down (in the direction it moves)."
             },
@@ -186,7 +331,11 @@
             {
               "type": "choice",
               "prompt": "You push an empty and a full shopping cart with the same force. Which accelerates more?",
-              "choices": ["The empty cart", "The full cart", "They accelerate equally"],
+              "choices": [
+                "The empty cart",
+                "The full cart",
+                "They accelerate equally"
+              ],
               "correct": 0,
               "explain": "Same force, less mass → more acceleration."
             },
@@ -235,7 +384,12 @@
             {
               "type": "choice",
               "prompt": "If you double a car's speed, its kinetic energy becomes…",
-              "choices": ["2× as much", "4× as much", "the same", "½ as much"],
+              "choices": [
+                "2× as much",
+                "4× as much",
+                "the same",
+                "½ as much"
+              ],
               "correct": 1,
               "explain": "KE depends on v². (2v)² = 4v², so the energy is 4× as much. That's why speed matters so much in crashes."
             },
@@ -274,7 +428,12 @@
             {
               "type": "choice",
               "prompt": "A ball is dropped from 10 m. Ignoring air resistance, where is its kinetic energy greatest?",
-              "choices": ["At the top", "Halfway down", "Just before it hits the ground", "It stays the same"],
+              "choices": [
+                "At the top",
+                "Halfway down",
+                "Just before it hits the ground",
+                "It stays the same"
+              ],
               "correct": 2,
               "explain": "By then almost all its potential energy has turned into kinetic energy."
             },
@@ -283,1141 +442,6 @@
               "prompt": "On a frictionless track, a roller coaster can never rise higher than the point it started from (at rest).",
               "isTrue": true,
               "explain": "It can't have more energy than it started with, so it can't gain more height."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ch4-momentum",
-      "title": "Linear Momentum",
-      "subtitle": "Momentum, impulse, collisions, conservation",
-      "color": "teal",
-      "lessons": [
-        {
-          "id": "ch4-momentum-what-is-momentum",
-          "title": "What is momentum?",
-          "symbol": "arrow.right",
-          "steps": [
-            {
-              "type": "read",
-              "title": "Momentum = mass × velocity",
-              "text": "Momentum is how hard something is to stop.\n\n**p = m × v**\n\nA truck at 10 m s⁻¹ is harder to stop than a bike at 10 m s⁻¹. Same speed, more mass, more momentum."
-            },
-            {
-              "type": "choice",
-              "prompt": "A 2 kg ball moves at 3 m s⁻¹. What is its momentum?",
-              "choices": [
-                "5 kg m s⁻¹",
-                "6 kg m s⁻¹",
-                "1.5 kg m s⁻¹",
-                "9 kg m s⁻¹"
-              ],
-              "correct": 1,
-              "explain": "p = m × v = 2 × 3 = **6 kg m s⁻¹**."
-            },
-            {
-              "type": "read",
-              "title": "Units",
-              "text": "Unit of momentum: **kg m s⁻¹**\n\nIt is the same as **N s** (newton second). Both are correct on a Cambridge paper."
-            },
-            {
-              "type": "number",
-              "prompt": "A 1500 kg car moves at 20 m s⁻¹. What is its momentum?",
-              "value": 30000,
-              "tolerance": 300,
-              "unit": "kg m s⁻¹",
-              "explain": "p = 1500 × 20 = **30 000 kg m s⁻¹**."
-            },
-            {
-              "type": "read",
-              "title": "It's a vector",
-              "text": "Momentum has a **direction** — the same direction as the velocity.\n\nSo it's a **vector**, like velocity and force. Kinetic energy is a **scalar** (no direction)."
-            },
-            {
-              "type": "multi",
-              "prompt": "Which of these are vectors?",
-              "choices": [
-                "Momentum",
-                "Kinetic energy",
-                "Velocity",
-                "Mass",
-                "Force"
-              ],
-              "answers": [
-                0,
-                2,
-                4
-              ],
-              "explain": "Momentum, velocity and force have direction. Kinetic energy and mass do not."
-            },
-            {
-              "type": "blank",
-              "prompt": "Cambridge definition: linear momentum is the product of mass and ___.",
-              "accept": [
-                "velocity"
-              ],
-              "explain": "Say **velocity**, not speed. Velocity has direction, and so does momentum. Using 'speed' loses the mark."
-            },
-            {
-              "type": "truefalse",
-              "prompt": "1 N s is the same as 1 kg m s⁻¹.",
-              "isTrue": true,
-              "explain": "1 N = 1 kg m s⁻². Multiply by s: 1 N s = 1 kg m s⁻¹."
-            },
-            {
-              "type": "number",
-              "prompt": "A 0.15 kg ball has momentum 6.0 kg m s⁻¹. What is its speed?",
-              "value": 40,
-              "tolerance": 0.4,
-              "unit": "m s⁻¹",
-              "explain": "v = p ÷ m = 6.0 ÷ 0.15 = **40 m s⁻¹**."
-            },
-            {
-              "type": "choice",
-              "prompt": "Object X has twice the mass and half the speed of object Y. Compare their momenta.",
-              "choices": [
-                "X has twice as much",
-                "X has half as much",
-                "They are equal",
-                "X has four times as much"
-              ],
-              "correct": 2,
-              "explain": "p_X = (2m)(v/2) = mv = p_Y. **Equal.**"
-            }
-          ]
-        },
-        {
-          "id": "ch4-momentum-direction-change",
-          "title": "Signs and change in momentum",
-          "symbol": "arrow.left.arrow.right",
-          "steps": [
-            {
-              "type": "read",
-              "title": "Pick a positive direction",
-              "text": "Choose one way as **+** (usually right).\nAnything going the other way is **−**.\n\nBall at 4 m s⁻¹ to the right: v = +4\nBall at 4 m s⁻¹ to the left: v = −4"
-            },
-            {
-              "type": "choice",
-              "prompt": "Right is positive. A 2 kg ball moves LEFT at 5 m s⁻¹. Its momentum is:",
-              "choices": [
-                "+10 kg m s⁻¹",
-                "−10 kg m s⁻¹",
-                "+2.5 kg m s⁻¹",
-                "0"
-              ],
-              "correct": 1,
-              "explain": "p = 2 × (−5) = **−10 kg m s⁻¹**. The minus sign just means 'to the left'."
-            },
-            {
-              "type": "read",
-              "title": "Change in momentum",
-              "text": "**Δp = final p − initial p**\n\nΔp = mv − mu\n\nAlways **final minus initial**, with signs."
-            },
-            {
-              "type": "number",
-              "prompt": "A 3 kg trolley speeds up from 2 m s⁻¹ to 7 m s⁻¹ (same direction). Find Δp.",
-              "value": 15,
-              "tolerance": 0.15,
-              "unit": "kg m s⁻¹",
-              "explain": "Δp = 3×7 − 3×2 = 21 − 6 = **15 kg m s⁻¹**."
-            },
-            {
-              "type": "read",
-              "title": "The bounce trap",
-              "text": "Ball hits a wall at **v** and bounces back at **v**.\n\nBefore: +mv\nAfter: −mv\nΔp = −mv − (+mv) = **−2mv**\n\nSize of change = **2mv**, NOT zero! The direction flipped, so momentum changed a lot."
-            },
-            {
-              "type": "choice",
-              "prompt": "A helium atom of mass m hits a wall at speed v and rebounds along its original path. The collision is perfectly elastic. What is the change in momentum of the atom?",
-              "choices": [
-                "zero",
-                "0.5mv",
-                "mv",
-                "2mv"
-              ],
-              "correct": 3,
-              "explain": "Before: +mv. After: −mv (same speed, opposite way).\nΔp = −mv − mv = −2mv → magnitude **2mv**.\n\nZero is the trap: speed is the same, but momentum is a vector."
-            },
-            {
-              "type": "number",
-              "prompt": "A 0.20 kg ball hits a wall at 14.0 m s⁻¹ and rebounds at 7.0 m s⁻¹. Size of its change in momentum?",
-              "value": 4.2,
-              "tolerance": 0.05,
-              "unit": "kg m s⁻¹",
-              "explain": "Take toward wall as +.\nBefore: 0.20 × 14 = +2.8\nAfter: 0.20 × (−7) = −1.4\nΔp = −1.4 − 2.8 = −4.2 → **4.2 kg m s⁻¹**.\n\nWhen it bounces, the speeds **add** (14 + 7 = 21; 0.20 × 21 = 4.2)."
-            },
-            {
-              "type": "truefalse",
-              "prompt": "A ball that bounces back at the same speed has zero change in momentum.",
-              "isTrue": false,
-              "explain": "Direction reversed, so Δp = 2mv. Kinetic energy is unchanged, but momentum is not."
-            },
-            {
-              "type": "number",
-              "prompt": "A 60 g ball falls onto the floor at 8.0 m s⁻¹ and bounces up at 6.0 m s⁻¹. Size of the change in momentum?",
-              "value": 0.84,
-              "tolerance": 0.01,
-              "unit": "kg m s⁻¹",
-              "explain": "60 g = 0.060 kg (convert!).\nΔp = 0.060 × (8.0 + 6.0) = **0.84 kg m s⁻¹**."
-            },
-            {
-              "type": "choice",
-              "prompt": "A ball hits a wall at speed u and sticks (stops). Compared with bouncing back at speed u, the change in momentum is:",
-              "choices": [
-                "the same",
-                "half as big",
-                "twice as big",
-                "zero"
-              ],
-              "correct": 1,
-              "explain": "Sticks: Δp = mu.\nBounces: Δp = 2mu.\nSo sticking gives **half** the change."
-            }
-          ]
-        },
-        {
-          "id": "ch4-momentum-force-impulse",
-          "title": "Force = rate of change of momentum",
-          "symbol": "bolt",
-          "steps": [
-            {
-              "type": "read",
-              "title": "Newton's 2nd law (Cambridge version)",
-              "text": "**The resultant force on an object is proportional to its rate of change of momentum** (and in the same direction).\n\n**F = Δp ÷ Δt**\n\nMemorise that sentence. It's a common definition question."
-            },
-            {
-              "type": "read",
-              "title": "Where F = ma comes from",
-              "text": "If the mass stays the same:\nF = (mv − mu) ÷ t = m(v − u) ÷ t = **ma**\n\nSo F = ma is a special case of F = Δp/Δt."
-            },
-            {
-              "type": "number",
-              "prompt": "Momentum changes by 12 kg m s⁻¹ in 3.0 s. What is the resultant force?",
-              "value": 4,
-              "tolerance": 0.05,
-              "unit": "N",
-              "explain": "F = Δp ÷ Δt = 12 ÷ 3.0 = **4.0 N**."
-            },
-            {
-              "type": "read",
-              "title": "Impulse",
-              "text": "**Impulse = F × Δt = Δp**\n\nImpulse is the change in momentum. Same unit: N s.\n\nOn a **force–time graph**, impulse = **area under the graph**."
-            },
-            {
-              "type": "blank",
-              "prompt": "Force × time is called ___.",
-              "accept": [
-                "impulse"
-              ],
-              "explain": "Impulse = FΔt, which equals the change in momentum."
-            },
-            {
-              "type": "number",
-              "prompt": "A snooker ball (200 g) hits the cushion at 14.0 m s⁻¹ and rebounds at 7.0 m s⁻¹. Contact time is 0.60 s. Average force from the cushion?",
-              "value": 7.0,
-              "tolerance": 0.07,
-              "unit": "N",
-              "explain": "Δp = 0.200 × (14.0 + 7.0) = 4.2 kg m s⁻¹ (it bounced, so add the speeds).\nF = 4.2 ÷ 0.60 = **7.0 N**.\n\nTrap answers: 2.3 N comes from using 14 − 7 instead of 14 + 7."
-            },
-            {
-              "type": "choice",
-              "prompt": "A resultant force of 10 N acts on a body for 2.0 s. Which graph could show its momentum p against time t?",
-              "choices": [
-                "A",
-                "B",
-                "C",
-                "D"
-              ],
-              "correct": 1,
-              "explain": "Impulse = 10 × 2.0 = 20 N s, so p must change by **20** in 2.0 s.\nA: 20 → ~10 (change 10) ✗\n**B: 20 → 0 (change 20) ✓**\nC: 10 → 0 ✗   D: 5 → 0 ✗\n\nThe force can slow the body down — only the size of the change matters.",
-              "image": "images/ch4-momentum/q9.png",
-              "alt": "Momentum against time graph with four lines A to D"
-            },
-            {
-              "type": "read",
-              "title": "Why airbags work",
-              "text": "Same Δp, but a **longer Δt** means a **smaller F**.\n\nAirbags, crumple zones and bending your knees when you land all increase the stopping time."
-            },
-            {
-              "type": "choice",
-              "prompt": "Why does a crumple zone reduce injuries?",
-              "choices": [
-                "It reduces the change in momentum",
-                "It increases the time of the collision, so the force is smaller",
-                "It increases the momentum of the car",
-                "It makes the collision elastic"
-              ],
-              "correct": 1,
-              "explain": "Δp is fixed (the car still stops). F = Δp/Δt, so a bigger Δt gives a smaller F."
-            },
-            {
-              "type": "number",
-              "prompt": "A glider (1500 kg) starts from rest. The resultant force falls steadily from 10.0 kN to 0 over 40 s. What is its speed when the force reaches zero?",
-              "value": 133,
-              "tolerance": 1.5,
-              "unit": "m s⁻¹",
-              "explain": "Impulse = area of the triangle = ½ × 40 × 10 000 = 200 000 N s.\nv = Δp ÷ m = 200 000 ÷ 1500 = **133 m s⁻¹**.\n\nWatch the **k** in kN!",
-              "image": "images/ch4-momentum/q21.png",
-              "alt": "Force in kN against time, straight line from 10 kN at 0 s down to 0 at 40 s"
-            },
-            {
-              "type": "number",
-              "prompt": "A 0.045 kg golf ball leaves the club at 60 m s⁻¹. Contact time is 0.50 ms. Average force on the ball?",
-              "value": 5400,
-              "tolerance": 54,
-              "unit": "N",
-              "explain": "Δp = 0.045 × 60 = 2.7 N s.\n0.50 ms = 0.50 × 10⁻³ s.\nF = 2.7 ÷ 0.00050 = **5400 N**."
-            },
-            {
-              "type": "free",
-              "prompt": "State Newton's second law of motion in terms of momentum. Then show that it leads to F = ma when the mass is constant. [3]",
-              "solution": "**Law:** the resultant force acting on a body is proportional to the rate of change of its momentum (and acts in the direction of that change).\n\n**Show F = ma:**\nF = Δp/Δt = (mv − mu)/t\nIf m is constant: F = m(v − u)/t\n(v − u)/t = a, so **F = ma**.\n\n(With SI units the constant of proportionality is 1.)"
-            }
-          ]
-        },
-        {
-          "id": "ch4-momentum-streams",
-          "title": "Water jets and streams",
-          "symbol": "drop",
-          "steps": [
-            {
-              "type": "read",
-              "title": "Force from a stream",
-              "text": "For water, gas, or a stream of pellets:\n\n**F = (mass per second) × (change in velocity)**\n\nF = (Δm/Δt) × Δv\n\nFirst turn the rate into **kg per second**."
-            },
-            {
-              "type": "number",
-              "prompt": "Convert 90 kg per minute into kg per second.",
-              "value": 1.5,
-              "tolerance": 0.02,
-              "unit": "kg s⁻¹",
-              "explain": "90 ÷ 60 = **1.5 kg s⁻¹**."
-            },
-            {
-              "type": "choice",
-              "prompt": "Water is pumped through a hose at 90 kg per minute and leaves horizontally at 20 m s⁻¹. What is the minimum force a person must apply to stop the hose moving backwards?",
-              "choices": [
-                "30 N",
-                "270 N",
-                "1800 N",
-                "108 000 N"
-              ],
-              "correct": 0,
-              "explain": "Mass per second = 90 ÷ 60 = 1.5 kg s⁻¹.\nF = 1.5 × 20 = **30 N**.\n\n1800 N comes from forgetting to convert minutes to seconds."
-            },
-            {
-              "type": "choice",
-              "prompt": "Steel pellets (0.60 g each) fall onto a plate at 100 pellets per minute. They hit at 5.0 m s⁻¹ and rebound at 4.0 m s⁻¹. Average force on the plate?",
-              "choices": [
-                "0.0010 N",
-                "0.0054 N",
-                "0.0090 N",
-                "0.54 N"
-              ],
-              "correct": 2,
-              "explain": "Δp per pellet = 0.00060 × (5.0 + 4.0) = 0.0054 N s (bounce → add speeds).\nPellets per second = 100 ÷ 60 = 1.667.\nF = 0.0054 × 1.667 = **0.0090 N**.\n\n0.0054 forgets the rate; 0.0010 subtracts the speeds instead of adding."
-            },
-            {
-              "type": "number",
-              "prompt": "A rocket ejects 25 kg of gas each second at 2000 m s⁻¹ relative to the rocket. What thrust does this give?",
-              "value": 50000,
-              "tolerance": 500,
-              "unit": "N",
-              "explain": "F = (Δm/Δt) × v = 25 × 2000 = **50 000 N**."
-            },
-            {
-              "type": "truefalse",
-              "prompt": "A water jet hitting a wall and splashing back produces a bigger force than the same jet stopping dead.",
-              "isTrue": true,
-              "explain": "Bouncing back means a bigger Δv (speeds add), so a bigger Δp each second, so a bigger force."
-            },
-            {
-              "type": "number",
-              "prompt": "Rain falls vertically on a flat roof at 0.50 kg per second and hits at 8.0 m s⁻¹, then stops (doesn't bounce). Force on the roof from the rain?",
-              "value": 4.0,
-              "tolerance": 0.04,
-              "unit": "N",
-              "explain": "F = 0.50 × 8.0 = **4.0 N**."
-            }
-          ]
-        },
-        {
-          "id": "ch4-momentum-conservation",
-          "title": "Conservation of momentum",
-          "symbol": "arrow.triangle.2.circlepath",
-          "steps": [
-            {
-              "type": "read",
-              "title": "The big rule",
-              "text": "**The total momentum of a system stays constant, as long as no resultant external force acts on it.**\n\nTotal before = Total after\n\nThat's the principle of conservation of momentum. Learn the wording."
-            },
-            {
-              "type": "read",
-              "title": "Why it works",
-              "text": "When A pushes B, B pushes A back with an equal and opposite force (Newton's 3rd law), for the same time.\n\nSo A gains exactly the momentum B loses. The total doesn't change."
-            },
-            {
-              "type": "truefalse",
-              "prompt": "Momentum is conserved in every collision, as long as the system is isolated.",
-              "isTrue": true,
-              "explain": "Elastic, inelastic, sticking, exploding — momentum is always conserved if there's no external resultant force."
-            },
-            {
-              "type": "read",
-              "title": "Recipe",
-              "text": "1. Pick + direction.\n2. Total p before = add up m × v (with signs).\n3. Total p after = same thing.\n4. Set equal, solve."
-            },
-            {
-              "type": "number",
-              "prompt": "A 2.0 kg trolley at 3.0 m s⁻¹ hits a stationary 1.0 kg trolley. They stick together. Common speed afterwards?",
-              "value": 2.0,
-              "tolerance": 0.02,
-              "unit": "m s⁻¹",
-              "explain": "Before: 2.0 × 3.0 + 0 = 6.0\nAfter: (2.0 + 1.0) × v = 3.0v\nv = 6.0 ÷ 3.0 = **2.0 m s⁻¹**."
-            },
-            {
-              "type": "choice",
-              "prompt": "A lorry (20 000 kg) moves at 20.0 m s⁻¹ towards a car (900 kg) moving at 30.0 m s⁻¹ towards the lorry. What is the magnitude of the total momentum?",
-              "choices": [
-                "373 kN s",
-                "427 kN s",
-                "3600 kN s",
-                "4410 kN s"
-              ],
-              "correct": 0,
-              "explain": "Lorry +, car − (opposite directions).\n20 000 × 20.0 = 400 000\n900 × 30.0 = 27 000\nTotal = 400 000 − 27 000 = 373 000 N s = **373 kN s**.\n\n427 is the trap: adding instead of subtracting.",
-              "image": "images/ch4-momentum/q8.png",
-              "alt": "Lorry moving right at 20 m/s, car moving left at 30 m/s"
-            },
-            {
-              "type": "choice",
-              "prompt": "A 20 kg object moving at 6.0 m s⁻¹ collides with a 12 kg object moving at 15 m s⁻¹ in the opposite direction. They stick together. Speed just after?",
-              "choices": [
-                "1.9 m s⁻¹",
-                "9.0 m s⁻¹",
-                "9.4 m s⁻¹",
-                "21 m s⁻¹"
-              ],
-              "correct": 0,
-              "explain": "Before: 20 × 6.0 − 12 × 15 = 120 − 180 = −60\nAfter: 32 × v = −60\nv = −1.875 → speed **1.9 m s⁻¹** (moving in the 12 kg object's direction)."
-            },
-            {
-              "type": "read",
-              "title": "Explosions: start from zero",
-              "text": "If everything starts at rest, total momentum = **0**.\n\nAfter: the pieces fly apart with **equal and opposite** momenta.\n\nm₁v₁ = m₂v₂ (sizes)\n\nThe lighter piece goes faster."
-            },
-            {
-              "type": "number",
-              "prompt": "A 4.0 kg gun fires a 0.010 kg bullet at 400 m s⁻¹. Recoil speed of the gun?",
-              "value": 1.0,
-              "tolerance": 0.01,
-              "unit": "m s⁻¹",
-              "explain": "Before: 0.\nAfter: 0.010 × 400 = 4.0 kg m s⁻¹ one way, so the gun has 4.0 the other way.\nv = 4.0 ÷ 4.0 = **1.0 m s⁻¹**."
-            },
-            {
-              "type": "choice",
-              "prompt": "Rosetta: an orbiter (170 kg) and lander (100 kg) separate. The lander's velocity changes by 3.0 m s⁻¹ towards the comet. Treat them as isolated. What is the change in speed of the orbiter?",
-              "choices": [
-                "1.8 m s⁻¹",
-                "2.3 m s⁻¹",
-                "3.0 m s⁻¹",
-                "5.1 m s⁻¹"
-              ],
-              "correct": 0,
-              "explain": "Work in the frame where they start together (Δ total p = 0).\n100 × 3.0 = 170 × Δv\nΔv = 300 ÷ 170 = **1.8 m s⁻¹** (away from the comet).",
-              "image": "images/ch4-momentum/q13.png",
-              "alt": "Orbiter 170 kg above, lander 100 kg below moving down at 3.0 m/s"
-            },
-            {
-              "type": "choice",
-              "prompt": "A moving thorium nucleus emits an α-particle and becomes a radium nucleus. Which statement is correct?",
-              "choices": [
-                "The kinetic energy of the α-particle equals that of the radium nucleus.",
-                "The momentum of the α-particle equals the momentum of the radium nucleus.",
-                "The total momentum before the emission equals the total momentum after.",
-                "The velocity of the α-particle equals the velocity of the radium nucleus."
-              ],
-              "correct": 2,
-              "explain": "Isolated system → **total momentum conserved**.\nB is wrong here: the thorium was already moving, so the two momenta aren't simply equal (and they're in opposite directions in the picture anyway).",
-              "image": "images/ch4-momentum/q19.png",
-              "alt": "Thorium nucleus moving left; afterwards radium moves left and helium moves right"
-            },
-            {
-              "type": "free",
-              "prompt": "State the principle of conservation of momentum. [2]",
-              "solution": "**The total momentum of a system remains constant** (total before = total after) **provided no resultant external force acts on the system.**\n\nBoth parts needed for 2 marks: (1) total momentum constant, (2) the condition — isolated / no external resultant force."
-            }
-          ]
-        },
-        {
-          "id": "ch4-momentum-elastic-inelastic",
-          "title": "Elastic vs inelastic",
-          "symbol": "circle.lefthalf.filled",
-          "steps": [
-            {
-              "type": "read",
-              "title": "Two kinds of collision",
-              "text": "**Momentum is ALWAYS conserved.**\n\n**Elastic:** kinetic energy is ALSO conserved.\n**Inelastic:** some kinetic energy is lost (turned into heat, sound, deformation).\n\nTotal **energy** is always conserved. Only **kinetic** energy goes missing."
-            },
-            {
-              "type": "read",
-              "title": "KE reminder",
-              "text": "**Eₖ = ½mv²**\n\nKE is a scalar. No minus signs — v² is always positive."
-            },
-            {
-              "type": "number",
-              "prompt": "Kinetic energy of a 4.0 kg object at 3.0 m s⁻¹?",
-              "value": 18,
-              "tolerance": 0.2,
-              "unit": "J",
-              "explain": "Eₖ = ½ × 4.0 × 3.0² = ½ × 4 × 9 = **18 J**."
-            },
-            {
-              "type": "choice",
-              "prompt": "Two bodies collide and stick together (no external forces). Which is true?",
-              "choices": [
-                "KE different, momentum different",
-                "KE different, momentum the same",
-                "KE the same, momentum different",
-                "KE the same, momentum the same"
-              ],
-              "correct": 1,
-              "explain": "Sticking together = **inelastic**, so KE is lost.\nMomentum is always conserved in an isolated system."
-            },
-            {
-              "type": "choice",
-              "prompt": "A 4.0 kg object at 3.0 m s⁻¹ hits a stationary object in an inelastic collision. Which statement is correct?",
-              "choices": [
-                "After collision, total KE is 18 J.",
-                "After collision, total KE is less than 18 J.",
-                "Before collision, total KE is 12 J.",
-                "Before collision, total KE is less than 12 J."
-              ],
-              "correct": 1,
-              "explain": "KE before = ½ × 4.0 × 3.0² = 18 J.\nInelastic → some KE is lost → after is **less than 18 J**."
-            },
-            {
-              "type": "choice",
-              "prompt": "A body of mass m at velocity v hits a stationary body of the same mass and sticks to it. After the collision, the momentum and KE are:",
-              "choices": [
-                "mv and ¼mv²",
-                "mv and ⅛mv²",
-                "2mv and ½mv²",
-                "2mv and mv²"
-              ],
-              "correct": 0,
-              "explain": "Momentum conserved: **mv**.\nSpeed after: mv = 2m × V → V = v/2.\nKE = ½ × 2m × (v/2)² = **¼mv²**.\n\n(Half the KE was lost: it started at ½mv².)"
-            },
-            {
-              "type": "truefalse",
-              "prompt": "In a perfectly elastic collision, the total kinetic energy before equals the total kinetic energy after.",
-              "isTrue": true,
-              "explain": "That's the definition of elastic."
-            },
-            {
-              "type": "choice",
-              "prompt": "Two identical spheres (mass m, speed v) move towards each other and have a head-on elastic collision. Which is correct?",
-              "choices": [
-                "They stick together on impact.",
-                "The total kinetic energy after impact is mv².",
-                "The total kinetic energy before impact is zero.",
-                "The total momentum before impact is 2mv."
-              ],
-              "correct": 1,
-              "explain": "Total momentum = mv − mv = 0 (so D is wrong).\nKE is a scalar, it doesn't cancel: ½mv² + ½mv² = mv².\nElastic → KE after = **mv²**.",
-              "image": "images/ch4-momentum/q14.png",
-              "alt": "Two spheres of mass m moving towards each other at speed v"
-            },
-            {
-              "type": "read",
-              "title": "Finding KE lost",
-              "text": "1. Use momentum to find the unknown velocity.\n2. KE before = sum of ½mv².\n3. KE after = sum of ½mv².\n4. Loss = before − after."
-            },
-            {
-              "type": "number",
-              "prompt": "A 2.0 kg trolley at 3.0 m s⁻¹ hits a stationary 1.0 kg trolley and they stick (common speed 2.0 m s⁻¹). How much KE is lost?",
-              "value": 3.0,
-              "tolerance": 0.03,
-              "unit": "J",
-              "explain": "Before: ½ × 2.0 × 3.0² = 9.0 J\nAfter: ½ × 3.0 × 2.0² = 6.0 J\nLost = **3.0 J**."
-            },
-            {
-              "type": "choice",
-              "prompt": "Balls of mass m and 2m move towards each other at 2v and v. After the head-on collision, m rebounds to the left at v. What is the loss of kinetic energy?",
-              "choices": [
-                "¾mv²",
-                "³⁄₂mv²",
-                "⁹⁄₄mv²",
-                "⁹⁄₂mv²"
-              ],
-              "correct": 2,
-              "explain": "Right = +.\nBefore: m(2v) + 2m(−v) = 0.\nAfter: m(−v) + 2mV = 0 → V = +v/2.\nKE before: ½m(2v)² + ½(2m)v² = 2mv² + mv² = 3mv²\nKE after: ½mv² + ½(2m)(v/2)² = ½mv² + ¼mv² = ¾mv²\nLoss = 3 − ¾ = **⁹⁄₄ mv²**.",
-              "image": "images/ch4-momentum/q16.png",
-              "alt": "Mass m moving right at 2v towards mass 2m moving left at v"
-            },
-            {
-              "type": "choice",
-              "prompt": "Magnets P and Q on an air track move towards each other and interact without touching. The relative speed of approach equals the relative speed of separation. Which must be correct?",
-              "choices": [
-                "Some of the total KE is lost.",
-                "Some of the total momentum is lost.",
-                "The momentum of Q after equals the momentum of P before.",
-                "The total KE of P and Q before and after are equal."
-              ],
-              "correct": 3,
-              "explain": "Approach speed = separation speed means the collision is **elastic** → total KE is the same before and after.\nMomentum is never lost. C only works for special cases (equal masses, Q at rest).",
-              "image": "images/ch4-momentum/q3.png",
-              "alt": "Two magnets P and Q on floats on an air track, moving towards each other"
-            }
-          ]
-        },
-        {
-          "id": "ch4-momentum-relative-speed",
-          "title": "Elastic shortcut: relative speed",
-          "symbol": "arrow.up.arrow.down",
-          "steps": [
-            {
-              "type": "read",
-              "title": "The shortcut",
-              "text": "For a **perfectly elastic** collision in one line:\n\n**speed of approach = speed of separation**\n\nThis replaces the messy KE equation. It ONLY works if the collision is elastic."
-            },
-            {
-              "type": "read",
-              "title": "How to get the speeds",
-              "text": "**Approach:** how fast the gap closes before.\n• Same direction: subtract (20 − 12)\n• Towards each other: add (5 + 15)\n\n**Separation:** how fast the gap opens after. Same idea."
-            },
-            {
-              "type": "number",
-              "prompt": "X at 20 m s⁻¹ chases Y at 12 m s⁻¹ (same direction). What is their speed of approach?",
-              "value": 8,
-              "tolerance": 0.1,
-              "unit": "m s⁻¹",
-              "explain": "Same direction → subtract: 20 − 12 = **8 m s⁻¹**."
-            },
-            {
-              "type": "number",
-              "prompt": "Two balls move towards each other at 5 m s⁻¹ and 15 m s⁻¹. Speed of approach?",
-              "value": 20,
-              "tolerance": 0.2,
-              "unit": "m s⁻¹",
-              "explain": "Towards each other → add: 5 + 15 = **20 m s⁻¹**."
-            },
-            {
-              "type": "choice",
-              "prompt": "Elastic collision. Before: X at 20 m s⁻¹, Y at 12 m s⁻¹, both to the right. After: X at 10 m s⁻¹ right, Y at v right. What is v?",
-              "choices": [
-                "2.0 m s⁻¹",
-                "18 m s⁻¹",
-                "22 m s⁻¹",
-                "24 m s⁻¹"
-              ],
-              "correct": 1,
-              "explain": "Approach = 20 − 12 = 8.\nSeparation = v − 10.\nElastic: v − 10 = 8 → **v = 18 m s⁻¹**.\n\nNo masses needed!",
-              "image": "images/ch4-momentum/q5.png",
-              "alt": "Before: X 20 m/s and Y 12 m/s to the right. After: X 10 m/s and Y v to the right"
-            },
-            {
-              "type": "choice",
-              "prompt": "Two bodies on the same line have a perfectly elastic collision. Which statement **must** be correct?",
-              "choices": [
-                "The initial speed of one equals the final speed of the other.",
-                "The relative speed of approach equals their relative speed of separation.",
-                "Momentum is conserved but total KE is reduced.",
-                "One body will be stationary at one instant."
-              ],
-              "correct": 1,
-              "explain": "That's the elastic rule. A and D only happen in special cases. C describes inelastic."
-            },
-            {
-              "type": "choice",
-              "prompt": "Identical spheres. X moves at v towards stationary Y. The collision is elastic. What happens?",
-              "choices": [
-                "X: ½v right; Y: ½v right",
-                "X: v left; Y stays still",
-                "X: ½v left; Y: ½v right",
-                "X stops; Y: v right"
-              ],
-              "correct": 3,
-              "explain": "Equal masses, elastic, one at rest → they **swap velocities**.\nCheck: momentum mv = 0 + mv ✓. Separation v − 0 = v = approach ✓.\n\nA conserves momentum but loses KE, so it isn't elastic.",
-              "image": "images/ch4-momentum/q11.png",
-              "alt": "Sphere X moving right at v towards stationary sphere Y"
-            },
-            {
-              "type": "choice",
-              "prompt": "X (5 m s⁻¹ right) and Y (15 m s⁻¹ left) have a perfectly elastic head-on collision. Y then moves right at 7 m s⁻¹. Speed and direction of X?",
-              "choices": [
-                "3 m s⁻¹ left",
-                "13 m s⁻¹ left",
-                "3 m s⁻¹ right",
-                "13 m s⁻¹ right"
-              ],
-              "correct": 1,
-              "explain": "Approach = 5 + 15 = 20.\nY is at +7 after. Separation = 7 − v_X = 20 → v_X = −13.\n**13 m s⁻¹ to the left.**",
-              "image": "images/ch4-momentum/q15.png",
-              "alt": "Ball X moving right at 5 m/s, ball Y moving left at 15 m/s"
-            },
-            {
-              "type": "choice",
-              "prompt": "Spheres approach each other at u₁ (right) and u₂ (left). After a perfectly elastic collision they move right at v₁ and v₂ (v₂ in front). Which must be correct?",
-              "choices": [
-                "u₁ − u₂ = v₂ + v₁",
-                "u₁ − u₂ = v₂ − v₁",
-                "u₁ + u₂ = v₂ + v₁",
-                "u₁ + u₂ = v₂ − v₁"
-              ],
-              "correct": 3,
-              "explain": "Towards each other → approach = u₁ + u₂.\nSame direction after → separation = v₂ − v₁.\nSo **u₁ + u₂ = v₂ − v₁**.",
-              "image": "images/ch4-momentum/q24.png",
-              "alt": "Before: u1 right and u2 left. After: v1 and v2 both right"
-            },
-            {
-              "type": "choice",
-              "prompt": "Elastic collision: X (mass m) at v hits stationary Y (mass 4m). X rebounds at 3v/5. What is the kinetic energy of Y after?",
-              "choices": [
-                "⁸⁄₁₀ mv²",
-                "³⁴⁄₅₀ mv²",
-                "¹⁶⁄₅₀ mv²",
-                "⅕ mv²"
-              ],
-              "correct": 2,
-              "explain": "Momentum: mv = m(−3v/5) + 4mV\n4V = v + 3v/5 = 8v/5 → V = 2v/5\nKE = ½ × 4m × (2v/5)² = 2m × 4v²/25 = 8mv²/25 = **16/50 mv²**.\n\nCheck with the shortcut: separation = 2v/5 + 3v/5 = v = approach ✓.",
-              "image": "images/ch4-momentum/q17.png",
-              "alt": "X mass m at v hits stationary Y mass 4m. After: X moves left at 3v/5, Y moves right"
-            },
-            {
-              "type": "truefalse",
-              "prompt": "If the speed of separation is less than the speed of approach, the collision is inelastic.",
-              "isTrue": true,
-              "explain": "Smaller separation speed means some KE was lost → inelastic."
-            },
-            {
-              "type": "free",
-              "prompt": "A 0.50 kg ball at 6.0 m s⁻¹ makes a perfectly elastic head-on collision with a stationary 1.0 kg ball. Find both velocities after the collision. [4]",
-              "solution": "Right = +. Let after velocities be v₁ (0.50 kg) and v₂ (1.0 kg).\n\n**Momentum:** 0.50 × 6.0 = 0.50v₁ + 1.0v₂\n→ 3.0 = 0.50v₁ + v₂ (1)\n\n**Elastic:** approach = separation\n6.0 = v₂ − v₁ → v₂ = v₁ + 6.0 (2)\n\nSub (2) into (1): 3.0 = 0.50v₁ + v₁ + 6.0\n1.5v₁ = −3.0 → v₁ = −2.0\nv₂ = 4.0\n\n**Answer: 0.50 kg ball: 2.0 m s⁻¹ backwards (left). 1.0 kg ball: 4.0 m s⁻¹ forwards.**\n\nCheck KE: before ½(0.5)(36) = 9.0 J; after ½(0.5)(4) + ½(1)(16) = 1 + 8 = 9.0 J ✓"
-            }
-          ]
-        },
-        {
-          "id": "ch4-momentum-two-d",
-          "title": "Collisions in 2D",
-          "symbol": "arrow.up.right",
-          "steps": [
-            {
-              "type": "read",
-              "title": "Split into x and y",
-              "text": "Momentum is a vector, so in 2D:\n\n**x-momentum is conserved on its own.**\n**y-momentum is conserved on its own.**\n\nUse components: p cos θ and p sin θ."
-            },
-            {
-              "type": "read",
-              "title": "Sticking together at an angle",
-              "text": "Find total pₓ and total p_y.\n\nAngle: **tan θ = p_y ÷ pₓ**\nSize: **p = √(pₓ² + p_y²)**"
-            },
-            {
-              "type": "choice",
-              "prompt": "A 0.20 kg ball moving in the x-direction at 0.50 m s⁻¹ hits a 0.30 kg ball moving in the y-direction at 0.40 m s⁻¹. They stick. Angle θ to the x-direction?",
-              "choices": [
-                "39°",
-                "40°",
-                "50°",
-                "51°"
-              ],
-              "correct": 2,
-              "explain": "pₓ = 0.20 × 0.50 = 0.10\np_y = 0.30 × 0.40 = 0.12\ntan θ = 0.12 ÷ 0.10 = 1.2\nθ = **50°**.\n\n39° is the trap: tan⁻¹(0.40/0.50) uses velocities, not momenta.",
-              "image": "images/ch4-momentum/q7.png",
-              "alt": "0.20 kg ball moving in x-direction at 0.50 m/s and 0.30 kg ball moving in y-direction at 0.40 m/s"
-            },
-            {
-              "type": "number",
-              "prompt": "Same collision: what is the speed of the combined 0.50 kg lump?",
-              "value": 0.312,
-              "tolerance": 0.01,
-              "unit": "m s⁻¹",
-              "explain": "p = √(0.10² + 0.12²) = √0.0244 = 0.156 kg m s⁻¹\nv = 0.156 ÷ 0.50 = **0.31 m s⁻¹**."
-            },
-            {
-              "type": "read",
-              "title": "Sideways momentum must cancel",
-              "text": "A moving nucleus hits a stationary one. Before, there's **no sideways (y) momentum**.\n\nAfter, the two paths must have sideways momenta that cancel: **one goes up, one goes down**. If both go to the same side, it's impossible."
-            },
-            {
-              "type": "choice",
-              "prompt": "A nucleus collides with a stationary nucleus in a vacuum. Which diagram is **not** possible?",
-              "choices": [
-                "A",
-                "B",
-                "C",
-                "D"
-              ],
-              "correct": 2,
-              "explain": "No sideways momentum before → after, one particle must go up and one down.\nIn **C**, both particles go downward → total y-momentum isn't zero → impossible.",
-              "choiceImages": [
-                "images/ch4-momentum/q4a.png",
-                "images/ch4-momentum/q4b.png",
-                "images/ch4-momentum/q4c.png",
-                "images/ch4-momentum/q4d.png"
-              ]
-            },
-            {
-              "type": "choice",
-              "prompt": "A ball of mass m at u hits a stationary ball M. After: m moves at v, 30° above the line; M moves at V, 40° below. Which equations are correct?\n(1) mu = MV + mv\n(2) mv sin 30° = MV sin 40°\n(3) mu = mv cos 30° + MV cos 40°",
-              "choices": [
-                "1 ✓, 2 ✓, 3 ✓",
-                "1 ✗, 2 ✓, 3 ✗",
-                "1 ✓, 2 ✗, 3 ✗",
-                "1 ✗, 2 ✓, 3 ✓"
-              ],
-              "correct": 3,
-              "explain": "(1) ✗ — you can't just add vectors at angles.\n(2) ✓ — sideways: up momentum = down momentum.\n(3) ✓ — along the line: the cos components add up to mu.",
-              "image": "images/ch4-momentum/q25.png",
-              "alt": "Ball m at u hits stationary M. After, m goes 30 degrees above, M goes 40 degrees below"
-            },
-            {
-              "type": "number",
-              "prompt": "A 2.0 kg puck at 5.0 m s⁻¹ (x-direction) hits a stationary 2.0 kg puck. Afterwards the first puck moves at 3.0 m s⁻¹ at 53° above x. Find the y-component of velocity of the second puck (size).",
-              "value": 2.4,
-              "tolerance": 0.03,
-              "unit": "m s⁻¹",
-              "explain": "y before = 0.\nFirst puck: p_y = 2.0 × 3.0 × sin 53° = 2.0 × 2.40 = 4.79\nSecond puck: 2.0 × v_y = 4.79 (downwards)\nv_y = **2.4 m s⁻¹**."
-            }
-          ]
-        },
-        {
-          "id": "ch4-momentum-exam-traps",
-          "title": "Exam traps and curveballs",
-          "symbol": "exclamationmark.triangle",
-          "steps": [
-            {
-              "type": "read",
-              "title": "Traps to watch for",
-              "text": "• g vs kg, ms vs s, kN vs N — **convert first**\n• Bounce → **add** the speeds\n• Opposite directions → one velocity is **negative**\n• Momentum is a vector, KE is a scalar\n• 'Elastic' → you can use approach = separation"
-            },
-            {
-              "type": "truefalse",
-              "prompt": "In an inelastic collision, total energy is not conserved.",
-              "isTrue": false,
-              "explain": "**Total** energy is always conserved. Only **kinetic** energy is lost (it becomes thermal energy, sound, etc.). Saying 'energy is lost' instead of 'kinetic energy is lost' can cost a mark."
-            },
-            {
-              "type": "multi",
-              "prompt": "In which of these is momentum conserved? (No external forces.)",
-              "choices": [
-                "Elastic collision",
-                "Inelastic collision",
-                "Explosion",
-                "Objects stick together"
-              ],
-              "answers": [
-                0,
-                1,
-                2,
-                3
-              ],
-              "explain": "**All of them.** Momentum is always conserved in an isolated system. Only KE differs."
-            },
-            {
-              "type": "choice",
-              "prompt": "A ball falls and hits the ground. Why isn't momentum conserved for the ball on its own?",
-              "choices": [
-                "Gravity and the ground exert external forces on it",
-                "It's an elastic collision",
-                "Momentum is only conserved in 2D",
-                "The ball's mass changes"
-              ],
-              "correct": 0,
-              "explain": "Conservation needs **no resultant external force**. The system 'ball + Earth' conserves momentum; the ball alone doesn't."
-            },
-            {
-              "type": "choice",
-              "prompt": "Which quantity has the same unit as momentum?",
-              "choices": [
-                "Force × time",
-                "Force × distance",
-                "Mass × acceleration",
-                "Energy ÷ time"
-              ],
-              "correct": 0,
-              "explain": "Impulse = F × t, unit N s = kg m s⁻¹.\nF × d = J; ma = N; E/t = W."
-            },
-            {
-              "type": "choice",
-              "prompt": "Base units of momentum?",
-              "choices": [
-                "kg m s⁻²",
-                "kg m s⁻¹",
-                "kg m² s⁻²",
-                "kg m² s⁻¹"
-              ],
-              "correct": 1,
-              "explain": "p = mv → kg × m s⁻¹ = **kg m s⁻¹**."
-            },
-            {
-              "type": "number",
-              "prompt": "Two trolleys at rest are pushed apart by a spring. The 0.60 kg trolley moves off at 0.50 m s⁻¹. The other moves at 0.75 m s⁻¹. What is its mass?",
-              "value": 0.4,
-              "tolerance": 0.02,
-              "unit": "kg",
-              "explain": "Starts at 0 → equal and opposite momenta.\n0.60 × 0.50 = 0.30 = m × 0.75\nm = 0.30 ÷ 0.75 = **0.40 kg**."
-            },
-            {
-              "type": "choice",
-              "prompt": "A 0.40 kg ball and a 0.60 kg ball have equal kinetic energies. Which has the larger momentum?",
-              "choices": [
-                "0.40 kg ball",
-                "0.60 kg ball",
-                "Equal",
-                "Can't tell"
-              ],
-              "correct": 1,
-              "explain": "p = √(2mEₖ). Same Eₖ → bigger m gives bigger p.\nThe **0.60 kg** ball."
-            },
-            {
-              "type": "number",
-              "prompt": "An object has Eₖ = 50 J and momentum 10 kg m s⁻¹. What is its mass?",
-              "value": 1.0,
-              "tolerance": 0.01,
-              "unit": "kg",
-              "explain": "Eₖ = p² ÷ 2m → m = p² ÷ 2Eₖ = 100 ÷ 100 = **1.0 kg**.\n\n(Useful: Eₖ = p²/2m.)"
-            },
-            {
-              "type": "choice",
-              "prompt": "A force–time graph is a rectangle 4.0 N high and 0.50 s wide, acting on a 2.0 kg object at rest. Final speed?",
-              "choices": [
-                "1.0 m s⁻¹",
-                "2.0 m s⁻¹",
-                "4.0 m s⁻¹",
-                "0.25 m s⁻¹"
-              ],
-              "correct": 0,
-              "explain": "Area = 4.0 × 0.50 = 2.0 N s = Δp.\nv = 2.0 ÷ 2.0 = **1.0 m s⁻¹**."
-            },
-            {
-              "type": "truefalse",
-              "prompt": "When you jump, the Earth gains momentum equal and opposite to yours.",
-              "isTrue": true,
-              "explain": "Total momentum is conserved. The Earth's mass is huge, so its velocity change is tiny."
-            },
-            {
-              "type": "free",
-              "prompt": "A 1200 kg car at 15 m s⁻¹ hits the back of a stationary 1800 kg van. They lock together.\n(a) Find their speed just after. [2]\n(b) Find the kinetic energy lost. [3]\n(c) Explain why total energy is still conserved. [1]",
-              "solution": "**(a)** Momentum: 1200 × 15 = (1200 + 1800)v\n18 000 = 3000v → **v = 6.0 m s⁻¹**\n\n**(b)** KE before = ½ × 1200 × 15² = 135 000 J\nKE after = ½ × 3000 × 6.0² = 54 000 J\nLost = **81 000 J (81 kJ)**\n\n**(c)** The lost kinetic energy is transferred to other forms (thermal energy, sound, and work done deforming the metal). The total energy stays the same."
-            },
-            {
-              "type": "free",
-              "prompt": "A trolley A (0.80 kg) moves at 0.60 m s⁻¹ towards a stationary trolley B (0.40 kg). After the collision, A moves at 0.20 m s⁻¹ in the same direction.\n(a) Find the velocity of B. [2]\n(b) Use relative speeds to decide if the collision is elastic. [2]",
-              "solution": "**(a)** 0.80 × 0.60 = 0.80 × 0.20 + 0.40 × v_B\n0.48 = 0.16 + 0.40v_B → v_B = 0.32 ÷ 0.40 = **0.80 m s⁻¹** (same direction)\n\n**(b)** Approach = 0.60 − 0 = 0.60 m s⁻¹\nSeparation = 0.80 − 0.20 = 0.60 m s⁻¹\nEqual → **elastic**.\n\n(Check KE: before ½(0.8)(0.36) = 0.144 J; after ½(0.8)(0.04) + ½(0.4)(0.64) = 0.016 + 0.128 = 0.144 J ✓)"
-            },
-            {
-              "type": "free",
-              "prompt": "A ball of mass 0.30 kg is thrown at a wall at 12 m s⁻¹ and rebounds at 9.0 m s⁻¹. It is in contact for 0.050 s.\n(a) Calculate the change in momentum. [2]\n(b) Calculate the average force on the ball. [1]\n(c) State the size and direction of the average force on the wall, and name the law. [2]",
-              "solution": "**(a)** Towards wall = +.\nΔp = 0.30 × (−9.0) − 0.30 × 12 = −2.7 − 3.6 = **−6.3 kg m s⁻¹** (6.3, away from the wall)\n\n**(b)** F = 6.3 ÷ 0.050 = **126 N ≈ 130 N** (away from the wall)\n\n**(c)** **126 N towards the wall** — Newton's **third law** (equal and opposite forces between the ball and the wall)."
-            }
-          ]
-        },
-        {
-          "id": "ch4-momentum-quiz",
-          "title": "Chapter 4 quiz",
-          "kind": "quiz",
-          "steps": [
-            {
-              "type": "choice",
-              "prompt": "Which is the correct definition of linear momentum?",
-              "choices": [
-                "mass × speed",
-                "mass × velocity",
-                "force × distance",
-                "½ × mass × velocity²"
-              ],
-              "correct": 1,
-              "explain": "Momentum = mass × **velocity** (a vector)."
-            },
-            {
-              "type": "choice",
-              "prompt": "A 0.50 kg ball hits a wall at 8.0 m s⁻¹ and rebounds at 6.0 m s⁻¹. Contact time 0.020 s. Average force?",
-              "choices": [
-                "50 N",
-                "100 N",
-                "350 N",
-                "700 N"
-              ],
-              "correct": 2,
-              "explain": "Δp = 0.50 × (8.0 + 6.0) = 7.0 N s.\nF = 7.0 ÷ 0.020 = **350 N**.\n50 N is the 'subtract the speeds' trap."
-            },
-            {
-              "type": "choice",
-              "prompt": "Which row is correct for a perfectly elastic collision in an isolated system?",
-              "choices": [
-                "KE conserved, momentum not conserved",
-                "KE not conserved, momentum conserved",
-                "Both conserved",
-                "Neither conserved"
-              ],
-              "correct": 2,
-              "explain": "Elastic → KE conserved. Isolated → momentum always conserved."
-            },
-            {
-              "type": "number",
-              "prompt": "A 3.0 kg ball at 4.0 m s⁻¹ hits a stationary 1.0 kg ball. They stick together. Common speed?",
-              "value": 3.0,
-              "tolerance": 0.03,
-              "unit": "m s⁻¹",
-              "explain": "3.0 × 4.0 = 4.0v → **v = 3.0 m s⁻¹**."
-            },
-            {
-              "type": "number",
-              "prompt": "A 70 kg skater at rest pushes a 50 kg skater, who moves off at 1.4 m s⁻¹. Speed of the 70 kg skater?",
-              "value": 1.0,
-              "tolerance": 0.01,
-              "unit": "m s⁻¹",
-              "explain": "50 × 1.4 = 70 = 70 × v → **v = 1.0 m s⁻¹** (opposite way)."
-            },
-            {
-              "type": "choice",
-              "prompt": "A force on a 2.0 kg mass falls steadily from 6.0 N to 0 in 4.0 s. The mass starts at rest. Final speed?",
-              "choices": [
-                "3.0 m s⁻¹",
-                "6.0 m s⁻¹",
-                "12 m s⁻¹",
-                "24 m s⁻¹"
-              ],
-              "correct": 1,
-              "explain": "Area = ½ × 4.0 × 6.0 = 12 N s.\nv = 12 ÷ 2.0 = **6.0 m s⁻¹**."
-            },
-            {
-              "type": "choice",
-              "prompt": "Elastic collision. P moves right at 9 m s⁻¹, Q moves left at 3 m s⁻¹. Afterwards Q moves right at 6 m s⁻¹. Velocity of P after?",
-              "choices": [
-                "6 m s⁻¹ left",
-                "6 m s⁻¹ right",
-                "3 m s⁻¹ left",
-                "3 m s⁻¹ right"
-              ],
-              "correct": 0,
-              "explain": "Approach = 9 + 3 = 12.\nSeparation: 6 − v_P = 12 → v_P = −6 → **6 m s⁻¹ left**."
-            },
-            {
-              "type": "truefalse",
-              "prompt": "In an inelastic collision, the total momentum after is less than before.",
-              "isTrue": false,
-              "explain": "Momentum is always conserved (isolated system). Only KE decreases."
-            },
-            {
-              "type": "number",
-              "prompt": "A machine gun fires 10 bullets per second, each of mass 0.020 kg, at 500 m s⁻¹. Average force on the gun?",
-              "value": 100,
-              "tolerance": 1,
-              "unit": "N",
-              "explain": "Δp per second = 10 × 0.020 × 500 = **100 N**."
-            },
-            {
-              "type": "choice",
-              "prompt": "A 0.10 kg ball moves at 3.0 m s⁻¹ in the x-direction and hits a stationary ball. After, the first ball moves at 90° to its original path. Which must be true about the second ball?",
-              "choices": [
-                "It moves along the x-direction only",
-                "Its x-momentum is 0.30 kg m s⁻¹",
-                "It is stationary",
-                "Its momentum is zero"
-              ],
-              "correct": 1,
-              "explain": "First ball now has no x-momentum (it moves at 90°).\nSo the second ball carries all the x-momentum: 0.10 × 3.0 = **0.30 kg m s⁻¹**. It also needs y-momentum to cancel the first ball's, so A is wrong."
-            },
-            {
-              "type": "blank",
-              "prompt": "The area under a force–time graph equals the change in ___.",
-              "accept": [
-                "momentum",
-                "linear momentum"
-              ],
-              "explain": "Area = F × t = impulse = **change in momentum**."
-            },
-            {
-              "type": "choice",
-              "prompt": "A 2.0 kg object moving at 6.0 m s⁻¹ hits a stationary 4.0 kg object and they stick. Kinetic energy lost?",
-              "choices": [
-                "12 J",
-                "24 J",
-                "36 J",
-                "0 J"
-              ],
-              "correct": 1,
-              "explain": "v = 12 ÷ 6.0 = 2.0 m s⁻¹.\nKE before = ½ × 2.0 × 36 = 36 J\nKE after = ½ × 6.0 × 4 = 12 J\nLost = **24 J**."
-            },
-            {
-              "type": "choice",
-              "prompt": "Which unit is equivalent to N s?",
-              "choices": [
-                "kg m s⁻²",
-                "kg m s⁻¹",
-                "J s⁻¹",
-                "kg m² s⁻¹"
-              ],
-              "correct": 1,
-              "explain": "N s = kg m s⁻² × s = **kg m s⁻¹**."
-            },
-            {
-              "type": "multi",
-              "prompt": "A ball bounces off a wall elastically. Which are true?",
-              "choices": [
-                "Its momentum changes",
-                "Its kinetic energy changes",
-                "Its speed is the same after",
-                "The wall exerts a force on it"
-              ],
-              "answers": [
-                0,
-                2,
-                3
-              ],
-              "explain": "Direction reverses → momentum changes. Elastic → same speed and same KE. The wall provides the force that changes the momentum."
-            },
-            {
-              "type": "number",
-              "prompt": "A 5.0 kg shell at rest explodes into 2.0 kg and 3.0 kg pieces. The 2.0 kg piece moves at 30 m s⁻¹. Total kinetic energy released?",
-              "value": 1500,
-              "tolerance": 15,
-              "unit": "J",
-              "explain": "3.0 × v = 2.0 × 30 → v = 20 m s⁻¹.\nKE = ½(2.0)(900) + ½(3.0)(400) = 900 + 600 = **1500 J**."
-            },
-            {
-              "type": "choice",
-              "prompt": "Why does a long jumper land in a sand pit?",
-              "choices": [
-                "To reduce the change in momentum",
-                "To increase the stopping time, so the force is smaller",
-                "To make the landing elastic",
-                "To increase their momentum"
-              ],
-              "correct": 1,
-              "explain": "Δp is the same either way. F = Δp/Δt: longer time → smaller force."
-            },
-            {
-              "type": "choice",
-              "prompt": "Two identical trucks: one at rest, one moving at v. They collide elastically head-on. Afterwards:",
-              "choices": [
-                "both move at v/2",
-                "the moving one stops; the other moves at v",
-                "both stop",
-                "the moving one bounces back at v"
-              ],
-              "correct": 1,
-              "explain": "Equal masses, elastic, one at rest → velocities swap."
-            },
-            {
-              "type": "number",
-              "prompt": "A 900 kg car at 20 m s⁻¹ brakes to rest in 4.5 s. Average braking force (size)?",
-              "value": 4000,
-              "tolerance": 40,
-              "unit": "N",
-              "explain": "Δp = 900 × 20 = 18 000 N s.\nF = 18 000 ÷ 4.5 = **4000 N**."
-            },
-            {
-              "type": "free",
-              "prompt": "(a) Define impulse. [1]\n(b) A 0.058 kg tennis ball arrives at 25 m s⁻¹ and leaves the racket at 35 m s⁻¹ in the opposite direction. Contact time is 4.0 ms. Find the average force on the ball. [3]\n(c) State whether the collision is elastic. Explain. [1]",
-              "solution": "**(a)** Impulse = force × time for which it acts (= change in momentum).\n\n**(b)** Δp = 0.058 × (35 + 25) = 0.058 × 60 = 3.48 N s\nF = 3.48 ÷ 0.0040 = **870 N**\n\n**(c)** **Not elastic for the ball alone** — it leaves faster than it arrived, so it gained KE from the racket (the racket does work on it). An external force (the player) acts on the system, so you can't treat it as an isolated elastic collision."
-            },
-            {
-              "type": "free",
-              "prompt": "A 2.0 kg trolley X at 3.0 m s⁻¹ makes a perfectly elastic collision with a stationary 1.0 kg trolley Y.\n(a) Write the momentum equation. [1]\n(b) Write the relative-speed equation. [1]\n(c) Find both velocities after. [2]\n(d) Show that KE is conserved. [2]",
-              "solution": "Right = +.\n**(a)** 2.0 × 3.0 = 2.0v_X + 1.0v_Y → 6.0 = 2.0v_X + v_Y\n\n**(b)** 3.0 = v_Y − v_X\n\n**(c)** v_Y = v_X + 3.0 → 6.0 = 3.0v_X + 3.0 → **v_X = 1.0 m s⁻¹**, **v_Y = 4.0 m s⁻¹** (both to the right)\n\n**(d)** Before: ½ × 2.0 × 9.0 = 9.0 J\nAfter: ½ × 2.0 × 1.0 + ½ × 1.0 × 16 = 1.0 + 8.0 = 9.0 J ✓"
             }
           ]
         }

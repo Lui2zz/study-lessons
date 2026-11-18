@@ -59,10 +59,39 @@ def check_image(where, path):
         warn(where, f"image {path!r} is {os.path.getsize(full) // 1000} KB; keep images under ~1.5 MB (crop or shrink)")
 
 
-def check_step(where, s, quiz=False):
+def gives_away(s):
+    """True if the hint seems to contain the answer."""
+    h = (s.get("hint") or "").lower()
+    if not h:
+        return False
+    t = s.get("type")
+    if t == "number" and is_num(s.get("value")):
+        v = s["value"]
+        txt = str(int(v)) if v == int(v) else str(v)
+        return re.search(r"(?<![\d.])" + re.escape(txt) + r"(?!\d|\.\d)", h) is not None and len(txt) > 1
+    if t == "blank" and s.get("accept"):
+        return any(is_text(a) and len(a) > 2 and a.lower() in h for a in s["accept"])
+    if t == "choice" and isinstance(s.get("choices"), list) and isinstance(s.get("correct"), int):
+        c = s["choices"][s["correct"]] if 0 <= s["correct"] < len(s["choices"]) else ""
+        return is_text(c) and len(c) > 4 and c.lower() in h
+    return False
+
+
+def check_step(where, s, quiz=False, scored=False):
     if not isinstance(s, dict):
         return err(where, "step must be an object")
     t = s.get("type")
+    if "hint" in s:
+        if not is_text(s["hint"]):
+            err(where, "\"hint\" must be text")
+        elif t == "read":
+            warn(where, "hints only show on questions, not read steps")
+        elif gives_away(s):
+            warn(where, "the hint seems to contain the answer; hints should nudge, not tell")
+    if "skill" in s and not is_text(s["skill"]):
+        err(where, "\"skill\" must be text, e.g. \"Mean Value Theorem\"")
+    if scored and t in STEP_TYPES and t != "read" and not is_text(s.get("skill")):
+        warn(where, "questions in quizzes and diagnostics need a \"skill\" so the app can track weak spots")
     for key in ("image", "solutionImage"):
         if key in s:
             check_image(f"{where} › {key}", s[key])
@@ -151,6 +180,9 @@ def check_resources(where, res):
 
 def ids_in(course):
     out = set()
+    for card in course.get("fundamentals", []) or []:
+        if isinstance(card, dict) and isinstance(card.get("id"), str):
+            out.add(card["id"])
     for u in course.get("units", []) or []:
         for l in (u or {}).get("lessons", []) or []:
             if isinstance(l, dict) and isinstance(l.get("id"), str):
@@ -190,6 +222,34 @@ def main(argv):
 
     seen = {}
     lesson_count = 0
+    cards = course.get("fundamentals")
+    if cards is not None:
+        if not isinstance(cards, list):
+            err("fundamentals", "must be a list of question cards")
+            cards = []
+        for ci, card in enumerate(cards):
+            cw = f"fundamentals › card {ci + 1}"
+            if not isinstance(card, dict):
+                err(cw, "must be an object")
+                continue
+            cid = card.get("id")
+            cw = f"fundamentals › {cid or ci + 1}"
+            if not (isinstance(cid, str) and ID_RE.match(cid)):
+                err(cw, "every card needs an \"id\" (lowercase-with-dashes); its review schedule is saved by id")
+            elif prefix and not cid.startswith(prefix):
+                err(cw, f"ids in this course must start with {prefix!r}")
+            elif cid in seen:
+                err(cw, f"id also used by {seen[cid]}")
+            else:
+                seen[cid] = cw
+            if card.get("type") == "read":
+                err(cw, "fundamentals must be questions, not read steps")
+            else:
+                check_step(cw, card, quiz=True, scored=True)
+            if card.get("type") == "free":
+                warn(cw, "free-response cards are slow to rep; prefer choice, blank, number or truefalse")
+        if len(cards) > 0 and len(cards) < 5:
+            warn("fundamentals", "only a few cards; aim for 10+ per course, adding more each unit")
     for ui, u in enumerate(units):
         uw = f"unit {ui + 1}"
         if not isinstance(u, dict):
@@ -238,32 +298,49 @@ def main(argv):
             if "xp" in l and not (isinstance(l["xp"], int) and l["xp"] > 0):
                 err(lw, "\"xp\" must be a positive whole number")
             kind = l.get("kind", "lesson")
-            if kind not in ("lesson", "quiz"):
-                err(lw, f"\"kind\" must be \"lesson\" or \"quiz\", not {kind!r}")
+            if kind not in ("lesson", "quiz", "diagnostic"):
+                err(lw, f"\"kind\" must be \"lesson\", \"quiz\" or \"diagnostic\", not {kind!r}")
             steps = l.get("steps")
             if not isinstance(steps, list) or not steps:
                 err(lw, "\"steps\" must be a non-empty list")
                 continue
             for si, s in enumerate(steps):
-                check_step(f"{lw} › step {si + 1}", s, quiz=(kind == "quiz"))
+                check_step(f"{lw} › step {si + 1}", s, quiz=(kind in ("quiz", "diagnostic")),
+                           scored=(kind in ("quiz", "diagnostic")))
             questions = [s for s in steps if isinstance(s, dict) and s.get("type") != "read"]
             if not questions:
                 warn(lw, "no questions")
             if len(steps) > 40:
                 warn(lw, f"{len(steps)} steps is very long; consider splitting it into two lessons")
+        # A diagnostic should test every skill the unit teaches.
+        taught, tested = set(), set()
+        for l in lessons:
+            if not isinstance(l, dict):
+                continue
+            k = l.get("kind", "lesson")
+            for s in l.get("steps") or []:
+                if not isinstance(s, dict) or s.get("type") == "read":
+                    continue
+                sk = s.get("skill") if is_text(s.get("skill")) else (l.get("title") if k == "lesson" else None)
+                if sk:
+                    (tested if k == "diagnostic" else taught).add(sk.strip().lower())
+        if tested:
+            for sk in sorted(taught - tested):
+                warn(uw, f"the diagnostic has no question for skill {sk!r}")
 
     if len(argv) >= 4 and argv[2] == "--previous":
         with open(argv[3], encoding="utf-8") as f:
             old = json.load(f)
         gone = ids_in(old) - ids_in(course)
         for g in sorted(gone):
-            err("ids", f"lesson id {g!r} was removed or renamed; saved progress for it will be lost")
+            err("ids", f"id {g!r} was removed or renamed; saved progress for it will be lost")
 
     for w in warnings:
         print("warning", w)
     for e in errors:
         print("ERROR  ", e)
-    print(f"{len(units)} units, {lesson_count} lessons, {len(errors)} errors, {len(warnings)} warnings")
+    n_cards = len(cards) if isinstance(cards, list) else 0
+    print(f"{len(units)} units, {lesson_count} lessons, {n_cards} fundamentals, {len(errors)} errors, {len(warnings)} warnings")
     return 1 if errors else 0
 
 
