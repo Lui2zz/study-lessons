@@ -2,7 +2,7 @@
   "format": 1,
   "id": "physics",
   "title": "Physics",
-  "updated": "2026-11-18",
+  "updated": "2026-11-23",
   "fundamentals": [
     {
       "id": "phys-f-speed",
@@ -290,6 +290,225 @@
       "unit": "m s⁻¹",
       "explain": "Direction reverses, so add: 5 + 3 = 8.",
       "skill": "Signs and change in momentum"
+    },
+    {
+      "id": "phys-f-newton1",
+      "type": "choice",
+      "prompt": "Newton's first law:",
+      "choices": [
+        "F = ma",
+        "An object stays at rest or at constant velocity unless a resultant force acts",
+        "Forces come in equal and opposite pairs",
+        "Force = rate of change of momentum"
+      ],
+      "correct": 1,
+      "explain": "First law = **no resultant force, no change in velocity**.",
+      "skill": "Newton's first law",
+      "image": "images/ch5-dynamics-statics/d-inertia.png",
+      "alt": "A 1 kg block and a 2000 kg block, each pushed with 50 N"
+    },
+    {
+      "id": "phys-f-mass-def",
+      "type": "blank",
+      "prompt": "Mass is the property of an object that resists ___ in motion.",
+      "accept": [
+        "change",
+        "changes"
+      ],
+      "explain": "**Change** in motion.",
+      "skill": "Mass, weight and inertia",
+      "image": "images/ch5-dynamics-statics/d-inertia.png",
+      "alt": "A 1 kg block and a 2000 kg block, each pushed with 50 N"
+    },
+    {
+      "id": "phys-f-weight-mg",
+      "type": "choice",
+      "prompt": "Weight =",
+      "choices": [
+        "m ÷ g",
+        "mg",
+        "ma²",
+        "m + g"
+      ],
+      "correct": 1,
+      "explain": "**W = mg**, in newtons.",
+      "skill": "Mass, weight and inertia",
+      "image": "images/ch5-dynamics-statics/d-mass-weight.png",
+      "alt": "A 10 kg box on Earth (g = 9.81 N/kg, weight 98 N) and on the Moon (g = 1.6 N/kg, weight 16 N); mass is 10 kg in both"
+    },
+    {
+      "id": "phys-f-g-earth",
+      "type": "number",
+      "prompt": "g at the Earth's surface (N kg⁻¹)?",
+      "value": 9.81,
+      "tolerance": 0.01,
+      "unit": "N kg⁻¹",
+      "explain": "**9.81 N kg⁻¹** = 9.81 m s⁻²",
+      "skill": "Mass, weight and inertia",
+      "image": "images/ch5-dynamics-statics/d-mass-weight.png",
+      "alt": "A 10 kg box on Earth (g = 9.81 N/kg, weight 98 N) and on the Moon (g = 1.6 N/kg, weight 16 N); mass is 10 kg in both"
+    },
+    {
+      "id": "phys-f-third-law-pair",
+      "type": "truefalse",
+      "prompt": "A Newton's third law pair acts on the same object.",
+      "isTrue": false,
+      "explain": "Always on **different** objects, equal, opposite, same type.",
+      "skill": "Newton's third law",
+      "image": "images/ch5-dynamics-statics/d-n3-book.png",
+      "alt": "Book on a table with four forces: P Earth pulls book, Q book pushes table, R table pushes book, S book pulls Earth"
+    },
+    {
+      "id": "phys-f-terminal",
+      "type": "choice",
+      "prompt": "Terminal velocity is reached when:",
+      "choices": [
+        "Drag equals weight",
+        "Weight is zero",
+        "Acceleration equals g",
+        "Drag is zero"
+      ],
+      "correct": 0,
+      "explain": "Drag = weight → resultant 0 → constant velocity.",
+      "skill": "Drag and terminal velocity",
+      "image": "images/ch5-dynamics-statics/d-vt-terminal.png",
+      "alt": "Velocity-time graph curving up and levelling off at terminal velocity"
+    },
+    {
+      "id": "phys-f-moment",
+      "type": "choice",
+      "prompt": "Moment of a force =",
+      "choices": [
+        "Force × distance along the lever",
+        "Force × perpendicular distance from pivot to line of action",
+        "Force ÷ distance",
+        "Force × time"
+      ],
+      "correct": 1,
+      "explain": "F × **perpendicular** distance. Unit N m.",
+      "skill": "Moment of a force",
+      "image": "images/ch5-dynamics-statics/tb-moment-angle.png",
+      "alt": "Lever with force F1 at perpendicular distance x1 from the pivot, and force F2 at angle θ with perpendicular distance x2"
+    },
+    {
+      "id": "phys-f-principle-moments",
+      "type": "choice",
+      "prompt": "Principle of moments: in equilibrium,",
+      "choices": [
+        "Clockwise moments = anticlockwise moments about any point",
+        "All forces are equal",
+        "Moments add to the weight",
+        "Clockwise moments are bigger"
+      ],
+      "correct": 0,
+      "explain": "Sum of clockwise = sum of anticlockwise, about **any** point.",
+      "skill": "Principle of moments",
+      "image": "images/ch5-dynamics-statics/tb-seesaw.png",
+      "alt": "Seesaw: 20 N at 2.0 m left of the pivot and 40 N at 1.0 m right of the pivot"
+    },
+    {
+      "id": "phys-f-couple",
+      "type": "choice",
+      "prompt": "A couple is:",
+      "choices": [
+        "Two forces acting at the same point",
+        "A pair of equal, parallel, opposite forces that cause turning only",
+        "Two forces in the same direction",
+        "Any two forces"
+      ],
+      "correct": 1,
+      "explain": "Equal, parallel, opposite → rotation, **no** linear acceleration.",
+      "skill": "Couples and torque",
+      "image": "images/ch5-dynamics-statics/d-couple-rod.png",
+      "alt": "A rod pivoted at its centre with 6.0 N up at one end and 6.0 N down at the other end, 0.30 m apart"
+    },
+    {
+      "id": "phys-f-couple-torque",
+      "type": "choice",
+      "prompt": "Torque of a couple =",
+      "choices": [
+        "Both forces × radius",
+        "Force ÷ distance",
+        "One force × perpendicular distance between the forces",
+        "Sum of the forces"
+      ],
+      "correct": 2,
+      "explain": "**One** force × distance **between** them.",
+      "skill": "Couples and torque",
+      "image": "images/ch5-dynamics-statics/tb-steering.png",
+      "alt": "Steering wheel with 15 N up on one side and 15 N down on the other, each 0.20 m from the centre"
+    },
+    {
+      "id": "phys-f-equilibrium",
+      "type": "truefalse",
+      "prompt": "Total equilibrium needs zero resultant force AND zero resultant moment.",
+      "isTrue": true,
+      "explain": "Both conditions.",
+      "skill": "Total equilibrium",
+      "image": "images/ch5-dynamics-statics/d-ladder.png",
+      "alt": "A ladder leaning on a smooth wall with weight W, wall reaction R, ground normal force N and friction F"
+    },
+    {
+      "id": "phys-f-density",
+      "type": "choice",
+      "prompt": "Density =",
+      "choices": [
+        "m × V",
+        "V ÷ m",
+        "m ÷ V",
+        "m g"
+      ],
+      "correct": 2,
+      "explain": "**ρ = m ÷ V**, kg m⁻³. 1 g cm⁻³ = 1000 kg m⁻³.",
+      "skill": "Density",
+      "image": "images/ch5-dynamics-statics/d-cube-gold.png",
+      "alt": "A metal cube of side 2.0 cm with mass 64 g"
+    },
+    {
+      "id": "phys-f-pascal",
+      "type": "blank",
+      "prompt": "The unit of pressure is the ___ (1 N m⁻²).",
+      "accept": [
+        "pascal",
+        "pascals",
+        "Pa"
+      ],
+      "explain": "**Pascal (Pa)**. p = F ÷ A.",
+      "skill": "Pressure",
+      "image": "images/ch5-dynamics-statics/d-brick.png",
+      "alt": "The same 20 N brick (20 cm × 10 cm × 5 cm) lying flat, on its side and on its end"
+    },
+    {
+      "id": "phys-f-fluid-pressure",
+      "type": "choice",
+      "prompt": "Pressure due to depth in a fluid:",
+      "choices": [
+        "Δp = ρgh",
+        "Δp = mgh",
+        "Δp = ρ ÷ gh",
+        "Δp = F × A"
+      ],
+      "correct": 0,
+      "explain": "**Δp = ρgh**: fluid density × g × depth.",
+      "skill": "Pressure in a fluid",
+      "image": "images/ch5-dynamics-statics/d-tank-points.png",
+      "alt": "Tank of water with points P near the top, Q in the middle and R near the bottom"
+    },
+    {
+      "id": "phys-f-upthrust",
+      "type": "choice",
+      "prompt": "Upthrust =",
+      "choices": [
+        "Weight of the object",
+        "ρ_object g V",
+        "Weight of fluid displaced = ρ_fluid g V",
+        "Pressure × depth"
+      ],
+      "correct": 2,
+      "explain": "Archimedes: **weight of fluid displaced**.",
+      "skill": "Upthrust",
+      "image": "images/ch5-dynamics-statics/d-boat.png",
+      "alt": "A boat floating on water with weight down and upthrust up"
     }
   ],
   "units": [
@@ -2509,6 +2728,3274 @@
               "solution": "Right = +.\n**(a)** 2.0 × 3.0 = 2.0v_X + 1.0v_Y → 6.0 = 2.0v_X + v_Y\n\n**(b)** 3.0 = v_Y − v_X\n\n**(c)** v_Y = v_X + 3.0 → 6.0 = 3.0v_X + 3.0 → **v_X = 1.0 m s⁻¹**, **v_Y = 4.0 m s⁻¹** (both to the right)\n\n**(d)** Before: ½ × 2.0 × 9.0 = 9.0 J\nAfter: ½ × 2.0 × 1.0 + ½ × 1.0 × 16 = 1.0 + 8.0 = 9.0 J ✓",
               "skill": "Elastic shortcut: relative speed",
               "hint": "Momentum equation + relative speed equation, then solve them together."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch5-dynamics-statics",
+      "title": "Dynamics, Statics & Pressure",
+      "subtitle": "Newton's laws, moments, density, pressure, upthrust",
+      "color": "pink",
+      "number": 5,
+      "resources": [
+        {
+          "title": "Khan Academy · Forces and Newton's laws",
+          "subtitle": "Videos and practice",
+          "url": "https://www.khanacademy.org/search?page_search_query=newton%27s%20laws%20of%20motion"
+        },
+        {
+          "title": "Khan Academy · Torque and moments",
+          "subtitle": "Videos and practice",
+          "url": "https://www.khanacademy.org/search?page_search_query=torque"
+        },
+        {
+          "title": "Khan Academy · Fluids: pressure and buoyancy",
+          "subtitle": "Videos and practice",
+          "url": "https://www.khanacademy.org/search?page_search_query=buoyant%20force"
+        }
+      ],
+      "lessons": [
+        {
+          "id": "ch5-dynamics-statics-diagnostic",
+          "title": "Unit 5 check-in",
+          "symbol": "stethoscope",
+          "kind": "diagnostic",
+          "steps": [
+            {
+              "type": "truefalse",
+              "prompt": "A 5.0 kg mass weighs about 49 N on Earth (g = 9.81 N kg⁻¹).",
+              "isTrue": true,
+              "explain": "W = mg = 5.0 × 9.81 = 49.1 N ✓",
+              "skill": "Mass, weight and inertia",
+              "image": "images/ch5-dynamics-statics/d-mass-weight.png",
+              "alt": "A 10 kg box on Earth (g = 9.81 N/kg, weight 98 N) and on the Moon (g = 1.6 N/kg, weight 16 N); mass is 10 kg in both"
+            },
+            {
+              "type": "choice",
+              "prompt": "Which force acts opposite to the velocity of an object moving through air?",
+              "choices": [
+                "Upthrust",
+                "Drag",
+                "Tension",
+                "Normal force"
+              ],
+              "correct": 1,
+              "explain": "**Drag** (air resistance, a viscous force) always opposes the velocity.",
+              "skill": "Types of force",
+              "image": "images/ch5-dynamics-statics/d-skydiver.png",
+              "alt": "A skydiver falling with weight down and air resistance up"
+            },
+            {
+              "type": "choice",
+              "prompt": "How many forces act on the hanging lamp?",
+              "choices": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "correct": 1,
+              "explain": "**2**: tension (up) and weight (down).",
+              "skill": "Free-body diagrams",
+              "image": "images/ch5-dynamics-statics/d-lamp.png",
+              "alt": "A lamp hanging from a string with tension T up and weight W down"
+            },
+            {
+              "type": "choice",
+              "prompt": "A box slides at constant velocity. The resultant force on it is:",
+              "choices": [
+                "In the direction of motion",
+                "Zero",
+                "Opposite to the motion",
+                "Equal to its weight"
+              ],
+              "correct": 1,
+              "explain": "Constant velocity → **zero** resultant (Newton's first law).",
+              "skill": "Newton's first law",
+              "image": "images/ch5-dynamics-statics/d-box-push.png",
+              "alt": "A box pushed right along the floor with friction to the left, weight down and normal force up"
+            },
+            {
+              "type": "number",
+              "prompt": "A 3.0 kg box is pulled with 10 N against 4.0 N of friction. Find its acceleration.",
+              "value": 2.0,
+              "tolerance": 0.02,
+              "unit": "m s⁻²",
+              "explain": "a = (10 − 4.0) ÷ 3.0 = **2.0 m s⁻²**",
+              "skill": "Newton's second law",
+              "hint": "Find the resultant force first.",
+              "image": "images/ch5-dynamics-statics/d-box-push.png",
+              "alt": "A box pushed right along the floor with friction to the left, weight down and normal force up"
+            },
+            {
+              "type": "choice",
+              "prompt": "Q is the book pushing down on the table. Its third-law partner is:",
+              "choices": [
+                "P (Earth pulls book)",
+                "R (table pushes book)",
+                "S (book pulls Earth)"
+              ],
+              "correct": 1,
+              "explain": "**R**: same type (contact), different objects, equal and opposite.",
+              "skill": "Newton's third law",
+              "image": "images/ch5-dynamics-statics/d-n3-book.png",
+              "alt": "Book on a table with four forces: P Earth pulls book, Q book pushes table, R table pushes book, S book pulls Earth"
+            },
+            {
+              "type": "number",
+              "prompt": "If the engine's force were 9000 N (no friction), what would the train's acceleration be?",
+              "value": 1.5,
+              "tolerance": 0.02,
+              "unit": "m s⁻²",
+              "explain": "a = 9000 ÷ 6000 = **1.5 m s⁻²**",
+              "skill": "Connected bodies",
+              "hint": "Use the total mass.",
+              "image": "images/ch5-dynamics-statics/d-train.png",
+              "alt": "An engine of mass 3000 kg pulling two 1500 kg carriages with a 12 000 N driving force"
+            },
+            {
+              "type": "number",
+              "prompt": "If the 25° slope were smooth, what would the block's acceleration be? (g = 9.81 m s⁻²)",
+              "value": 4.146,
+              "tolerance": 0.04,
+              "unit": "m s⁻²",
+              "explain": "a = g sin 25° = 9.81 × 0.423 = **4.15 m s⁻²**",
+              "skill": "Forces on a slope",
+              "hint": "Only W sin θ acts along a smooth slope.",
+              "image": "images/ch5-dynamics-statics/d-slope-blank.png",
+              "alt": "A 4.0 kg block on a 25° slope"
+            },
+            {
+              "type": "choice",
+              "prompt": "At terminal velocity, the acceleration is:",
+              "choices": [
+                "g",
+                "Increasing",
+                "Zero",
+                "Negative"
+              ],
+              "correct": 2,
+              "explain": "Drag = weight → resultant 0 → acceleration **0**.",
+              "skill": "Drag and terminal velocity",
+              "image": "images/ch5-dynamics-statics/d-vt-terminal.png",
+              "alt": "Velocity-time graph curving up and levelling off at terminal velocity"
+            },
+            {
+              "type": "choice",
+              "prompt": "An object topples when:",
+              "choices": [
+                "Its mass is large",
+                "The vertical line through its centre of gravity falls outside its base",
+                "Its base is wide",
+                "It is not moving"
+              ],
+              "correct": 1,
+              "explain": "Weight line **outside the base** → unbalanced moment → it tips.",
+              "skill": "Centre of gravity",
+              "image": "images/ch5-dynamics-statics/d-cg-topple.png",
+              "alt": "Two tilted blocks: one with its weight line inside the base (stable), one outside the base (topples)"
+            },
+            {
+              "type": "number",
+              "prompt": "A 30 N force pushes at 90° to a door, 0.40 m from the hinge. Find its moment.",
+              "value": 12,
+              "tolerance": 0.12,
+              "unit": "N m",
+              "explain": "30 × 0.40 = **12 N m**",
+              "skill": "Moment of a force",
+              "image": "images/ch5-dynamics-statics/d-door-push.png",
+              "alt": "A door seen from above, hinged at one end, with the same push applied at A, B or C, C being farthest from the hinge"
+            },
+            {
+              "type": "number",
+              "prompt": "A 300 N child sits 1.5 m from a seesaw's pivot. How far on the other side must a 450 N child sit to balance?",
+              "value": 1.0,
+              "tolerance": 0.01,
+              "unit": "m",
+              "explain": "300 × 1.5 = 450 × d\nd = **1.0 m**",
+              "skill": "Principle of moments",
+              "hint": "Clockwise moments = anticlockwise moments.",
+              "image": "images/ch5-dynamics-statics/d-seesaw-kids.png",
+              "alt": "Seesaw with pivot in the middle: 400 N at 2.0 m left of the pivot, unknown weight W 1.2 m to the right"
+            },
+            {
+              "type": "number",
+              "prompt": "Two 8.0 N forces form a couple, 0.25 m apart. Find the torque.",
+              "value": 2.0,
+              "tolerance": 0.02,
+              "unit": "N m",
+              "explain": "8.0 × 0.25 = **2.0 N m**",
+              "skill": "Couples and torque",
+              "image": "images/ch5-dynamics-statics/d-couple-rod.png",
+              "alt": "A rod pivoted at its centre with 6.0 N up at one end and 6.0 N down at the other end, 0.30 m apart"
+            },
+            {
+              "type": "multi",
+              "prompt": "For total equilibrium, which must be true?",
+              "choices": [
+                "Resultant force is zero",
+                "Resultant moment is zero",
+                "The object must be at rest",
+                "There must be only two forces"
+              ],
+              "answers": [
+                0,
+                1
+              ],
+              "explain": "**Zero resultant force AND zero resultant moment.**",
+              "skill": "Total equilibrium",
+              "image": "images/ch5-dynamics-statics/d-ladder.png",
+              "alt": "A ladder leaning on a smooth wall with weight W, wall reaction R, ground normal force N and friction F"
+            },
+            {
+              "type": "number",
+              "prompt": "A stone has a mass of 300 g and a volume of 120 cm³. Find its density in kg m⁻³.",
+              "value": 2500,
+              "tolerance": 25,
+              "unit": "kg m⁻³",
+              "explain": "300 ÷ 120 = 2.5 g cm⁻³ = **2500 kg m⁻³**",
+              "skill": "Density",
+              "image": "images/ch5-dynamics-statics/d-displacement.png",
+              "alt": "Measuring cylinder reads 50 cm³ before and 72 cm³ after a 55 g stone is added"
+            },
+            {
+              "type": "number",
+              "prompt": "A 200 N force acts at 90° on an area of 0.050 m². Find the pressure.",
+              "value": 4000,
+              "tolerance": 40,
+              "unit": "Pa",
+              "explain": "p = 200 ÷ 0.050 = **4000 Pa**",
+              "skill": "Pressure",
+              "image": "images/ch5-dynamics-statics/d-brick.png",
+              "alt": "The same 20 N brick (20 cm × 10 cm × 5 cm) lying flat, on its side and on its end"
+            },
+            {
+              "type": "number",
+              "prompt": "Find the pressure due to water 3.0 m below the surface. (g = 9.81 m s⁻²)",
+              "value": 29430,
+              "tolerance": 300,
+              "unit": "Pa",
+              "explain": "ρgh = 1000 × 9.81 × 3.0 = **29 400 Pa**",
+              "skill": "Pressure in a fluid",
+              "image": "images/ch5-dynamics-statics/d-tank-depth.png",
+              "alt": "Tank of water with point X 4.0 m below the surface"
+            },
+            {
+              "type": "choice",
+              "prompt": "Archimedes' principle: the upthrust on an object equals:",
+              "choices": [
+                "Its own weight",
+                "The weight of fluid it displaces",
+                "Its volume × g",
+                "The fluid pressure at its top"
+              ],
+              "correct": 1,
+              "explain": "**Upthrust = weight of fluid displaced** = ρ_fluid g V.",
+              "skill": "Upthrust",
+              "image": "images/ch5-dynamics-statics/d-boat.png",
+              "alt": "A boat floating on water with weight down and upthrust up"
+            },
+            {
+              "type": "choice",
+              "prompt": "Brownian motion of smoke particles is evidence that:",
+              "choices": [
+                "Smoke is hot",
+                "Air molecules are moving randomly",
+                "Light pushes particles",
+                "Gravity is weak"
+              ],
+              "correct": 1,
+              "explain": "Random zig-zags come from collisions with **randomly moving air molecules**.",
+              "skill": "Kinetic model of matter",
+              "image": "images/ch5-dynamics-statics/d-brownian.png",
+              "alt": "Zig-zag random path of a smoke particle seen in a microscope"
+            }
+          ]
+        },
+        {
+          "id": "ch5-dynamics-statics-mass-weight",
+          "title": "Mass, weight and inertia",
+          "symbol": "scalemass",
+          "steps": [
+            {
+              "type": "read",
+              "title": "Mass",
+              "text": "**Mass** is the amount of matter in an object.\n\nCambridge wording: mass is the property of an object that **resists change in motion**.\n\nUnit: **kg**. Mass is the same everywhere: Earth, Moon, space."
+            },
+            {
+              "type": "read",
+              "title": "Inertia",
+              "text": "**Inertia** = how hard it is to change an object's motion.\n\nMore mass → more inertia → harder to speed up, slow down or turn.\n\nBig mass needs a big resultant force for the same acceleration.",
+              "image": "images/ch5-dynamics-statics/d-inertia.png",
+              "alt": "A 1 kg block and a 2000 kg block, each pushed with 50 N"
+            },
+            {
+              "type": "choice",
+              "prompt": "The same 50 N push acts on both blocks (no friction). Which one accelerates more?",
+              "choices": [
+                "The 1 kg block",
+                "The 2000 kg block",
+                "They accelerate equally"
+              ],
+              "correct": 0,
+              "explain": "Less mass = less inertia.\n\n1 kg: a = 50 ÷ 1 = 50 m s⁻²\n2000 kg: a = 50 ÷ 2000 = 0.025 m s⁻²",
+              "skill": "Mass, weight and inertia",
+              "image": "images/ch5-dynamics-statics/d-inertia.png",
+              "alt": "A 1 kg block and a 2000 kg block, each pushed with 50 N"
+            },
+            {
+              "type": "number",
+              "prompt": "Find the acceleration of the 2000 kg block pushed with 50 N.",
+              "value": 0.025,
+              "tolerance": 0.001,
+              "unit": "m s⁻²",
+              "explain": "a = F ÷ m = 50 ÷ 2000 = **0.025 m s⁻²**",
+              "skill": "Mass, weight and inertia",
+              "hint": "Use a = F ÷ m.",
+              "image": "images/ch5-dynamics-statics/d-inertia.png",
+              "alt": "A 1 kg block and a 2000 kg block, each pushed with 50 N"
+            },
+            {
+              "type": "read",
+              "title": "Weight",
+              "text": "**Weight** is the gravitational force on a mass.\n\n**W = mg**\n\ng = gravitational field strength. On Earth g = **9.81 N kg⁻¹** (same as 9.81 m s⁻²).\n\nWeight is a **force**, so it's in **newtons** and points **down**.",
+              "image": "images/ch5-dynamics-statics/d-mass-weight.png",
+              "alt": "A 10 kg box on Earth (g = 9.81 N/kg, weight 98 N) and on the Moon (g = 1.6 N/kg, weight 16 N); mass is 10 kg in both"
+            },
+            {
+              "type": "number",
+              "prompt": "Find the weight of the 10 kg box on Earth. Use g = 9.81 N kg⁻¹.",
+              "value": 98.1,
+              "tolerance": 1,
+              "unit": "N",
+              "explain": "W = mg = 10 × 9.81 = **98.1 N**",
+              "skill": "Mass, weight and inertia",
+              "image": "images/ch5-dynamics-statics/d-mass-weight.png",
+              "alt": "A 10 kg box on Earth (g = 9.81 N/kg, weight 98 N) and on the Moon (g = 1.6 N/kg, weight 16 N); mass is 10 kg in both"
+            },
+            {
+              "type": "truefalse",
+              "prompt": "Taking the 10 kg box to the Moon changes its mass.",
+              "isTrue": false,
+              "explain": "Mass stays 10 kg. Only the **weight** changes, because g is smaller on the Moon.",
+              "skill": "Mass, weight and inertia",
+              "image": "images/ch5-dynamics-statics/d-mass-weight.png",
+              "alt": "A 10 kg box on Earth (g = 9.81 N/kg, weight 98 N) and on the Moon (g = 1.6 N/kg, weight 16 N); mass is 10 kg in both"
+            },
+            {
+              "type": "number",
+              "prompt": "A 60 kg astronaut stands on the Moon, where g = 1.6 N kg⁻¹. What is her weight?",
+              "value": 96,
+              "tolerance": 1,
+              "unit": "N",
+              "explain": "W = mg = 60 × 1.6 = **96 N**",
+              "skill": "Mass, weight and inertia",
+              "image": "images/ch5-dynamics-statics/d-mass-weight.png",
+              "alt": "A 10 kg box on Earth (g = 9.81 N/kg, weight 98 N) and on the Moon (g = 1.6 N/kg, weight 16 N); mass is 10 kg in both"
+            },
+            {
+              "type": "choice",
+              "prompt": "Which unit is used for weight?",
+              "choices": [
+                "kg",
+                "N",
+                "N kg⁻¹",
+                "kg m s⁻¹"
+              ],
+              "correct": 1,
+              "explain": "Weight is a force, so it's measured in **newtons (N)**. kg is for mass, N kg⁻¹ is for g.",
+              "skill": "Mass, weight and inertia",
+              "image": "images/ch5-dynamics-statics/d-mass-weight.png",
+              "alt": "A 10 kg box on Earth (g = 9.81 N/kg, weight 98 N) and on the Moon (g = 1.6 N/kg, weight 16 N); mass is 10 kg in both"
+            },
+            {
+              "type": "number",
+              "prompt": "An object weighs 49 N on Earth (g = 9.81 N kg⁻¹). What is its mass?",
+              "value": 4.99,
+              "tolerance": 0.05,
+              "unit": "kg",
+              "explain": "m = W ÷ g = 49 ÷ 9.81 = **4.99 kg**",
+              "skill": "Mass, weight and inertia",
+              "hint": "Rearrange W = mg.",
+              "image": "images/ch5-dynamics-statics/d-mass-weight.png",
+              "alt": "A 10 kg box on Earth (g = 9.81 N/kg, weight 98 N) and on the Moon (g = 1.6 N/kg, weight 16 N); mass is 10 kg in both"
+            },
+            {
+              "type": "blank",
+              "prompt": "Cambridge definition: mass is the property of an object that resists ___ in motion.",
+              "accept": [
+                "change",
+                "changes",
+                "a change"
+              ],
+              "explain": "Mass resists **change in motion**. That's why heavy objects are hard to start, stop or turn.",
+              "skill": "Mass, weight and inertia",
+              "image": "images/ch5-dynamics-statics/d-inertia.png",
+              "alt": "A 1 kg block and a 2000 kg block, each pushed with 50 N"
+            },
+            {
+              "type": "choice",
+              "prompt": "Which is true about mass and weight?",
+              "choices": [
+                "Mass is a force; weight is in kg",
+                "Mass is a scalar in kg; weight is a vector force in N",
+                "Both are measured in newtons",
+                "Both change on the Moon"
+              ],
+              "correct": 1,
+              "explain": "Mass: scalar, kg, never changes.\nWeight: vector force, N, depends on g.",
+              "skill": "Mass, weight and inertia",
+              "image": "images/ch5-dynamics-statics/d-mass-weight.png",
+              "alt": "A 10 kg box on Earth (g = 9.81 N/kg, weight 98 N) and on the Moon (g = 1.6 N/kg, weight 16 N); mass is 10 kg in both"
+            }
+          ]
+        },
+        {
+          "id": "ch5-dynamics-statics-types-of-force",
+          "title": "Types of force",
+          "symbol": "arrow.up.and.down.and.arrow.left.and.right",
+          "steps": [
+            {
+              "type": "read",
+              "title": "8 forces to know",
+              "text": "1. **Weight**: gravity pulling down\n2. **Normal contact force**: a surface pushing\n3. **Friction**: rubbing surfaces\n4. **Drag** (viscous force): moving through a fluid\n5. **Upthrust**: a fluid pushing up\n6. **Tension**: a stretched string, cable or spring\n7. **Electric force**: between charges\n8. **Applied force**: a push or pull"
+            },
+            {
+              "type": "read",
+              "title": "Normal contact force",
+              "text": "A surface pushes back on whatever presses on it.\n\nIt is **always perpendicular (90°) to the surface**. That's why it's called *normal*.",
+              "image": "images/ch5-dynamics-statics/d-book-table.png",
+              "alt": "A book on a table with weight W down and normal force N up"
+            },
+            {
+              "type": "choice",
+              "prompt": "What causes force N on the book?",
+              "choices": [
+                "The Earth pulling the book",
+                "The table pushing up on the book",
+                "The book pushing on the table",
+                "Air pressure"
+              ],
+              "correct": 1,
+              "explain": "N is the **table** pushing on the book: a normal contact force at 90° to the tabletop.",
+              "skill": "Types of force",
+              "image": "images/ch5-dynamics-statics/d-book-table.png",
+              "alt": "A book on a table with weight W down and normal force N up"
+            },
+            {
+              "type": "read",
+              "title": "Friction",
+              "text": "Friction acts **where the surfaces touch**, and **opposes** motion.\n\n**Static** friction: opposes the *attempt* to move (object still at rest).\n**Kinetic** friction: opposes the motion while sliding.",
+              "image": "images/ch5-dynamics-statics/d-box-push.png",
+              "alt": "A box pushed right along the floor with friction to the left, weight down and normal force up"
+            },
+            {
+              "type": "choice",
+              "prompt": "The box slides to the right. Which way does friction on the box act?",
+              "choices": [
+                "Right",
+                "Up",
+                "Left",
+                "Down"
+              ],
+              "correct": 2,
+              "explain": "Friction opposes the motion. Box moves right, so friction acts **left**.",
+              "skill": "Types of force",
+              "image": "images/ch5-dynamics-statics/d-box-push.png",
+              "alt": "A box pushed right along the floor with friction to the left, weight down and normal force up"
+            },
+            {
+              "type": "truefalse",
+              "prompt": "Static friction can act on an object that isn't moving.",
+              "isTrue": true,
+              "explain": "Yes. Push a heavy box gently and it doesn't move: **static friction** matches your push.",
+              "skill": "Types of force",
+              "image": "images/ch5-dynamics-statics/d-box-push.png",
+              "alt": "A box pushed right along the floor with friction to the left, weight down and normal force up"
+            },
+            {
+              "type": "read",
+              "title": "Drag (viscous force)",
+              "text": "A **viscous force** is the resistive force on an object moving through a **fluid** (liquid or gas). Air resistance is one.\n\nIt acts **opposite the velocity**, and it **gets bigger as speed increases**.",
+              "image": "images/ch5-dynamics-statics/d-skydiver.png",
+              "alt": "A skydiver falling with weight down and air resistance up"
+            },
+            {
+              "type": "blank",
+              "prompt": "The resistive force on an object moving through a liquid or gas is called a ___ force.",
+              "accept": [
+                "viscous",
+                "drag",
+                "resistive"
+              ],
+              "explain": "**Viscous force** (or drag). Fluid = liquid or gas.",
+              "skill": "Types of force",
+              "image": "images/ch5-dynamics-statics/d-skydiver.png",
+              "alt": "A skydiver falling with weight down and air resistance up"
+            },
+            {
+              "type": "read",
+              "title": "Upthrust and tension",
+              "text": "**Upthrust**: a fluid pushes up on anything in it, because it is displaced by the object.\n\n**Tension**: a stretched string, cable or spring pulls back along its length, towards its middle.",
+              "image": "images/ch5-dynamics-statics/d-boat.png",
+              "alt": "A boat floating on water with weight down and upthrust up"
+            },
+            {
+              "type": "multi",
+              "prompt": "Which forces act on the floating boat?",
+              "choices": [
+                "Weight",
+                "Upthrust",
+                "Friction",
+                "Tension",
+                "Normal force from the sea floor"
+              ],
+              "answers": [
+                0,
+                1
+              ],
+              "explain": "Just **weight** down and **upthrust** up. It isn't touching the sea floor or tied to anything.",
+              "skill": "Types of force",
+              "image": "images/ch5-dynamics-statics/d-boat.png",
+              "alt": "A boat floating on water with weight down and upthrust up"
+            },
+            {
+              "type": "choice",
+              "prompt": "Which way does the tension in the string act on the lamp?",
+              "choices": [
+                "Down, along the string",
+                "Up, along the string",
+                "Sideways",
+                "There's no tension"
+              ],
+              "correct": 1,
+              "explain": "A string can only **pull**. On the lamp, tension pulls **up along the string**.",
+              "skill": "Types of force",
+              "image": "images/ch5-dynamics-statics/d-lamp.png",
+              "alt": "A lamp hanging from a string with tension T up and weight W down"
+            },
+            {
+              "type": "multi",
+              "prompt": "Which of these are contact forces?",
+              "choices": [
+                "Friction",
+                "Weight",
+                "Normal force",
+                "Electric force",
+                "Tension",
+                "Drag"
+              ],
+              "answers": [
+                0,
+                2,
+                4,
+                5
+              ],
+              "explain": "Contact forces need touching: friction, normal, tension, drag.\n\nWeight and electric force act **at a distance** (fields).",
+              "skill": "Types of force",
+              "image": "images/ch5-dynamics-statics/d-box-push.png",
+              "alt": "A box pushed right along the floor with friction to the left, weight down and normal force up"
+            }
+          ]
+        },
+        {
+          "id": "ch5-dynamics-statics-free-body",
+          "title": "Free-body diagrams",
+          "symbol": "cube.transparent",
+          "steps": [
+            {
+              "type": "read",
+              "title": "Free-body diagram rules",
+              "text": "1. Draw **one** object only.\n2. Show **every force acting ON it**, never forces it exerts.\n3. Arrows start on the object.\n4. Longer arrow = bigger force.\n5. Label each one (W, N, F, T…).",
+              "image": "images/ch5-dynamics-statics/d-box-push.png",
+              "alt": "A box pushed right along the floor with friction to the left, weight down and normal force up"
+            },
+            {
+              "type": "choice",
+              "prompt": "How many forces act on the falling skydiver?",
+              "choices": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "correct": 1,
+              "explain": "**2**: weight (down) and air resistance (up).",
+              "skill": "Free-body diagrams",
+              "image": "images/ch5-dynamics-statics/d-skydiver.png",
+              "alt": "A skydiver falling with weight down and air resistance up"
+            },
+            {
+              "type": "truefalse",
+              "prompt": "A free-body diagram of the book should include the force the book exerts on the table (Q).",
+              "isTrue": false,
+              "explain": "Q acts **on the table**, not on the book. Only forces *on* the book belong: P (weight) and R (normal).",
+              "skill": "Free-body diagrams",
+              "image": "images/ch5-dynamics-statics/d-n3-book.png",
+              "alt": "Book on a table with four forces: P Earth pulls book, Q book pushes table, R table pushes book, S book pulls Earth"
+            },
+            {
+              "type": "choice",
+              "prompt": "How many forces act on the ladder?",
+              "choices": [
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              "correct": 2,
+              "explain": "**4**: weight W, wall push R, ground normal N, ground friction F.",
+              "skill": "Free-body diagrams",
+              "image": "images/ch5-dynamics-statics/d-ladder.png",
+              "alt": "A ladder leaning on a smooth wall with weight W, wall reaction R, ground normal force N and friction F"
+            },
+            {
+              "type": "multi",
+              "prompt": "A block rests on a rough slope. Which forces belong on its free-body diagram?",
+              "choices": [
+                "Weight, straight down",
+                "Normal force, perpendicular to the slope",
+                "Friction, up the slope",
+                "An extra 'sliding force' down the slope",
+                "Normal force straight up"
+              ],
+              "answers": [
+                0,
+                1,
+                2
+              ],
+              "explain": "Only three forces: **W**, **N** (90° to slope) and **friction** (up the slope).\n\nThere's no extra 'sliding force'. That's just part of W.",
+              "skill": "Free-body diagrams",
+              "image": "images/ch5-dynamics-statics/d-slope-forces.png",
+              "alt": "A block at rest on a 30° slope with weight W down, normal force N perpendicular to the slope and friction F up the slope"
+            },
+            {
+              "type": "choice",
+              "prompt": "On a slope, which way does the normal force point?",
+              "choices": [
+                "Straight up",
+                "Perpendicular to the slope, away from it",
+                "Down the slope",
+                "Along the slope, upwards"
+              ],
+              "correct": 1,
+              "explain": "Normal = **90° to the surface**. On a slope, that's tilted.",
+              "skill": "Free-body diagrams",
+              "image": "images/ch5-dynamics-statics/d-slope-forces.png",
+              "alt": "A block at rest on a 30° slope with weight W down, normal force N perpendicular to the slope and friction F up the slope"
+            },
+            {
+              "type": "truefalse",
+              "prompt": "W sin θ is an extra force you add to the diagram along with W.",
+              "isTrue": false,
+              "explain": "W sin θ and W cos θ are just **components** of W. Draw either W, or its two components, never both.",
+              "skill": "Free-body diagrams",
+              "image": "images/ch5-dynamics-statics/d-slope-components.png",
+              "alt": "Weight W on a 30° slope split into W sin θ along the slope and W cos θ into the slope"
+            },
+            {
+              "type": "free",
+              "prompt": "Exam-style: A block of mass 1.5 kg rests on a rough surface inclined at 20°. Draw a free-body diagram showing the three forces acting on the block.",
+              "solution": "Three arrows, all starting on the block:\n\n1. **Weight W** (= mg = 14.7 N): straight **down**.\n2. **Normal contact force N**: **perpendicular** to the slope, away from it.\n3. **Friction F**: **along the slope, upwards** (it stops the block sliding down).\n\nLabel all three.",
+              "skill": "Free-body diagrams",
+              "hint": "Three forces: one from gravity, two from the surface.",
+              "image": "images/ch5-dynamics-statics/tb-slope-block.png",
+              "alt": "A block resting on a rough surface inclined at 20°"
+            }
+          ]
+        },
+        {
+          "id": "ch5-dynamics-statics-first-law",
+          "title": "Newton's first law",
+          "symbol": "pause.circle",
+          "steps": [
+            {
+              "type": "read",
+              "title": "Newton's first law",
+              "text": "Learn this word for word:\n\n**An object will remain at rest or keep moving with constant velocity unless it is acted on by a resultant (unbalanced) force.**\n\nNo resultant force → no change in velocity."
+            },
+            {
+              "type": "blank",
+              "prompt": "An object stays at rest or keeps moving with constant ___ unless acted on by a resultant force.",
+              "accept": [
+                "velocity"
+              ],
+              "explain": "**Velocity**, not speed. Velocity includes direction, so a change of direction also needs a resultant force.",
+              "skill": "Newton's first law",
+              "image": "images/ch5-dynamics-statics/d-inertia.png",
+              "alt": "A 1 kg block and a 2000 kg block, each pushed with 50 N"
+            },
+            {
+              "type": "read",
+              "title": "Equilibrium",
+              "text": "Resultant force = **0 N** means **equilibrium**.\n\n**Static** equilibrium: at rest.\n**Dynamic** equilibrium: moving at constant velocity.\n\n**Uniform motion** = constant velocity, in a straight line.",
+              "image": "images/ch5-dynamics-statics/d-book-table.png",
+              "alt": "A book on a table with weight W down and normal force N up"
+            },
+            {
+              "type": "truefalse",
+              "prompt": "If something is moving, there must be a resultant force on it.",
+              "isTrue": false,
+              "explain": "No! A resultant force changes velocity. Constant velocity needs **zero** resultant force.",
+              "skill": "Newton's first law",
+              "image": "images/ch5-dynamics-statics/d-box-push.png",
+              "alt": "A box pushed right along the floor with friction to the left, weight down and normal force up"
+            },
+            {
+              "type": "number",
+              "prompt": "The box is pushed at a **constant** speed with a 35 N push. What is the friction force?",
+              "value": 35,
+              "tolerance": 0.01,
+              "unit": "N",
+              "explain": "Constant velocity → resultant = 0 → friction = push = **35 N**.",
+              "skill": "Newton's first law",
+              "hint": "Constant velocity means equilibrium.",
+              "image": "images/ch5-dynamics-statics/d-box-push.png",
+              "alt": "A box pushed right along the floor with friction to the left, weight down and normal force up"
+            },
+            {
+              "type": "choice",
+              "prompt": "A skydiver falls at a constant velocity. Compare air resistance with weight.",
+              "choices": [
+                "Air resistance > weight",
+                "Air resistance = weight",
+                "Air resistance < weight",
+                "Air resistance = 0"
+              ],
+              "correct": 1,
+              "explain": "Constant velocity → resultant force 0 → air resistance **equals** weight.",
+              "skill": "Newton's first law",
+              "image": "images/ch5-dynamics-statics/d-skydiver.png",
+              "alt": "A skydiver falling with weight down and air resistance up"
+            },
+            {
+              "type": "choice",
+              "prompt": "Which is **not** in equilibrium?",
+              "choices": [
+                "A lamp hanging still",
+                "A skydiver at terminal velocity",
+                "A ball at the top of its throw (momentarily still)",
+                "A box pushed at steady speed"
+              ],
+              "correct": 2,
+              "explain": "At the top, the ball is still for an instant, but **weight still acts**, so the resultant isn't zero. It's accelerating down at g.",
+              "skill": "Newton's first law",
+              "hint": "Is the resultant force zero?",
+              "image": "images/ch5-dynamics-statics/d-lamp.png",
+              "alt": "A lamp hanging from a string with tension T up and weight W down"
+            },
+            {
+              "type": "choice",
+              "prompt": "A bus brakes suddenly and standing passengers lurch forward. Why?",
+              "choices": [
+                "The brakes push them forward",
+                "Their inertia keeps them moving forward",
+                "Gravity pulls them forward",
+                "Air in the bus pushes them"
+              ],
+              "correct": 1,
+              "explain": "The bus slows, but no force has slowed the passengers yet. Their **inertia** keeps them moving (first law).",
+              "skill": "Newton's first law",
+              "image": "images/ch5-dynamics-statics/d-inertia.png",
+              "alt": "A 1 kg block and a 2000 kg block, each pushed with 50 N"
+            },
+            {
+              "type": "blank",
+              "prompt": "Motion at constant velocity is called ___ motion.",
+              "accept": [
+                "uniform"
+              ],
+              "explain": "**Uniform motion**: constant velocity, so the displacement-time graph is a straight line.",
+              "skill": "Newton's first law",
+              "image": "images/ch5-dynamics-statics/d-vt-terminal.png",
+              "alt": "Velocity-time graph curving up and levelling off at terminal velocity"
+            },
+            {
+              "type": "multi",
+              "prompt": "Which are in **dynamic** equilibrium?",
+              "choices": [
+                "A car at a steady 25 m s⁻¹ on a straight road",
+                "A book resting on a table",
+                "A skydiver at terminal velocity",
+                "A car going round a bend at a steady speed"
+              ],
+              "answers": [
+                0,
+                2
+              ],
+              "explain": "Dynamic = moving at **constant velocity**. The car on a bend is changing direction, so it is **not** in equilibrium. The book is static equilibrium.",
+              "skill": "Newton's first law",
+              "hint": "Constant velocity means constant speed *and* direction.",
+              "image": "images/ch5-dynamics-statics/d-skydiver.png",
+              "alt": "A skydiver falling with weight down and air resistance up"
+            }
+          ]
+        },
+        {
+          "id": "ch5-dynamics-statics-second-law",
+          "title": "Newton's second law",
+          "symbol": "speedometer",
+          "steps": [
+            {
+              "type": "read",
+              "title": "Newton's second law",
+              "text": "**F = ma**\n\nF is the **resultant** force. Always find it first!\n\nCambridge wording: **the resultant force on an object is equal to its rate of change of momentum**, and acts in the same direction as the change in momentum."
+            },
+            {
+              "type": "number",
+              "prompt": "Step 1: what is the resultant force on the box?",
+              "value": 30,
+              "tolerance": 0.01,
+              "unit": "N",
+              "explain": "50 − 20 = **30 N** to the right.",
+              "skill": "Newton's second law",
+              "hint": "Subtract forces in opposite directions.",
+              "image": "images/ch5-dynamics-statics/d-n2-box.png",
+              "alt": "A 6.0 kg box with 50 N pulling right and 20 N pulling left"
+            },
+            {
+              "type": "number",
+              "prompt": "Step 2: what is the box's acceleration?",
+              "value": 5.0,
+              "tolerance": 0.05,
+              "unit": "m s⁻²",
+              "explain": "a = F ÷ m = 30 ÷ 6.0 = **5.0 m s⁻²** to the right.",
+              "skill": "Newton's second law",
+              "hint": "Use the resultant, not the 50 N.",
+              "image": "images/ch5-dynamics-statics/d-n2-box.png",
+              "alt": "A 6.0 kg box with 50 N pulling right and 20 N pulling left"
+            },
+            {
+              "type": "truefalse",
+              "prompt": "1 N is the force that gives a 1 kg mass an acceleration of 1 m s⁻².",
+              "isTrue": true,
+              "explain": "From F = ma: 1 N = 1 kg × 1 m s⁻². So 1 N = 1 kg m s⁻².",
+              "skill": "Newton's second law",
+              "image": "images/ch5-dynamics-statics/d-n2-box.png",
+              "alt": "A 6.0 kg box with 50 N pulling right and 20 N pulling left"
+            },
+            {
+              "type": "read",
+              "title": "Force = rate of change of momentum",
+              "text": "**F = Δp ÷ Δt**\n\nOn a momentum-time graph, the **gradient = resultant force**.",
+              "image": "images/ch5-dynamics-statics/d-pt-graph.png",
+              "alt": "Straight-line graph of momentum against time rising from 2 to 14 kg m/s over 4 s"
+            },
+            {
+              "type": "number",
+              "prompt": "The graph shows an object's momentum. What is the resultant force on it?",
+              "value": 3.0,
+              "tolerance": 0.05,
+              "unit": "N",
+              "explain": "Gradient = (14 − 2) ÷ 4 = 12 ÷ 4 = **3.0 N**",
+              "skill": "Newton's second law",
+              "hint": "Force = gradient of the p-t graph.",
+              "image": "images/ch5-dynamics-statics/d-pt-graph.png",
+              "alt": "Straight-line graph of momentum against time rising from 2 to 14 kg m/s over 4 s"
+            },
+            {
+              "type": "blank",
+              "prompt": "Cambridge: the resultant force on an object equals its rate of change of ___.",
+              "accept": [
+                "momentum",
+                "linear momentum"
+              ],
+              "explain": "**Momentum.** F = Δp ÷ Δt. It becomes F = ma when mass is constant.",
+              "skill": "Newton's second law",
+              "image": "images/ch5-dynamics-statics/d-pt-graph.png",
+              "alt": "Straight-line graph of momentum against time rising from 2 to 14 kg m/s over 4 s"
+            },
+            {
+              "type": "choice",
+              "prompt": "The resultant force on a cart doubles, and its mass halves. What happens to its acceleration?",
+              "choices": [
+                "Stays the same",
+                "Doubles",
+                "Halves",
+                "×4"
+              ],
+              "correct": 3,
+              "explain": "a = F ÷ m. Double F → ×2. Halve m → ×2. Total **×4**.",
+              "skill": "Newton's second law",
+              "image": "images/ch5-dynamics-statics/d-n2-box.png",
+              "alt": "A 6.0 kg box with 50 N pulling right and 20 N pulling left"
+            },
+            {
+              "type": "read",
+              "title": "Lifts",
+              "text": "In a lift, the scale reads the **normal force N**.\n\nTake up as +: **N − mg = ma**\n\nAccelerating up → N > mg (you feel heavier).\nAccelerating down → N < mg.\nConstant velocity → N = mg.",
+              "image": "images/ch5-dynamics-statics/d-lift.png",
+              "alt": "A 60 kg person standing on a scale in a lift accelerating upwards at 2.0 m/s²"
+            },
+            {
+              "type": "number",
+              "prompt": "The lift accelerates **upwards** at 2.0 m s⁻². What does the scale read? (g = 9.81 m s⁻²)",
+              "value": 708.6,
+              "tolerance": 7,
+              "unit": "N",
+              "explain": "N − mg = ma\nN = m(g + a) = 60 × (9.81 + 2.0) = **709 N**",
+              "skill": "Newton's second law",
+              "hint": "Resultant = N − mg, and it points up.",
+              "image": "images/ch5-dynamics-statics/d-lift.png",
+              "alt": "A 60 kg person standing on a scale in a lift accelerating upwards at 2.0 m/s²"
+            },
+            {
+              "type": "number",
+              "prompt": "Now the lift accelerates **downwards** at 2.0 m s⁻². New scale reading? (g = 9.81 m s⁻²)",
+              "value": 468.6,
+              "tolerance": 5,
+              "unit": "N",
+              "explain": "mg − N = ma\nN = m(g − a) = 60 × (9.81 − 2.0) = **469 N**",
+              "skill": "Newton's second law",
+              "hint": "The resultant now points down.",
+              "image": "images/ch5-dynamics-statics/d-lift.png",
+              "alt": "A 60 kg person standing on a scale in a lift accelerating upwards at 2.0 m/s²"
+            },
+            {
+              "type": "choice",
+              "prompt": "The lift moves **upwards at constant velocity**. The scale reads:",
+              "choices": [
+                "More than mg",
+                "Exactly mg",
+                "Less than mg",
+                "Zero"
+              ],
+              "correct": 1,
+              "explain": "Constant velocity → a = 0 → N = mg = 589 N. Moving doesn't matter, only **accelerating** does.",
+              "skill": "Newton's second law",
+              "image": "images/ch5-dynamics-statics/d-lift.png",
+              "alt": "A 60 kg person standing on a scale in a lift accelerating upwards at 2.0 m/s²"
+            }
+          ]
+        },
+        {
+          "id": "ch5-dynamics-statics-third-law",
+          "title": "Newton's third law",
+          "symbol": "arrow.left.arrow.right",
+          "steps": [
+            {
+              "type": "read",
+              "title": "Newton's third law",
+              "text": "**When two bodies interact, the forces they exert on each other are equal and opposite.**\n\nIf A pushes B, B pushes A back just as hard."
+            },
+            {
+              "type": "read",
+              "title": "Action-reaction pair: 4 checks",
+              "text": "A real third-law pair must:\n\n1. Act on **DIFFERENT** objects\n2. Be **EQUAL** in size\n3. Be **OPPOSITE** in direction\n4. Be the **SAME TYPE** of force\n\nAll four, or it's not a pair.",
+              "image": "images/ch5-dynamics-statics/d-n3-book.png",
+              "alt": "Book on a table with four forces: P Earth pulls book, Q book pushes table, R table pushes book, S book pulls Earth"
+            },
+            {
+              "type": "choice",
+              "prompt": "P is the Earth pulling the book down (gravity). Which force is its third-law partner?",
+              "choices": [
+                "Q",
+                "R",
+                "S"
+              ],
+              "correct": 2,
+              "explain": "**S**: the book pulls the Earth up. Different objects, equal, opposite, both gravity. ✓",
+              "skill": "Newton's third law",
+              "image": "images/ch5-dynamics-statics/d-n3-book.png",
+              "alt": "Book on a table with four forces: P Earth pulls book, Q book pushes table, R table pushes book, S book pulls Earth"
+            },
+            {
+              "type": "choice",
+              "prompt": "R is the table pushing up on the book. Which force is its partner?",
+              "choices": [
+                "P",
+                "Q",
+                "S"
+              ],
+              "correct": 1,
+              "explain": "**Q**: the book pushes down on the table. Both are contact forces, on different objects. ✓",
+              "skill": "Newton's third law",
+              "image": "images/ch5-dynamics-statics/d-n3-book.png",
+              "alt": "Book on a table with four forces: P Earth pulls book, Q book pushes table, R table pushes book, S book pulls Earth"
+            },
+            {
+              "type": "truefalse",
+              "prompt": "P (weight) and R (normal force) are a Newton's third law pair.",
+              "isTrue": false,
+              "explain": "They're equal and opposite, **but** they act on the **same** object (the book) and are **different types** (gravity vs contact). They balance because of the **first** law, not the third.",
+              "skill": "Newton's third law",
+              "hint": "Run the 4 checks.",
+              "image": "images/ch5-dynamics-statics/d-n3-book.png",
+              "alt": "Book on a table with four forces: P Earth pulls book, Q book pushes table, R table pushes book, S book pulls Earth"
+            },
+            {
+              "type": "multi",
+              "prompt": "Which conditions must a third-law pair meet?",
+              "choices": [
+                "Act on different objects",
+                "Equal magnitude",
+                "Opposite direction",
+                "Same type of force",
+                "Act on the same object"
+              ],
+              "answers": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "explain": "Different objects, equal, opposite, same type. Never the same object.",
+              "skill": "Newton's third law",
+              "image": "images/ch5-dynamics-statics/d-n3-book.png",
+              "alt": "Book on a table with four forces: P Earth pulls book, Q book pushes table, R table pushes book, S book pulls Earth"
+            },
+            {
+              "type": "choice",
+              "prompt": "Skater B pushes skater A with 100 N. What force does A exert on B?",
+              "choices": [
+                "0 N",
+                "67 N",
+                "100 N",
+                "150 N"
+              ],
+              "correct": 2,
+              "explain": "Third law: **100 N**, opposite direction, whatever their masses.",
+              "skill": "Newton's third law",
+              "image": "images/ch5-dynamics-statics/d-skaters.png",
+              "alt": "Two skaters on ice, A 50 kg and B 75 kg, pushing each other apart"
+            },
+            {
+              "type": "number",
+              "prompt": "The push is 100 N. What is skater A's acceleration?",
+              "value": 2.0,
+              "tolerance": 0.02,
+              "unit": "m s⁻²",
+              "explain": "a = F ÷ m = 100 ÷ 50 = **2.0 m s⁻²**",
+              "skill": "Newton's third law",
+              "image": "images/ch5-dynamics-statics/d-skaters.png",
+              "alt": "Two skaters on ice, A 50 kg and B 75 kg, pushing each other apart"
+            },
+            {
+              "type": "number",
+              "prompt": "And skater B's acceleration?",
+              "value": 1.33,
+              "tolerance": 0.02,
+              "unit": "m s⁻²",
+              "explain": "a = 100 ÷ 75 = **1.33 m s⁻²**\n\nSame force, but more mass → less acceleration.",
+              "skill": "Newton's third law",
+              "image": "images/ch5-dynamics-statics/d-skaters.png",
+              "alt": "Two skaters on ice, A 50 kg and B 75 kg, pushing each other apart"
+            },
+            {
+              "type": "choice",
+              "prompt": "The Earth pulls an apple down with 1.5 N. The apple pulls the Earth:",
+              "choices": [
+                "Up with 1.5 N",
+                "Up with almost 0 N",
+                "Down with 1.5 N",
+                "Not at all"
+              ],
+              "correct": 0,
+              "explain": "Up with **1.5 N**. The Earth barely moves because its mass is huge (tiny acceleration).",
+              "skill": "Newton's third law",
+              "image": "images/ch5-dynamics-statics/d-n3-book.png",
+              "alt": "Book on a table with four forces: P Earth pulls book, Q book pushes table, R table pushes book, S book pulls Earth"
+            }
+          ]
+        },
+        {
+          "id": "ch5-dynamics-statics-connected-bodies",
+          "title": "Connected bodies",
+          "symbol": "link",
+          "steps": [
+            {
+              "type": "read",
+              "title": "The 2-step method",
+              "text": "**Step 1: whole system.**\na = (resultant external force) ÷ (total mass)\n\n**Step 2: one body.**\nUse F = ma on just one part to find a tension or contact force.\n\nInternal forces (tensions between parts) cancel in step 1."
+            },
+            {
+              "type": "number",
+              "prompt": "Step 1: the engine's driving force is 12 000 N (ignore friction). Find the train's acceleration.",
+              "value": 2.0,
+              "tolerance": 0.02,
+              "unit": "m s⁻²",
+              "explain": "Total mass = 3000 + 1500 + 1500 = 6000 kg\na = 12 000 ÷ 6000 = **2.0 m s⁻²**",
+              "skill": "Connected bodies",
+              "hint": "Divide by the total mass.",
+              "image": "images/ch5-dynamics-statics/d-train.png",
+              "alt": "An engine of mass 3000 kg pulling two 1500 kg carriages with a 12 000 N driving force"
+            },
+            {
+              "type": "number",
+              "prompt": "Step 2: find the tension in the coupling between the two **carriages**.",
+              "value": 3000,
+              "tolerance": 30,
+              "unit": "N",
+              "explain": "That coupling only pulls the last carriage:\nT = ma = 1500 × 2.0 = **3000 N**",
+              "skill": "Connected bodies",
+              "hint": "Which mass does that coupling pull?",
+              "image": "images/ch5-dynamics-statics/d-train.png",
+              "alt": "An engine of mass 3000 kg pulling two 1500 kg carriages with a 12 000 N driving force"
+            },
+            {
+              "type": "number",
+              "prompt": "Find the tension in the coupling between the **engine and the first carriage**.",
+              "value": 6000,
+              "tolerance": 60,
+              "unit": "N",
+              "explain": "It pulls **both** carriages:\nT = (1500 + 1500) × 2.0 = **6000 N**",
+              "skill": "Connected bodies",
+              "hint": "It pulls everything behind it.",
+              "image": "images/ch5-dynamics-statics/d-train.png",
+              "alt": "An engine of mass 3000 kg pulling two 1500 kg carriages with a 12 000 N driving force"
+            },
+            {
+              "type": "number",
+              "prompt": "An 18 N force pushes two blocks on a smooth floor. Find their acceleration.",
+              "value": 3.0,
+              "tolerance": 0.03,
+              "unit": "m s⁻²",
+              "explain": "a = 18 ÷ (4.0 + 2.0) = **3.0 m s⁻²**",
+              "skill": "Connected bodies",
+              "image": "images/ch5-dynamics-statics/d-two-blocks-push.png",
+              "alt": "An 18 N force pushes a 4.0 kg block, which pushes a 2.0 kg block on a smooth floor"
+            },
+            {
+              "type": "number",
+              "prompt": "What force does the 4.0 kg block exert on the 2.0 kg block?",
+              "value": 6.0,
+              "tolerance": 0.06,
+              "unit": "N",
+              "explain": "Only this force pushes the 2.0 kg block:\nF = ma = 2.0 × 3.0 = **6.0 N**",
+              "skill": "Connected bodies",
+              "hint": "Look at the 2.0 kg block on its own.",
+              "image": "images/ch5-dynamics-statics/d-two-blocks-push.png",
+              "alt": "An 18 N force pushes a 4.0 kg block, which pushes a 2.0 kg block on a smooth floor"
+            },
+            {
+              "type": "read",
+              "title": "Hanging mass over a pulley",
+              "text": "The hanging block's **weight** drives the whole system.\n\nThe string tension is the **same** all along a light string over a smooth pulley.",
+              "image": "images/ch5-dynamics-statics/d-table-pulley.png",
+              "alt": "Block A of 4.0 kg on a smooth table joined by a string over a pulley to hanging block B of 1.0 kg"
+            },
+            {
+              "type": "number",
+              "prompt": "Find the acceleration of A and B. (g = 9.81 m s⁻²)",
+              "value": 1.962,
+              "tolerance": 0.02,
+              "unit": "m s⁻²",
+              "explain": "Driving force = weight of B = 1.0 × 9.81 = 9.81 N\nTotal mass = 5.0 kg\na = 9.81 ÷ 5.0 = **1.96 m s⁻²**",
+              "skill": "Connected bodies",
+              "hint": "What force makes the system move?",
+              "image": "images/ch5-dynamics-statics/d-table-pulley.png",
+              "alt": "Block A of 4.0 kg on a smooth table joined by a string over a pulley to hanging block B of 1.0 kg"
+            },
+            {
+              "type": "number",
+              "prompt": "Find the tension in the string.",
+              "value": 7.85,
+              "tolerance": 0.08,
+              "unit": "N",
+              "explain": "Only T pulls A along:\nT = m_A × a = 4.0 × 1.962 = **7.85 N**",
+              "skill": "Connected bodies",
+              "hint": "Use block A on its own.",
+              "image": "images/ch5-dynamics-statics/d-table-pulley.png",
+              "alt": "Block A of 4.0 kg on a smooth table joined by a string over a pulley to hanging block B of 1.0 kg"
+            },
+            {
+              "type": "truefalse",
+              "prompt": "The tension equals the weight of B (9.81 N).",
+              "isTrue": false,
+              "explain": "B accelerates **down**, so its weight must be bigger than T. T = 7.85 N < 9.81 N.",
+              "skill": "Connected bodies",
+              "image": "images/ch5-dynamics-statics/d-table-pulley.png",
+              "alt": "Block A of 4.0 kg on a smooth table joined by a string over a pulley to hanging block B of 1.0 kg"
+            },
+            {
+              "type": "number",
+              "prompt": "Atwood machine: find the acceleration. (g = 9.81 m s⁻²)",
+              "value": 2.45,
+              "tolerance": 0.03,
+              "unit": "m s⁻²",
+              "explain": "Resultant = (5.0 − 3.0) × 9.81 = 19.62 N\nTotal mass = 8.0 kg\na = 19.62 ÷ 8.0 = **2.45 m s⁻²**",
+              "skill": "Connected bodies",
+              "hint": "The difference in weights drives it.",
+              "image": "images/ch5-dynamics-statics/d-atwood.png",
+              "alt": "A 3.0 kg mass and a 5.0 kg mass hanging on either side of a pulley"
+            },
+            {
+              "type": "number",
+              "prompt": "Find the tension in the Atwood string.",
+              "value": 36.8,
+              "tolerance": 0.4,
+              "unit": "N",
+              "explain": "3.0 kg block accelerates **up**:\nT − 3.0g = 3.0a\nT = 3.0 × (9.81 + 2.45) = **36.8 N**",
+              "skill": "Connected bodies",
+              "hint": "Use the lighter block: T − mg = ma.",
+              "image": "images/ch5-dynamics-statics/d-atwood.png",
+              "alt": "A 3.0 kg mass and a 5.0 kg mass hanging on either side of a pulley"
+            },
+            {
+              "type": "free",
+              "prompt": "Like your test: A (2.0 kg) is on a smooth flat surface, tied to B (3.0 kg) on a smooth 30° slope, tied over a pulley to hanging block C. What mass must C have for the system to stay **at rest**? What's the tension in the A–B string then? (g = 9.81 m s⁻²)",
+              "solution": "**At rest → equilibrium.**\n\nA is on a smooth flat surface, so nothing pulls it sideways: **tension A–B = 0 N**.\n\nB: the only force down the slope is the weight component:\nW_B sin 30° = 3.0 × 9.81 × 0.5 = 14.7 N\n\nThe B–C string must balance it: T = 14.7 N\n\nC is still, so its weight = T:\nm_C × 9.81 = 14.7\n**m_C = 1.5 kg**",
+              "skill": "Connected bodies",
+              "hint": "Balance the forces along the slope on B.",
+              "image": "images/ch5-dynamics-statics/d-three-blocks.png",
+              "alt": "Block A 2.0 kg on a smooth flat surface tied to block B 3.0 kg on a smooth 30° slope, tied over a pulley to hanging block C"
+            }
+          ]
+        },
+        {
+          "id": "ch5-dynamics-statics-slopes",
+          "title": "Forces on a slope",
+          "symbol": "triangle",
+          "steps": [
+            {
+              "type": "read",
+              "title": "Split the weight",
+              "text": "On a slope at angle θ, split W into:\n\n**Along the slope: W sin θ** (pulls it down the slope)\n**Into the slope: W cos θ** (balanced by N)\n\nMemory trick: **s**in = **s**lides.",
+              "image": "images/ch5-dynamics-statics/d-slope-components.png",
+              "alt": "Weight W on a 30° slope split into W sin θ along the slope and W cos θ into the slope"
+            },
+            {
+              "type": "choice",
+              "prompt": "Which component of weight pulls a block **down the slope**?",
+              "choices": [
+                "W cos θ",
+                "W sin θ",
+                "W tan θ",
+                "W"
+              ],
+              "correct": 1,
+              "explain": "**W sin θ** acts along the slope. W cos θ presses into it.",
+              "skill": "Forces on a slope",
+              "image": "images/ch5-dynamics-statics/d-slope-components.png",
+              "alt": "Weight W on a 30° slope split into W sin θ along the slope and W cos θ into the slope"
+            },
+            {
+              "type": "number",
+              "prompt": "The slope is smooth. Find the block's acceleration down the slope. (g = 9.81 m s⁻²)",
+              "value": 4.905,
+              "tolerance": 0.05,
+              "unit": "m s⁻²",
+              "explain": "Resultant = mg sin 30°\na = g sin 30° = 9.81 × 0.5 = **4.91 m s⁻²**\n\n(The mass cancels!)",
+              "skill": "Forces on a slope",
+              "hint": "Only W sin θ acts along a smooth slope.",
+              "image": "images/ch5-dynamics-statics/d-slope-smooth.png",
+              "alt": "A 2.0 kg block on a smooth 30° slope"
+            },
+            {
+              "type": "number",
+              "prompt": "Find the normal force on the 2.0 kg block. (g = 9.81 m s⁻²)",
+              "value": 16.99,
+              "tolerance": 0.17,
+              "unit": "N",
+              "explain": "N = W cos θ = 2.0 × 9.81 × cos 30° = **17.0 N**",
+              "skill": "Forces on a slope",
+              "hint": "N balances the component into the slope.",
+              "image": "images/ch5-dynamics-statics/d-slope-smooth.png",
+              "alt": "A 2.0 kg block on a smooth 30° slope"
+            },
+            {
+              "type": "number",
+              "prompt": "The 4.0 kg block sits **at rest** on a rough 25° slope. What friction force acts on it? (g = 9.81 m s⁻²)",
+              "value": 16.58,
+              "tolerance": 0.17,
+              "unit": "N",
+              "explain": "At rest → friction balances W sin θ:\nF = 4.0 × 9.81 × sin 25° = **16.6 N**, up the slope",
+              "skill": "Forces on a slope",
+              "hint": "Friction balances the force down the slope.",
+              "image": "images/ch5-dynamics-statics/d-slope-blank.png",
+              "alt": "A 4.0 kg block on a 25° slope"
+            },
+            {
+              "type": "number",
+              "prompt": "Find the normal force on the 4.0 kg block.",
+              "value": 35.56,
+              "tolerance": 0.36,
+              "unit": "N",
+              "explain": "N = mg cos θ = 4.0 × 9.81 × cos 25° = **35.6 N**",
+              "skill": "Forces on a slope",
+              "image": "images/ch5-dynamics-statics/d-slope-blank.png",
+              "alt": "A 4.0 kg block on a 25° slope"
+            },
+            {
+              "type": "truefalse",
+              "prompt": "If the slope gets steeper, the normal force gets smaller.",
+              "isTrue": true,
+              "explain": "N = W cos θ. As θ increases, cos θ **decreases**, so N decreases.",
+              "skill": "Forces on a slope",
+              "image": "images/ch5-dynamics-statics/d-slope-components.png",
+              "alt": "Weight W on a 30° slope split into W sin θ along the slope and W cos θ into the slope"
+            },
+            {
+              "type": "choice",
+              "prompt": "When θ = 0° (flat ground), the component of weight along the surface is:",
+              "choices": [
+                "W",
+                "W/2",
+                "0",
+                "Depends on the mass"
+              ],
+              "correct": 2,
+              "explain": "W sin 0° = **0**. On flat ground, nothing pulls it sideways.",
+              "skill": "Forces on a slope",
+              "image": "images/ch5-dynamics-statics/d-slope-components.png",
+              "alt": "Weight W on a 30° slope split into W sin θ along the slope and W cos θ into the slope"
+            },
+            {
+              "type": "number",
+              "prompt": "Exam-style: a 1.5 kg block rests on a rough 20° slope. Calculate the component of its weight down the slope. (g = 9.81 m s⁻²)",
+              "value": 5.03,
+              "tolerance": 0.05,
+              "unit": "N",
+              "explain": "W sin θ = 1.5 × 9.81 × sin 20° = 14.7 × 0.342 = **5.03 N**",
+              "skill": "Forces on a slope",
+              "image": "images/ch5-dynamics-statics/tb-slope-block.png",
+              "alt": "A block resting on a rough surface inclined at 20°"
+            },
+            {
+              "type": "number",
+              "prompt": "Same block: what's the normal contact force between the block and the slope?",
+              "value": 13.83,
+              "tolerance": 0.14,
+              "unit": "N",
+              "explain": "N = W cos θ = 14.7 × cos 20° = **13.8 N**",
+              "skill": "Forces on a slope",
+              "image": "images/ch5-dynamics-statics/tb-slope-block.png",
+              "alt": "A block resting on a rough surface inclined at 20°"
+            },
+            {
+              "type": "number",
+              "prompt": "Harder: a 2.0 kg block slides down a 30° slope with friction 4.0 N. Find its acceleration. (g = 9.81 m s⁻²)",
+              "value": 2.905,
+              "tolerance": 0.03,
+              "unit": "m s⁻²",
+              "explain": "Down the slope: W sin 30° = 2.0 × 9.81 × 0.5 = 9.81 N\nResultant = 9.81 − 4.0 = 5.81 N\na = 5.81 ÷ 2.0 = **2.91 m s⁻²**",
+              "skill": "Forces on a slope",
+              "hint": "Resultant = W sin θ − friction.",
+              "image": "images/ch5-dynamics-statics/d-slope-smooth.png",
+              "alt": "A 2.0 kg block on a smooth 30° slope"
+            }
+          ]
+        },
+        {
+          "id": "ch5-dynamics-statics-terminal-velocity",
+          "title": "Drag and terminal velocity",
+          "symbol": "wind",
+          "steps": [
+            {
+              "type": "read",
+              "title": "Free fall",
+              "text": "**Free fall**: the **only** force is weight.\n\nSo a = **g** = 9.81 m s⁻², whatever the mass (in a vacuum, a feather and a hammer land together)."
+            },
+            {
+              "type": "read",
+              "title": "Drag grows with speed",
+              "text": "Drag (air resistance) **increases as speed increases**. Often drag = kv².\n\nFalling object:\n1. Start: v = 0, drag = 0, **a = g**\n2. Speeds up → drag grows → resultant shrinks → a gets smaller\n3. Drag = weight → resultant = 0 → **a = 0**",
+              "image": "images/ch5-dynamics-statics/d-vt-terminal.png",
+              "alt": "Velocity-time graph curving up and levelling off at terminal velocity"
+            },
+            {
+              "type": "blank",
+              "prompt": "At terminal velocity, the resultant force is ___ N.",
+              "accept": [
+                "0",
+                "zero"
+              ],
+              "explain": "Drag = weight, so resultant = **0** and acceleration = 0.",
+              "skill": "Drag and terminal velocity",
+              "image": "images/ch5-dynamics-statics/d-vt-terminal.png",
+              "alt": "Velocity-time graph curving up and levelling off at terminal velocity"
+            },
+            {
+              "type": "read",
+              "title": "Terminal velocity",
+              "text": "Cambridge: **terminal velocity is reached when the air resistance (drag) equals the weight**, so the resultant force is zero and velocity is constant.\n\n(In a liquid: weight = drag + upthrust.)",
+              "image": "images/ch5-dynamics-statics/d-skydiver.png",
+              "alt": "A skydiver falling with weight down and air resistance up"
+            },
+            {
+              "type": "choice",
+              "prompt": "What is the gradient of the v-t graph at the very start?",
+              "choices": [
+                "0",
+                "g",
+                "Terminal velocity",
+                "Infinite"
+              ],
+              "correct": 1,
+              "explain": "At t = 0, v = 0 so drag = 0. The only force is weight, so a = **g**. Gradient = acceleration.",
+              "skill": "Drag and terminal velocity",
+              "image": "images/ch5-dynamics-statics/d-vt-terminal.png",
+              "alt": "Velocity-time graph curving up and levelling off at terminal velocity"
+            },
+            {
+              "type": "choice",
+              "prompt": "Why does the gradient of the v-t graph decrease?",
+              "choices": [
+                "Weight decreases",
+                "Drag increases as speed increases, so the resultant decreases",
+                "g decreases",
+                "Mass decreases"
+              ],
+              "correct": 1,
+              "explain": "Weight stays the same. **Drag grows**, so the resultant force (and a) shrinks.",
+              "skill": "Drag and terminal velocity",
+              "image": "images/ch5-dynamics-statics/d-vt-terminal.png",
+              "alt": "Velocity-time graph curving up and levelling off at terminal velocity"
+            },
+            {
+              "type": "choice",
+              "prompt": "This is the acceleration-time graph for the same fall. What does it show?",
+              "choices": [
+                "a is constant",
+                "a starts at g and decreases to zero",
+                "a increases to g",
+                "a is always zero"
+              ],
+              "correct": 1,
+              "explain": "Starts at **g** (no drag), falls to **0** at terminal velocity.",
+              "skill": "Drag and terminal velocity",
+              "image": "images/ch5-dynamics-statics/d-at-terminal.png",
+              "alt": "Acceleration-time graph starting at g and falling to zero"
+            },
+            {
+              "type": "number",
+              "prompt": "At this instant, find the ball's acceleration. (g = 9.81 m s⁻²)",
+              "value": 5.886,
+              "tolerance": 0.06,
+              "unit": "m s⁻²",
+              "explain": "m = W ÷ g = 0.50 ÷ 9.81 = 0.0510 kg\nResultant = 0.50 − 0.20 = 0.30 N\na = 0.30 ÷ 0.0510 = **5.89 m s⁻²**",
+              "skill": "Drag and terminal velocity",
+              "hint": "Find the mass first, from the weight.",
+              "image": "images/ch5-dynamics-statics/d-ball-drag.png",
+              "alt": "A falling ball with weight 0.50 N down and drag 0.20 N up"
+            },
+            {
+              "type": "choice",
+              "prompt": "Skydiver: at which point is the resultant force **upwards**?",
+              "choices": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "E"
+              ],
+              "correct": 3,
+              "explain": "At **D** the parachute has just opened. Drag > weight, so she **decelerates** (velocity falling).",
+              "skill": "Drag and terminal velocity",
+              "hint": "Where is velocity decreasing?",
+              "image": "images/ch5-dynamics-statics/d-vt-parachute.png",
+              "alt": "Velocity-time graph of a skydiver with points A to E; the parachute opens at C, speed drops at D and levels at E"
+            },
+            {
+              "type": "multi",
+              "prompt": "At which points is drag approximately equal to weight?",
+              "choices": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "E"
+              ],
+              "answers": [
+                2,
+                4
+              ],
+              "explain": "Flat parts of the graph = constant velocity = drag equals weight: **C** (first terminal velocity) and **E** (new, slower terminal velocity).",
+              "skill": "Drag and terminal velocity",
+              "image": "images/ch5-dynamics-statics/d-vt-parachute.png",
+              "alt": "Velocity-time graph of a skydiver with points A to E; the parachute opens at C, speed drops at D and levels at E"
+            },
+            {
+              "type": "truefalse",
+              "prompt": "After the parachute opens, the new terminal velocity is lower because the weight is smaller.",
+              "isTrue": false,
+              "explain": "Weight is the same. The parachute's bigger area makes drag bigger at any speed, so drag = weight is reached at a **lower speed**.",
+              "skill": "Drag and terminal velocity",
+              "image": "images/ch5-dynamics-statics/d-vt-parachute.png",
+              "alt": "Velocity-time graph of a skydiver with points A to E; the parachute opens at C, speed drops at D and levels at E"
+            },
+            {
+              "type": "number",
+              "prompt": "Drag = kv² with k = 0.25 kg m⁻¹. An 80 kg skydiver falls. Find the terminal velocity. (g = 9.81 m s⁻²)",
+              "value": 56.0,
+              "tolerance": 0.6,
+              "unit": "m s⁻¹",
+              "explain": "At terminal: kv² = mg\nv² = 80 × 9.81 ÷ 0.25 = 3139\nv = √3139 = **56.0 m s⁻¹**",
+              "skill": "Drag and terminal velocity",
+              "hint": "Set drag equal to weight.",
+              "image": "images/ch5-dynamics-statics/d-drag-kv2.png",
+              "alt": "Graph of drag force against speed curving upwards, F = kv²"
+            },
+            {
+              "type": "number",
+              "prompt": "Same skydiver at 20 m s⁻¹. Find the acceleration.",
+              "value": 8.56,
+              "tolerance": 0.09,
+              "unit": "m s⁻²",
+              "explain": "Drag = 0.25 × 20² = 100 N\nWeight = 80 × 9.81 = 784.8 N\na = (784.8 − 100) ÷ 80 = **8.56 m s⁻²**",
+              "skill": "Drag and terminal velocity",
+              "hint": "Find the drag at 20 m s⁻¹ first.",
+              "image": "images/ch5-dynamics-statics/d-drag-kv2.png",
+              "alt": "Graph of drag force against speed curving upwards, F = kv²"
+            },
+            {
+              "type": "choice",
+              "prompt": "If drag = kv², what are the SI units of k?",
+              "choices": [
+                "N s m⁻¹",
+                "kg m⁻¹",
+                "kg s⁻¹",
+                "N m"
+              ],
+              "correct": 1,
+              "explain": "k = F ÷ v² = (kg m s⁻²) ÷ (m² s⁻²) = **kg m⁻¹**",
+              "skill": "Drag and terminal velocity",
+              "hint": "Write N as base units, kg m s⁻².",
+              "image": "images/ch5-dynamics-statics/d-drag-kv2.png",
+              "alt": "Graph of drag force against speed curving upwards, F = kv²"
+            },
+            {
+              "type": "number",
+              "prompt": "A steel ball falls through oil at terminal velocity. Weight = 0.12 N, upthrust = 0.015 N. What is the viscous (drag) force?",
+              "value": 0.105,
+              "tolerance": 0.003,
+              "unit": "N",
+              "explain": "Resultant = 0:\nweight = drag + upthrust\ndrag = 0.12 − 0.015 = **0.105 N**",
+              "skill": "Drag and terminal velocity",
+              "hint": "In a liquid, upthrust also acts up.",
+              "image": "images/ch5-dynamics-statics/d-ball-drag.png",
+              "alt": "A falling ball with weight 0.50 N down and drag 0.20 N up"
+            }
+          ]
+        },
+        {
+          "id": "ch5-dynamics-statics-centre-of-gravity",
+          "title": "Centre of gravity",
+          "symbol": "scope",
+          "steps": [
+            {
+              "type": "read",
+              "title": "Centre of gravity",
+              "text": "**Centre of gravity**: the point where the **entire weight** of an object appears to act.\n\nSo we draw weight as **one arrow** from this point.\n\nUniform shapes: it's at the **geometric centre**.",
+              "image": "images/ch5-dynamics-statics/d-cg-shapes.png",
+              "alt": "Centre of gravity of a uniform rod, a uniform disc and a ring (at the empty centre)"
+            },
+            {
+              "type": "blank",
+              "prompt": "The point where the entire weight of an object appears to act is its centre of ___.",
+              "accept": [
+                "gravity",
+                "mass"
+              ],
+              "explain": "**Centre of gravity.** Draw the weight arrow from here.",
+              "skill": "Centre of gravity",
+              "image": "images/ch5-dynamics-statics/d-cg-shapes.png",
+              "alt": "Centre of gravity of a uniform rod, a uniform disc and a ring (at the empty centre)"
+            },
+            {
+              "type": "choice",
+              "prompt": "Where is the centre of gravity of the ring?",
+              "choices": [
+                "On the ring itself",
+                "At the empty centre",
+                "It has no centre of gravity",
+                "At the bottom"
+              ],
+              "correct": 1,
+              "explain": "At the **centre**, even though there's no material there. The centre of gravity doesn't have to be inside the object.",
+              "skill": "Centre of gravity",
+              "image": "images/ch5-dynamics-statics/d-cg-shapes.png",
+              "alt": "Centre of gravity of a uniform rod, a uniform disc and a ring (at the empty centre)"
+            },
+            {
+              "type": "number",
+              "prompt": "A uniform rod is 2.0 m long. How far from one end is its centre of gravity?",
+              "value": 1.0,
+              "tolerance": 0.01,
+              "unit": "m",
+              "explain": "Uniform → middle → **1.0 m**.",
+              "skill": "Centre of gravity",
+              "image": "images/ch5-dynamics-statics/d-cg-shapes.png",
+              "alt": "Centre of gravity of a uniform rod, a uniform disc and a ring (at the empty centre)"
+            },
+            {
+              "type": "read",
+              "title": "Finding it: plumb line",
+              "text": "1. Hang the shape freely from a pin.\n2. Hang a **plumb line** from the same pin, and draw along it.\n3. Repeat from another hole.\n\nThe centre of gravity is where the lines **cross**.",
+              "image": "images/ch5-dynamics-statics/tb-plumb-line.png",
+              "alt": "Irregular sheet hung from a pin with a plumb line; lines from two holes cross at the centre of gravity"
+            },
+            {
+              "type": "choice",
+              "prompt": "Why does the centre of gravity lie on the plumb line?",
+              "choices": [
+                "The plumb line is heavy",
+                "A freely hanging object comes to rest with its centre of gravity directly below the pivot",
+                "The pin is at the centre",
+                "The string is vertical"
+              ],
+              "correct": 1,
+              "explain": "When it stops swinging, weight passes **through the pivot**, so there's no moment. That means the centre of gravity is **directly below** the pin.",
+              "skill": "Centre of gravity",
+              "image": "images/ch5-dynamics-statics/tb-plumb-line.png",
+              "alt": "Irregular sheet hung from a pin with a plumb line; lines from two holes cross at the centre of gravity"
+            },
+            {
+              "type": "read",
+              "title": "Toppling",
+              "text": "An object **topples** when the vertical line through its centre of gravity falls **outside its base**. Then weight creates a moment that tips it over.\n\nLow centre of gravity + wide base = **stable**.",
+              "image": "images/ch5-dynamics-statics/d-cg-topple.png",
+              "alt": "Two tilted blocks: one with its weight line inside the base (stable), one outside the base (topples)"
+            },
+            {
+              "type": "choice",
+              "prompt": "Why does the right-hand block topple?",
+              "choices": [
+                "It's heavier",
+                "The line of its weight passes outside its base",
+                "Its base is wider",
+                "Its centre of gravity is lower"
+              ],
+              "correct": 1,
+              "explain": "The weight line is **outside the base**, so weight gives a turning moment that tips it over.",
+              "skill": "Centre of gravity",
+              "image": "images/ch5-dynamics-statics/d-cg-topple.png",
+              "alt": "Two tilted blocks: one with its weight line inside the base (stable), one outside the base (topples)"
+            },
+            {
+              "type": "truefalse",
+              "prompt": "Racing cars are built low and wide so they are harder to tip over.",
+              "isTrue": true,
+              "explain": "Low centre of gravity + wide base → you must tilt it much further before the weight line leaves the base.",
+              "skill": "Centre of gravity",
+              "image": "images/ch5-dynamics-statics/d-cg-topple.png",
+              "alt": "Two tilted blocks: one with its weight line inside the base (stable), one outside the base (topples)"
+            }
+          ]
+        },
+        {
+          "id": "ch5-dynamics-statics-moments",
+          "title": "Moment of a force",
+          "symbol": "wrench.and.screwdriver",
+          "steps": [
+            {
+              "type": "read",
+              "title": "Moment of a force",
+              "text": "**Moment = force × perpendicular distance from the pivot to the line of action of the force**\n\nUnit: **N m** (newton metre).\n\nBigger force or longer distance = bigger turning effect.",
+              "image": "images/ch5-dynamics-statics/tb-moment-angle.png",
+              "alt": "Lever with force F1 at perpendicular distance x1 from the pivot, and force F2 at angle θ with perpendicular distance x2"
+            },
+            {
+              "type": "choice",
+              "prompt": "The same push is applied at A, B or C. Where does it open the door most easily?",
+              "choices": [
+                "A",
+                "B",
+                "C",
+                "All the same"
+              ],
+              "correct": 2,
+              "explain": "**C** is farthest from the hinge, so it gives the biggest **moment**.",
+              "skill": "Moment of a force",
+              "image": "images/ch5-dynamics-statics/d-door-push.png",
+              "alt": "A door seen from above, hinged at one end, with the same push applied at A, B or C, C being farthest from the hinge"
+            },
+            {
+              "type": "blank",
+              "prompt": "The unit of moment is the ___.",
+              "accept": [
+                "N m",
+                "Nm",
+                "newton metre",
+                "newton-metre",
+                "newton meter"
+              ],
+              "explain": "Force (N) × distance (m) = **N m**.",
+              "skill": "Moment of a force",
+              "image": "images/ch5-dynamics-statics/d-door-push.png",
+              "alt": "A door seen from above, hinged at one end, with the same push applied at A, B or C, C being farthest from the hinge"
+            },
+            {
+              "type": "truefalse",
+              "prompt": "A force whose line of action passes through the pivot has zero moment.",
+              "isTrue": true,
+              "explain": "Perpendicular distance = 0, so moment = F × 0 = **0**.",
+              "skill": "Moment of a force",
+              "image": "images/ch5-dynamics-statics/tb-moment-angle.png",
+              "alt": "Lever with force F1 at perpendicular distance x1 from the pivot, and force F2 at angle θ with perpendicular distance x2"
+            },
+            {
+              "type": "read",
+              "title": "Forces at an angle",
+              "text": "Only the part of the force **at 90° to the lever** turns it.\n\n**Moment = F × d × sin θ**\n\n(θ = angle between the force and the lever.)",
+              "image": "images/ch5-dynamics-statics/tb-moment-angle.png",
+              "alt": "Lever with force F1 at perpendicular distance x1 from the pivot, and force F2 at angle θ with perpendicular distance x2"
+            },
+            {
+              "type": "number",
+              "prompt": "The 40 N force acts at 60° to the bar. Find its moment about the pivot.",
+              "value": 17.3,
+              "tolerance": 0.2,
+              "unit": "N m",
+              "explain": "Moment = F d sin θ = 40 × 0.50 × sin 60° = **17.3 N m**",
+              "skill": "Moment of a force",
+              "hint": "Use the component at 90° to the bar.",
+              "image": "images/ch5-dynamics-statics/d-moment-angle.png",
+              "alt": "A 0.50 m bar pivoted at the left; a 40 N force acts at the right end at 60° to the bar"
+            },
+            {
+              "type": "number",
+              "prompt": "If the same 40 N acted **at 90°** to the bar, what would its moment be?",
+              "value": 20,
+              "tolerance": 0.2,
+              "unit": "N m",
+              "explain": "40 × 0.50 = **20 N m**, the maximum possible.",
+              "skill": "Moment of a force",
+              "image": "images/ch5-dynamics-statics/d-moment-angle.png",
+              "alt": "A 0.50 m bar pivoted at the left; a 40 N force acts at the right end at 60° to the bar"
+            },
+            {
+              "type": "choice",
+              "prompt": "Exam-style: what is the moment of force F about the hinge H?",
+              "choices": [
+                "Fd cos x",
+                "Fd ÷ cos x",
+                "Fd sin x",
+                "Fd ÷ sin x"
+              ],
+              "correct": 2,
+              "explain": "Perpendicular component = F sin x. Moment = **Fd sin x** (answer C).",
+              "skill": "Moment of a force",
+              "hint": "Which part of F is at 90° to the door?",
+              "image": "images/ch5-dynamics-statics/tb-door.png",
+              "alt": "Door hinged at H; force F applied at distance d and angle x to the door"
+            },
+            {
+              "type": "number",
+              "prompt": "Exam-style: force F has a moment of 40 N m about the pivot. Calculate F.",
+              "value": 28.3,
+              "tolerance": 0.3,
+              "unit": "N",
+              "explain": "F × 2.0 × sin 45° = 40\nF = 40 ÷ (2.0 × 0.707) = **28.3 N**",
+              "skill": "Moment of a force",
+              "hint": "Moment = F d sin θ. Rearrange for F.",
+              "image": "images/ch5-dynamics-statics/tb-lever-45.png",
+              "alt": "Rod pivoted at the left; force F acts 2.0 m from the pivot at 45° to the rod"
+            }
+          ]
+        },
+        {
+          "id": "ch5-dynamics-statics-principle-of-moments",
+          "title": "Principle of moments",
+          "symbol": "scalemass",
+          "steps": [
+            {
+              "type": "read",
+              "title": "Principle of moments",
+              "text": "For an object in (rotational) equilibrium:\n\n**sum of clockwise moments = sum of anticlockwise moments**, about **any** point.\n\nTip: take moments about the point where an **unknown** force acts. It then disappears from the equation!",
+              "image": "images/ch5-dynamics-statics/tb-seesaw.png",
+              "alt": "Seesaw: 20 N at 2.0 m left of the pivot and 40 N at 1.0 m right of the pivot"
+            },
+            {
+              "type": "choice",
+              "prompt": "Exam-style: is the seesaw balanced?",
+              "choices": [
+                "Yes",
+                "No, it turns clockwise",
+                "No, it turns anticlockwise"
+              ],
+              "correct": 0,
+              "explain": "Anticlockwise: 20 × 2.0 = 40 N m\nClockwise: 40 × 1.0 = 40 N m\nEqual → **balanced**.",
+              "skill": "Principle of moments",
+              "image": "images/ch5-dynamics-statics/tb-seesaw.png",
+              "alt": "Seesaw: 20 N at 2.0 m left of the pivot and 40 N at 1.0 m right of the pivot"
+            },
+            {
+              "type": "number",
+              "prompt": "Exam-style: the beam is in equilibrium. Find force X.",
+              "value": 25,
+              "tolerance": 0.25,
+              "unit": "N",
+              "explain": "Clockwise: 10 × 1.0 + 20 × 0.5 = 20 N m\nAnticlockwise: X × 0.8\nX = 20 ÷ 0.8 = **25 N**",
+              "skill": "Principle of moments",
+              "hint": "Which forces turn it clockwise about the pivot?",
+              "image": "images/ch5-dynamics-statics/tb-beam-x.png",
+              "alt": "Beam with unknown force X 0.8 m left of the pivot, 20 N up 0.5 m left, and 10 N down 1.0 m right of the pivot"
+            },
+            {
+              "type": "number",
+              "prompt": "The seesaw balances. Find W.",
+              "value": 666.7,
+              "tolerance": 7,
+              "unit": "N",
+              "explain": "400 × 2.0 = W × 1.2\nW = 800 ÷ 1.2 = **667 N**",
+              "skill": "Principle of moments",
+              "image": "images/ch5-dynamics-statics/d-seesaw-kids.png",
+              "alt": "Seesaw with pivot in the middle: 400 N at 2.0 m left of the pivot, unknown weight W 1.2 m to the right"
+            },
+            {
+              "type": "number",
+              "prompt": "Exam-style: find the biceps force F. (Forearm 15 N at 16 cm, ball 50 N at 35 cm, biceps at 4.0 cm.)",
+              "value": 497.5,
+              "tolerance": 5,
+              "unit": "N",
+              "explain": "Moments about the elbow:\nF × 0.04 = 15 × 0.16 + 50 × 0.35 = 2.4 + 17.5 = 19.9\nF = 19.9 ÷ 0.04 = **498 N** (≈ 500 N!)",
+              "skill": "Principle of moments",
+              "hint": "Take moments about the elbow.",
+              "image": "images/ch5-dynamics-statics/tb-arm-simple.png",
+              "alt": "Forearm from the elbow: biceps force F at 4.0 cm, 15 N at 16 cm, 50 N at 35 cm"
+            },
+            {
+              "type": "number",
+              "prompt": "Find the support force R₂ on the uniform beam.",
+              "value": 316.7,
+              "tolerance": 3,
+              "unit": "N",
+              "explain": "Moments about the left support (R₁ vanishes):\nR₂ × 6.0 = 300 × 3.0 + 200 × 5.0 = 1900\nR₂ = **317 N**",
+              "skill": "Principle of moments",
+              "hint": "Take moments about R₁'s support.",
+              "image": "images/ch5-dynamics-statics/d-uniform-beam.png",
+              "alt": "Uniform 6.0 m beam of weight 300 N on supports at each end, with a 200 N load 5.0 m from the left end"
+            },
+            {
+              "type": "number",
+              "prompt": "Now find R₁.",
+              "value": 183.3,
+              "tolerance": 2,
+              "unit": "N",
+              "explain": "Up = down: R₁ + R₂ = 300 + 200 = 500\nR₁ = 500 − 316.7 = **183 N**",
+              "skill": "Principle of moments",
+              "hint": "Resultant force must also be zero.",
+              "image": "images/ch5-dynamics-statics/d-uniform-beam.png",
+              "alt": "Uniform 6.0 m beam of weight 300 N on supports at each end, with a 200 N load 5.0 m from the left end"
+            },
+            {
+              "type": "number",
+              "prompt": "The plank balances. Find F.",
+              "value": 6.67,
+              "tolerance": 0.07,
+              "unit": "N",
+              "explain": "About the pivot:\nAnticlockwise: 60 × 1.0 = 60\nClockwise: 40 × 1.0 + F × 3.0\n60 = 40 + 3F → **F = 6.67 N**",
+              "skill": "Principle of moments",
+              "hint": "Don't forget the plank's own weight.",
+              "image": "images/ch5-dynamics-statics/d-beam-overhang.png",
+              "alt": "Uniform 4.0 m plank of weight 40 N pivoted 1.0 m from its left end, with 60 N at the left end and unknown force F at the right end"
+            },
+            {
+              "type": "number",
+              "prompt": "A light rod is hinged at the left. Find T.",
+              "value": 9.6,
+              "tolerance": 0.1,
+              "unit": "N",
+              "explain": "About the hinge:\nT × 1.00 = 8.0 × 0.30 + 12 × 0.60 = 2.4 + 7.2\n**T = 9.6 N**",
+              "skill": "Principle of moments",
+              "image": "images/ch5-dynamics-statics/d-beam-hanging.png",
+              "alt": "Light rod hinged at the left, with 8.0 N at 0.30 m, 12 N at 0.60 m and an upward force T at 1.00 m"
+            },
+            {
+              "type": "number",
+              "prompt": "Exam-style: find the force the person must apply to lift the wheelbarrow's legs off the ground.",
+              "value": 66.7,
+              "tolerance": 0.7,
+              "unit": "N",
+              "explain": "About the wheel axle:\nF × 1.20 = 400 × 0.20\nF = **66.7 N**",
+              "skill": "Principle of moments",
+              "hint": "Pivot = wheel axle.",
+              "image": "images/ch5-dynamics-statics/tb-wheelbarrow.png",
+              "alt": "Wheelbarrow: 400 N load 0.20 m from the wheel axle, legs 0.50 m from the axle, handles 1.20 m from the axle"
+            },
+            {
+              "type": "number",
+              "prompt": "Exam-style: the bar's centre of gravity is at the pivot. Find mass M.",
+              "value": 172.5,
+              "tolerance": 1.7,
+              "unit": "g",
+              "explain": "Anticlockwise: M × 20\nClockwise: 100 × 30 + 10 × 45 = 3450\nM = 3450 ÷ 20 = **172.5 g**\n\n(g cancels, so you can work in grams.)",
+              "skill": "Principle of moments",
+              "image": "images/ch5-dynamics-statics/tb-scales.png",
+              "alt": "Sliding-mass scales: mass M hung 20 cm left of the pivot, 100 g mass 30 cm right and 10 g mass 45 cm right"
+            },
+            {
+              "type": "choice",
+              "prompt": "Exam-style: are the moments about P balanced?",
+              "choices": [
+                "Yes",
+                "No, net clockwise",
+                "No, net anticlockwise"
+              ],
+              "correct": 0,
+              "explain": "F₁: through P → 0\nF₂: 10 × 0.25 = 2.5 N m clockwise\nF₃: 10 × 0.50 × sin 30° = 2.5 N m clockwise\nF₄: 5 × 1.00 = 5.0 N m anticlockwise\n\n5.0 = 5.0 → **balanced**.",
+              "skill": "Principle of moments",
+              "hint": "F₃ is at 30°, so use F d sin θ.",
+              "image": "images/ch5-dynamics-statics/tb-beam-four.png",
+              "alt": "Beam with F1 = 10 N up at P, F2 = 10 N down at 25 cm, F3 = 10 N at 30° to the beam at 50 cm, F4 = 5 N up at 100 cm"
+            }
+          ]
+        },
+        {
+          "id": "ch5-dynamics-statics-couples",
+          "title": "Couples and torque",
+          "symbol": "steeringwheel",
+          "steps": [
+            {
+              "type": "read",
+              "title": "Couple",
+              "text": "A **couple** = a pair of **equal, parallel but opposite** forces whose effect is to produce **turning only**, with no linear acceleration.\n\nResultant force = 0, but it still spins.",
+              "image": "images/ch5-dynamics-statics/tb-steering.png",
+              "alt": "Steering wheel with 15 N up on one side and 15 N down on the other, each 0.20 m from the centre"
+            },
+            {
+              "type": "read",
+              "title": "Torque of a couple",
+              "text": "**Torque of a couple = one of the forces × perpendicular distance between the forces**\n\nUnit: N m.",
+              "image": "images/ch5-dynamics-statics/tb-steering.png",
+              "alt": "Steering wheel with 15 N up on one side and 15 N down on the other, each 0.20 m from the centre"
+            },
+            {
+              "type": "number",
+              "prompt": "Find the torque of the couple on the steering wheel.",
+              "value": 6.0,
+              "tolerance": 0.06,
+              "unit": "N m",
+              "explain": "Distance between forces = 0.20 + 0.20 = 0.40 m\nTorque = 15 × 0.40 = **6.0 N m**",
+              "skill": "Couples and torque",
+              "hint": "Use ONE force × the distance between them.",
+              "image": "images/ch5-dynamics-statics/tb-steering.png",
+              "alt": "Steering wheel with 15 N up on one side and 15 N down on the other, each 0.20 m from the centre"
+            },
+            {
+              "type": "choice",
+              "prompt": "Which rod has a couple acting on it?",
+              "choices": [
+                "A",
+                "B",
+                "C",
+                "D"
+              ],
+              "correct": 0,
+              "explain": "**A**: equal, opposite, parallel and **separated**.\nB and C point the same way. D's forces act at the same point, so the distance between them is 0 (no turning).",
+              "skill": "Couples and torque",
+              "image": "images/ch5-dynamics-statics/d-couple-which.png",
+              "alt": "Four rods A to D: A has one force up at the left end and one down at the right end; B has both forces up; C has both down; D has an up and a down force at the same point"
+            },
+            {
+              "type": "number",
+              "prompt": "Find the torque of this couple.",
+              "value": 1.8,
+              "tolerance": 0.02,
+              "unit": "N m",
+              "explain": "6.0 × 0.30 = **1.8 N m**",
+              "skill": "Couples and torque",
+              "image": "images/ch5-dynamics-statics/d-couple-rod.png",
+              "alt": "A rod pivoted at its centre with 6.0 N up at one end and 6.0 N down at the other end, 0.30 m apart"
+            },
+            {
+              "type": "truefalse",
+              "prompt": "A couple can make an object accelerate in a straight line.",
+              "isTrue": false,
+              "explain": "The forces are equal and opposite, so the resultant **force** is 0. It only causes **rotation**.",
+              "skill": "Couples and torque",
+              "image": "images/ch5-dynamics-statics/d-couple-rod.png",
+              "alt": "A rod pivoted at its centre with 6.0 N up at one end and 6.0 N down at the other end, 0.30 m apart"
+            },
+            {
+              "type": "number",
+              "prompt": "Exam-style: a car wheel has a torque of 137 N m applied by its axle. The tyre radius is 0.18 m. Find the driving force at the tyre.",
+              "value": 761,
+              "tolerance": 8,
+              "unit": "N",
+              "explain": "Torque = F × r\nF = 137 ÷ 0.18 = **761 N**",
+              "skill": "Couples and torque",
+              "image": "images/ch5-dynamics-statics/tb-tyre.png",
+              "alt": "Car tyre of radius 0.18 m"
+            },
+            {
+              "type": "number",
+              "prompt": "Exam-style: 30 N acts at each end of a 90 cm rod (normal to it). Find the torque of the couple.",
+              "value": 27,
+              "tolerance": 0.3,
+              "unit": "N m",
+              "explain": "30 × 0.90 = **27 N m**",
+              "skill": "Couples and torque",
+              "image": "images/ch5-dynamics-statics/tb-rod-disc.png",
+              "alt": "90 cm rod fixed to a disc of radius 24 cm; 30 N forces at each end; a rope with tension T at the disc edge"
+            },
+            {
+              "type": "number",
+              "prompt": "Exam-style: the rope at the edge of the 24 cm radius disc stops it turning. Find T.",
+              "value": 112.5,
+              "tolerance": 1.2,
+              "unit": "N",
+              "explain": "Rope's moment balances the couple:\nT × 0.24 = 27\nT = **112.5 N**",
+              "skill": "Couples and torque",
+              "hint": "T's moment must cancel the couple's torque.",
+              "image": "images/ch5-dynamics-statics/tb-rod-disc.png",
+              "alt": "90 cm rod fixed to a disc of radius 24 cm; 30 N forces at each end; a rope with tension T at the disc edge"
+            },
+            {
+              "type": "number",
+              "prompt": "Exam-style: the engine produces a torque of 200 N m on the axle. The wheel diameter is 0.58 m. Find the horizontal force of the road on the wheel.",
+              "value": 690,
+              "tolerance": 7,
+              "unit": "N",
+              "explain": "Radius = 0.58 ÷ 2 = 0.29 m\nF = 200 ÷ 0.29 = **690 N**",
+              "skill": "Couples and torque",
+              "hint": "Diameter ≠ radius!",
+              "image": "images/ch5-dynamics-statics/tb-car-wheel.png",
+              "alt": "Car wheel on the ground with its axle"
+            }
+          ]
+        },
+        {
+          "id": "ch5-dynamics-statics-total-equilibrium",
+          "title": "Total equilibrium",
+          "symbol": "equal.circle",
+          "steps": [
+            {
+              "type": "read",
+              "title": "Two conditions",
+              "text": "An object is in **total equilibrium** only if:\n\n1. **Resultant force = 0** (no linear acceleration)\n2. **Resultant moment = 0** about any point (no rotation)"
+            },
+            {
+              "type": "multi",
+              "prompt": "Which conditions are needed for total equilibrium?",
+              "choices": [
+                "Resultant force is zero",
+                "Resultant moment is zero",
+                "The object is at rest",
+                "All forces are equal"
+              ],
+              "answers": [
+                0,
+                1
+              ],
+              "explain": "Both: zero **resultant force** and zero **resultant moment**. It could still be moving at constant velocity.",
+              "skill": "Total equilibrium",
+              "image": "images/ch5-dynamics-statics/d-ladder.png",
+              "alt": "A ladder leaning on a smooth wall with weight W, wall reaction R, ground normal force N and friction F"
+            },
+            {
+              "type": "read",
+              "title": "Triangle of forces",
+              "text": "Three forces in equilibrium, drawn **tip to tail**, make a **closed triangle**.\n\nOr resolve: horizontal components cancel, and vertical components cancel.",
+              "image": "images/ch5-dynamics-statics/d-vector-triangle.png",
+              "alt": "Three forces F1, F2 and F3 drawn tip to tail forming a closed triangle"
+            },
+            {
+              "type": "truefalse",
+              "prompt": "If three forces drawn tip to tail form a closed triangle, the resultant force is zero.",
+              "isTrue": true,
+              "explain": "You end where you started, so the resultant = **0**.",
+              "skill": "Total equilibrium",
+              "image": "images/ch5-dynamics-statics/d-vector-triangle.png",
+              "alt": "Three forces F1, F2 and F3 drawn tip to tail forming a closed triangle"
+            },
+            {
+              "type": "number",
+              "prompt": "Each string makes 40° with the ceiling. Find the tension T. (W = 12 N)",
+              "value": 9.33,
+              "tolerance": 0.1,
+              "unit": "N",
+              "explain": "Vertical: 2T sin 40° = 12\nT = 12 ÷ (2 × 0.643) = **9.33 N**",
+              "skill": "Total equilibrium",
+              "hint": "The two vertical components hold up the weight.",
+              "image": "images/ch5-dynamics-statics/d-lamp-two-strings.png",
+              "alt": "A 12 N lamp hanging from two strings, each at 40° to the ceiling"
+            },
+            {
+              "type": "number",
+              "prompt": "Exam-style: each cord has tension 45 N at 50° to the horizontal. Find the vertical component of tension in one cord.",
+              "value": 34.5,
+              "tolerance": 0.35,
+              "unit": "N",
+              "explain": "45 × sin 50° = **34.5 N**",
+              "skill": "Total equilibrium",
+              "image": "images/ch5-dynamics-statics/tb-picture.png",
+              "alt": "Picture hanging from a nail by a cord, each side at 50° to the horizontal"
+            },
+            {
+              "type": "number",
+              "prompt": "Exam-style: now find the weight of the picture.",
+              "value": 68.9,
+              "tolerance": 0.7,
+              "unit": "N",
+              "explain": "Two cords: W = 2 × 34.5 = **68.9 N**",
+              "skill": "Total equilibrium",
+              "image": "images/ch5-dynamics-statics/tb-picture.png",
+              "alt": "Picture hanging from a nail by a cord, each side at 50° to the horizontal"
+            },
+            {
+              "type": "number",
+              "prompt": "Exam-style: use the tensions to find the weight of the stone.",
+              "value": 1.16,
+              "tolerance": 0.02,
+              "unit": "N",
+              "explain": "Vertical components:\n1.00 sin 60° + 0.58 sin 30° = 0.866 + 0.29 = **1.16 N**\n\n(Check: horizontal 1.00 cos 60° = 0.50 and 0.58 cos 30° = 0.50 ✓)",
+              "skill": "Total equilibrium",
+              "image": "images/ch5-dynamics-statics/tb-stone.png",
+              "alt": "Stone held by string 1 (1.00 N at 60° to horizontal) and string 2 (0.58 N at 30° to horizontal)"
+            },
+            {
+              "type": "number",
+              "prompt": "Exam-style: the tension in string A is 8.0 N. Find the tension in string C.",
+              "value": 5.14,
+              "tolerance": 0.05,
+              "unit": "N",
+              "explain": "Horizontal: T_C = 8.0 cos 50° = **5.14 N**",
+              "skill": "Total equilibrium",
+              "hint": "C must cancel A's horizontal component.",
+              "image": "images/ch5-dynamics-statics/tb-ring.png",
+              "alt": "A ring held by string A at 50° to the horizontal, string B straight down and string C horizontal"
+            },
+            {
+              "type": "number",
+              "prompt": "And the tension in string B.",
+              "value": 6.13,
+              "tolerance": 0.06,
+              "unit": "N",
+              "explain": "Vertical: T_B = 8.0 sin 50° = **6.13 N**",
+              "skill": "Total equilibrium",
+              "image": "images/ch5-dynamics-statics/tb-ring.png",
+              "alt": "A ring held by string A at 50° to the horizontal, string B straight down and string C horizontal"
+            },
+            {
+              "type": "number",
+              "prompt": "Exam-style: the flagpole has mass 25 kg. Take moments about the wall to find the cable tension T. (g = 9.81 m s⁻²)",
+              "value": 294,
+              "tolerance": 3,
+              "unit": "N",
+              "explain": "Only T sin 30° has a moment about the wall:\nT sin 30° × 2.5 = 25 × 9.81 × 1.5\n1.25 T = 367.9\n**T = 294 N**",
+              "skill": "Total equilibrium",
+              "hint": "Use the vertical component of T.",
+              "image": "images/ch5-dynamics-statics/tb-flagpole.png",
+              "alt": "Horizontal flagpole hinged to a wall, weight 1.5 m from the wall, cable at 30° attached at the far end 2.5 m from the wall"
+            },
+            {
+              "type": "number",
+              "prompt": "Flagpole: find the vertical force from the wall on the pole.",
+              "value": 98.1,
+              "tolerance": 1,
+              "unit": "N",
+              "explain": "Up = down:\nV + T sin 30° = 245.3\nV = 245.3 − 147.2 = **98.1 N**",
+              "skill": "Total equilibrium",
+              "image": "images/ch5-dynamics-statics/tb-flagpole.png",
+              "alt": "Horizontal flagpole hinged to a wall, weight 1.5 m from the wall, cable at 30° attached at the far end 2.5 m from the wall"
+            },
+            {
+              "type": "multi",
+              "prompt": "Take moments about the **foot** of the ladder. Which forces have zero moment?",
+              "choices": [
+                "W",
+                "R",
+                "N",
+                "F"
+              ],
+              "answers": [
+                2,
+                3
+              ],
+              "explain": "**N** and **F** act at the foot, so their distance is zero. That's why we take moments there!",
+              "skill": "Total equilibrium",
+              "image": "images/ch5-dynamics-statics/d-ladder.png",
+              "alt": "A ladder leaning on a smooth wall with weight W, wall reaction R, ground normal force N and friction F"
+            }
+          ]
+        },
+        {
+          "id": "ch5-dynamics-statics-density",
+          "title": "Density",
+          "symbol": "cube",
+          "steps": [
+            {
+              "type": "read",
+              "title": "Density",
+              "text": "**Density = mass per unit volume**\n\n**ρ = m ÷ V**\n\nUnits: **kg m⁻³** (or g cm⁻³)\n\n**1 g cm⁻³ = 1000 kg m⁻³**. Water is 1000 kg m⁻³."
+            },
+            {
+              "type": "number",
+              "prompt": "Find the density of the cube in g cm⁻³.",
+              "value": 8.0,
+              "tolerance": 0.08,
+              "unit": "g cm⁻³",
+              "explain": "V = 2.0³ = 8.0 cm³\nρ = 64 ÷ 8.0 = **8.0 g cm⁻³**",
+              "skill": "Density",
+              "hint": "Volume of a cube = side³.",
+              "image": "images/ch5-dynamics-statics/d-cube-gold.png",
+              "alt": "A metal cube of side 2.0 cm with mass 64 g"
+            },
+            {
+              "type": "number",
+              "prompt": "Write that density in kg m⁻³.",
+              "value": 8000,
+              "tolerance": 80,
+              "unit": "kg m⁻³",
+              "explain": "× 1000 → **8000 kg m⁻³**",
+              "skill": "Density",
+              "image": "images/ch5-dynamics-statics/d-cube-gold.png",
+              "alt": "A metal cube of side 2.0 cm with mass 64 g"
+            },
+            {
+              "type": "number",
+              "prompt": "Find the stone's density in kg m⁻³.",
+              "value": 2500,
+              "tolerance": 25,
+              "unit": "kg m⁻³",
+              "explain": "V = 72 − 50 = 22 cm³\nρ = 55 ÷ 22 = 2.5 g cm⁻³ = **2500 kg m⁻³**",
+              "skill": "Density",
+              "hint": "The rise in water level = the stone's volume.",
+              "image": "images/ch5-dynamics-statics/d-displacement.png",
+              "alt": "Measuring cylinder reads 50 cm³ before and 72 cm³ after a 55 g stone is added"
+            },
+            {
+              "type": "truefalse",
+              "prompt": "Cutting the cube in half halves its density.",
+              "isTrue": false,
+              "explain": "Mass and volume both halve, so density **stays the same**. It belongs to the material, not the size.",
+              "skill": "Density",
+              "image": "images/ch5-dynamics-statics/d-cube-gold.png",
+              "alt": "A metal cube of side 2.0 cm with mass 64 g"
+            },
+            {
+              "type": "number",
+              "prompt": "Exam-style: a cube of copper has mass 240 g and sides 3.0 cm. Find its density in g cm⁻³.",
+              "value": 8.89,
+              "tolerance": 0.09,
+              "unit": "g cm⁻³",
+              "explain": "V = 3.0³ = 27 cm³\nρ = 240 ÷ 27 = **8.89 g cm⁻³** (= 8890 kg m⁻³)",
+              "skill": "Density",
+              "image": "images/ch5-dynamics-statics/d-cube-gold.png",
+              "alt": "A metal cube of side 2.0 cm with mass 64 g"
+            },
+            {
+              "type": "number",
+              "prompt": "Exam-style: steel has density 7850 kg m⁻³. Find the mass of a steel sphere of radius 0.15 m. (V = 4/3 πr³)",
+              "value": 111,
+              "tolerance": 1.1,
+              "unit": "kg",
+              "explain": "V = 4/3 × π × 0.15³ = 0.01414 m³\nm = ρV = 7850 × 0.01414 = **111 kg**",
+              "skill": "Density",
+              "hint": "Volume first, then m = ρV.",
+              "image": "images/ch5-dynamics-statics/d-cube-gold.png",
+              "alt": "A metal cube of side 2.0 cm with mass 64 g"
+            }
+          ]
+        },
+        {
+          "id": "ch5-dynamics-statics-pressure",
+          "title": "Pressure",
+          "symbol": "arrow.down.to.line",
+          "steps": [
+            {
+              "type": "read",
+              "title": "Pressure",
+              "text": "**Pressure = normal force per unit area**\n\n**p = F ÷ A**\n\nUnit: **pascal (Pa)**. 1 Pa = 1 N m⁻²\n\nSame force on a smaller area = **bigger** pressure.",
+              "image": "images/ch5-dynamics-statics/d-brick.png",
+              "alt": "The same 20 N brick (20 cm × 10 cm × 5 cm) lying flat, on its side and on its end"
+            },
+            {
+              "type": "blank",
+              "prompt": "1 Pa = 1 ___",
+              "accept": [
+                "N m⁻²",
+                "N/m²",
+                "N m^-2",
+                "Nm-2",
+                "N/m^2",
+                "newton per square metre"
+              ],
+              "explain": "Pressure = N ÷ m², so **1 Pa = 1 N m⁻²**.",
+              "skill": "Pressure",
+              "image": "images/ch5-dynamics-statics/d-brick.png",
+              "alt": "The same 20 N brick (20 cm × 10 cm × 5 cm) lying flat, on its side and on its end"
+            },
+            {
+              "type": "number",
+              "prompt": "The 20 N brick lies **flat** (20 cm × 10 cm face down). Find the pressure on the floor.",
+              "value": 1000,
+              "tolerance": 10,
+              "unit": "Pa",
+              "explain": "A = 0.20 × 0.10 = 0.020 m²\np = 20 ÷ 0.020 = **1000 Pa**",
+              "skill": "Pressure",
+              "hint": "Convert cm to m first.",
+              "image": "images/ch5-dynamics-statics/d-brick.png",
+              "alt": "The same 20 N brick (20 cm × 10 cm × 5 cm) lying flat, on its side and on its end"
+            },
+            {
+              "type": "number",
+              "prompt": "Now stand it **on its end** (10 cm × 5 cm). New pressure?",
+              "value": 4000,
+              "tolerance": 40,
+              "unit": "Pa",
+              "explain": "A = 0.10 × 0.05 = 0.0050 m²\np = 20 ÷ 0.0050 = **4000 Pa**\n\nSmallest area → biggest pressure.",
+              "skill": "Pressure",
+              "image": "images/ch5-dynamics-statics/d-brick.png",
+              "alt": "The same 20 N brick (20 cm × 10 cm × 5 cm) lying flat, on its side and on its end"
+            },
+            {
+              "type": "number",
+              "prompt": "A 600 N person balances on one stiletto heel of area 1.0 cm². Find the pressure.",
+              "value": 6000000.0,
+              "tolerance": 60000.0,
+              "unit": "Pa",
+              "explain": "1.0 cm² = 1.0 × 10⁻⁴ m²\np = 600 ÷ 10⁻⁴ = **6.0 × 10⁶ Pa**",
+              "skill": "Pressure",
+              "hint": "1 cm² = 10⁻⁴ m²",
+              "image": "images/ch5-dynamics-statics/d-heel-elephant.png",
+              "alt": "A stiletto heel of area 1.0 cm² and an elephant foot of area 0.10 m²"
+            },
+            {
+              "type": "number",
+              "prompt": "A 50 000 N elephant stands on 4 feet, each 0.10 m². Find the pressure.",
+              "value": 125000,
+              "tolerance": 1250,
+              "unit": "Pa",
+              "explain": "A = 4 × 0.10 = 0.40 m²\np = 50 000 ÷ 0.40 = **1.25 × 10⁵ Pa**\n\nThe heel wins by far!",
+              "skill": "Pressure",
+              "image": "images/ch5-dynamics-statics/d-heel-elephant.png",
+              "alt": "A stiletto heel of area 1.0 cm² and an elephant foot of area 0.10 m²"
+            },
+            {
+              "type": "number",
+              "prompt": "Exam-style: a chair weighs 80 N and stands on four feet, each of area 10 cm². Find the pressure on the floor.",
+              "value": 20000,
+              "tolerance": 200,
+              "unit": "Pa",
+              "explain": "A = 4 × 10 = 40 cm² = 0.0040 m²\np = 80 ÷ 0.0040 = **2.0 × 10⁴ Pa**",
+              "skill": "Pressure",
+              "hint": "Total area of all four feet, in m².",
+              "image": "images/ch5-dynamics-statics/d-brick.png",
+              "alt": "The same 20 N brick (20 cm × 10 cm × 5 cm) lying flat, on its side and on its end"
+            },
+            {
+              "type": "truefalse",
+              "prompt": "Pressure is a vector.",
+              "isTrue": false,
+              "explain": "Pressure is a **scalar**. It acts equally in all directions at a point. The *force* it makes on a surface is a vector, at 90° to the surface.",
+              "skill": "Pressure",
+              "image": "images/ch5-dynamics-statics/d-top-bottom.png",
+              "alt": "A block under water with a smaller force F_top pushing down and a larger force F_bottom pushing up"
+            },
+            {
+              "type": "choice",
+              "prompt": "Kinetic model: why does a gas exert pressure on its container?",
+              "choices": [
+                "The gas is heavy",
+                "Molecules collide with the walls; each collision exerts a force",
+                "Molecules stick to the walls",
+                "The walls attract the molecules"
+              ],
+              "correct": 1,
+              "explain": "Molecules **hit the walls**. More collisions per second, or harder collisions → more force → more pressure.",
+              "skill": "Pressure",
+              "image": "images/ch5-dynamics-statics/d-phases.png",
+              "alt": "Particles in a solid (packed in rows), a liquid (close but random) and a gas (far apart, moving fast)"
+            }
+          ]
+        },
+        {
+          "id": "ch5-dynamics-statics-fluid-pressure",
+          "title": "Pressure in a fluid",
+          "symbol": "drop",
+          "steps": [
+            {
+              "type": "read",
+              "title": "Pressure in a liquid",
+              "text": "Pressure increases with **depth**.\n\n**Δp = ρgh**\n\nρ = density of the **fluid**, h = depth\n\nTotal pressure = atmospheric pressure + ρgh",
+              "image": "images/ch5-dynamics-statics/d-tank-points.png",
+              "alt": "Tank of water with points P near the top, Q in the middle and R near the bottom"
+            },
+            {
+              "type": "choice",
+              "prompt": "Where is the pressure greatest?",
+              "choices": [
+                "P",
+                "Q",
+                "R",
+                "Same everywhere"
+              ],
+              "correct": 2,
+              "explain": "**R** is deepest, and p = ρgh grows with h.",
+              "skill": "Pressure in a fluid",
+              "image": "images/ch5-dynamics-statics/d-tank-points.png",
+              "alt": "Tank of water with points P near the top, Q in the middle and R near the bottom"
+            },
+            {
+              "type": "number",
+              "prompt": "Find the pressure due to the water at X. (g = 9.81 m s⁻²)",
+              "value": 39240,
+              "tolerance": 400,
+              "unit": "Pa",
+              "explain": "Δp = ρgh = 1000 × 9.81 × 4.0 = **39 200 Pa**",
+              "skill": "Pressure in a fluid",
+              "image": "images/ch5-dynamics-statics/d-tank-depth.png",
+              "alt": "Tank of water with point X 4.0 m below the surface"
+            },
+            {
+              "type": "choice",
+              "prompt": "Same liquid, same depth. Which container has the greatest pressure at the bottom?",
+              "choices": [
+                "A",
+                "B",
+                "C",
+                "All equal"
+              ],
+              "correct": 3,
+              "explain": "Δp = ρgh depends only on **depth and density**, not shape or width. **All equal**.",
+              "skill": "Pressure in a fluid",
+              "image": "images/ch5-dynamics-statics/d-vessels.png",
+              "alt": "Three differently shaped containers A, B and C filled with the same liquid to the same depth"
+            },
+            {
+              "type": "number",
+              "prompt": "Find the pressure due to the sea water on the diver. (g = 9.81 m s⁻²)",
+              "value": 252600,
+              "tolerance": 2600,
+              "unit": "Pa",
+              "explain": "Δp = 1030 × 9.81 × 25 = **2.53 × 10⁵ Pa**",
+              "skill": "Pressure in a fluid",
+              "image": "images/ch5-dynamics-statics/d-diver.png",
+              "alt": "A diver 25 m below the surface of sea water of density 1030 kg/m³"
+            },
+            {
+              "type": "number",
+              "prompt": "Atmospheric pressure is 1.01 × 10⁵ Pa. Find the **total** pressure on the diver.",
+              "value": 353600,
+              "tolerance": 3600,
+              "unit": "Pa",
+              "explain": "1.01 × 10⁵ + 2.526 × 10⁵ = **3.54 × 10⁵ Pa**",
+              "skill": "Pressure in a fluid",
+              "hint": "Total = atmospheric + ρgh.",
+              "image": "images/ch5-dynamics-statics/d-diver.png",
+              "alt": "A diver 25 m below the surface of sea water of density 1030 kg/m³"
+            },
+            {
+              "type": "number",
+              "prompt": "Exam-style: the water levels in the manometer differ by 30 cm. Find the pressure difference between the gas and the atmosphere. (g = 9.81 m s⁻²)",
+              "value": 2943,
+              "tolerance": 30,
+              "unit": "Pa",
+              "explain": "Δp = ρgh = 1000 × 9.81 × 0.30 = **2940 Pa**",
+              "skill": "Pressure in a fluid",
+              "hint": "h = difference in levels, in metres.",
+              "image": "images/ch5-dynamics-statics/tb-manometer.png",
+              "alt": "U-tube manometer connected to a gas pipe; water level 30 cm lower on the gas side"
+            },
+            {
+              "type": "number",
+              "prompt": "Exam-style: a pool is 2.4 m deep at its deepest. Atmospheric pressure is 1.01 × 10⁵ Pa. Find the maximum total pressure at the bottom. (g = 9.81 m s⁻²)",
+              "value": 124544,
+              "tolerance": 1250,
+              "unit": "Pa",
+              "explain": "1.01 × 10⁵ + 1000 × 9.81 × 2.4 = 101 000 + 23 544 = **1.25 × 10⁵ Pa**",
+              "skill": "Pressure in a fluid",
+              "image": "images/ch5-dynamics-statics/d-tank-depth.png",
+              "alt": "Tank of water with point X 4.0 m below the surface"
+            },
+            {
+              "type": "number",
+              "prompt": "Exam-style: estimate the height of the atmosphere if air had a constant density of 1.29 kg m⁻³. (p = 101 kPa, g = 9.81 m s⁻²)",
+              "value": 7981,
+              "tolerance": 80,
+              "unit": "m",
+              "explain": "h = p ÷ (ρg) = 101 000 ÷ (1.29 × 9.81) = **7980 m** (≈ 8 km)",
+              "skill": "Pressure in a fluid",
+              "hint": "Rearrange p = ρgh.",
+              "image": "images/ch5-dynamics-statics/d-diver.png",
+              "alt": "A diver 25 m below the surface of sea water of density 1030 kg/m³"
+            },
+            {
+              "type": "free",
+              "prompt": "Derive Δp = ρgh. (You must be able to do this!)",
+              "solution": "Column of liquid: base area A, height h.\n\n1. Volume = A × h\n2. Mass = ρ × V = ρAh\n3. Weight = mg = ρAhg\n4. Pressure = force ÷ area = ρAhg ÷ A\n\n**Δp = ρgh**",
+              "skill": "Pressure in a fluid",
+              "hint": "Start with the volume of the column.",
+              "image": "images/ch5-dynamics-statics/tb-tank.png",
+              "alt": "Tank of liquid of density ρ, depth h, base area A"
+            }
+          ]
+        },
+        {
+          "id": "ch5-dynamics-statics-upthrust",
+          "title": "Upthrust",
+          "symbol": "arrow.up.circle",
+          "steps": [
+            {
+              "type": "read",
+              "title": "Why upthrust happens",
+              "text": "The **bottom** of an object is **deeper** than the top, so the pressure there is bigger.\n\nBigger push up − smaller push down = **upthrust**.",
+              "image": "images/ch5-dynamics-statics/d-top-bottom.png",
+              "alt": "A block under water with a smaller force F_top pushing down and a larger force F_bottom pushing up"
+            },
+            {
+              "type": "truefalse",
+              "prompt": "F_bottom is bigger than F_top.",
+              "isTrue": true,
+              "explain": "The bottom is deeper, so p = ρgh is bigger. That difference **is** the upthrust.",
+              "skill": "Upthrust",
+              "image": "images/ch5-dynamics-statics/d-top-bottom.png",
+              "alt": "A block under water with a smaller force F_top pushing down and a larger force F_bottom pushing up"
+            },
+            {
+              "type": "read",
+              "title": "Archimedes' principle",
+              "text": "**Upthrust = weight of fluid displaced**\n\n**Upthrust = ρ g V**\n\nρ = density of the **fluid**\nV = volume **under the fluid** (displaced)",
+              "image": "images/ch5-dynamics-statics/tb-archimedes.png",
+              "alt": "Block under liquid with top surface at depth h1 and bottom surface at depth h2"
+            },
+            {
+              "type": "number",
+              "prompt": "Find the upthrust on the block in water.",
+              "value": 1.5,
+              "tolerance": 0.02,
+              "unit": "N",
+              "explain": "Upthrust = 6.0 − 4.5 = **1.5 N**",
+              "skill": "Upthrust",
+              "hint": "Compare the two readings.",
+              "image": "images/ch5-dynamics-statics/d-newtonmeter.png",
+              "alt": "A block on a newton-meter reads 6.0 N in air and 4.5 N fully under water"
+            },
+            {
+              "type": "number",
+              "prompt": "Use the upthrust to find the block's volume, in cm³. (water 1000 kg m⁻³, g = 9.81 m s⁻²)",
+              "value": 153,
+              "tolerance": 2,
+              "unit": "cm³",
+              "explain": "V = U ÷ (ρg) = 1.5 ÷ (1000 × 9.81) = 1.53 × 10⁻⁴ m³ = **153 cm³**\n\n(1 m³ = 10⁶ cm³)",
+              "skill": "Upthrust",
+              "hint": "Upthrust = ρgV.",
+              "image": "images/ch5-dynamics-statics/d-newtonmeter.png",
+              "alt": "A block on a newton-meter reads 6.0 N in air and 4.5 N fully under water"
+            },
+            {
+              "type": "number",
+              "prompt": "Now find the block's density.",
+              "value": 4000,
+              "tolerance": 40,
+              "unit": "kg m⁻³",
+              "explain": "m = 6.0 ÷ 9.81 = 0.612 kg\nρ = 0.612 ÷ 1.53 × 10⁻⁴ = **4000 kg m⁻³**",
+              "skill": "Upthrust",
+              "image": "images/ch5-dynamics-statics/d-newtonmeter.png",
+              "alt": "A block on a newton-meter reads 6.0 N in air and 4.5 N fully under water"
+            },
+            {
+              "type": "number",
+              "prompt": "Exam-style: a 0.60 kg metal block (0.050 m × 0.040 m × 0.030 m) hangs from a newton-meter, fully in a liquid of density 1200 kg m⁻³. What does the meter read? (g = 9.81 m s⁻²)",
+              "value": 5.18,
+              "tolerance": 0.05,
+              "unit": "N",
+              "explain": "Weight = 0.60 × 9.81 = 5.886 N\nV = 6.0 × 10⁻⁵ m³\nUpthrust = 1200 × 9.81 × 6.0 × 10⁻⁵ = 0.706 N\nReading = 5.886 − 0.706 = **5.18 N**",
+              "skill": "Upthrust",
+              "hint": "Reading = weight − upthrust.",
+              "image": "images/ch5-dynamics-statics/d-newtonmeter.png",
+              "alt": "A block on a newton-meter reads 6.0 N in air and 4.5 N fully under water"
+            },
+            {
+              "type": "choice",
+              "prompt": "A floating object is in equilibrium. Which is true?",
+              "choices": [
+                "Upthrust > weight",
+                "Upthrust = weight",
+                "Upthrust < weight",
+                "There's no upthrust"
+              ],
+              "correct": 1,
+              "explain": "Floating at rest → resultant = 0 → **upthrust = weight**.",
+              "skill": "Upthrust",
+              "image": "images/ch5-dynamics-statics/d-floating-block.png",
+              "alt": "A floating wooden block, base 0.40 m × 0.40 m, with 0.30 m below the water and 0.20 m above"
+            },
+            {
+              "type": "number",
+              "prompt": "Find the upthrust on the floating block. (g = 9.81 m s⁻²)",
+              "value": 470.9,
+              "tolerance": 5,
+              "unit": "N",
+              "explain": "V under water = 0.40 × 0.40 × 0.30 = 0.048 m³\nU = 1000 × 9.81 × 0.048 = **471 N**",
+              "skill": "Upthrust",
+              "hint": "Only the part under water counts.",
+              "image": "images/ch5-dynamics-statics/d-floating-block.png",
+              "alt": "A floating wooden block, base 0.40 m × 0.40 m, with 0.30 m below the water and 0.20 m above"
+            },
+            {
+              "type": "number",
+              "prompt": "Find the density of the wood.",
+              "value": 600,
+              "tolerance": 6,
+              "unit": "kg m⁻³",
+              "explain": "Floating → W = U = 471 N → m = 48 kg\nTotal V = 0.40 × 0.40 × 0.50 = 0.080 m³\nρ = 48 ÷ 0.080 = **600 kg m⁻³**",
+              "skill": "Upthrust",
+              "hint": "Weight equals upthrust.",
+              "image": "images/ch5-dynamics-statics/d-floating-block.png",
+              "alt": "A floating wooden block, base 0.40 m × 0.40 m, with 0.30 m below the water and 0.20 m above"
+            },
+            {
+              "type": "truefalse",
+              "prompt": "Upthrust depends on the density of the object.",
+              "isTrue": false,
+              "explain": "U = ρ_fluid g V. It depends on the **fluid's** density and the volume displaced, not on what the object is made of.",
+              "skill": "Upthrust",
+              "image": "images/ch5-dynamics-statics/d-top-bottom.png",
+              "alt": "A block under water with a smaller force F_top pushing down and a larger force F_bottom pushing up"
+            },
+            {
+              "type": "number",
+              "prompt": "The balloon displaces 3000 m³ of air (density 1.2 kg m⁻³). Find the upthrust. (g = 9.81 m s⁻²)",
+              "value": 35316,
+              "tolerance": 350,
+              "unit": "N",
+              "explain": "U = 1.2 × 9.81 × 3000 = **3.53 × 10⁴ N**",
+              "skill": "Upthrust",
+              "image": "images/ch5-dynamics-statics/d-balloon.png",
+              "alt": "A balloon of volume 3000 m³ with upthrust up and weight down"
+            },
+            {
+              "type": "number",
+              "prompt": "Exam-style: the balloon is filled with hydrogen (0.090 kg m⁻³), and its fabric has mass 100 kg. What's the greatest mass it can lift?",
+              "value": 3230,
+              "tolerance": 30,
+              "unit": "kg",
+              "explain": "Mass of air displaced = 1.2 × 3000 = 3600 kg\nHydrogen = 0.090 × 3000 = 270 kg\nLift = 3600 − 270 − 100 = **3230 kg**",
+              "skill": "Upthrust",
+              "hint": "Compare the masses: air displaced vs everything it carries.",
+              "image": "images/ch5-dynamics-statics/d-balloon.png",
+              "alt": "A balloon of volume 3000 m³ with upthrust up and weight down"
+            }
+          ]
+        },
+        {
+          "id": "ch5-dynamics-statics-kinetic-model",
+          "title": "Kinetic model of matter",
+          "symbol": "circle.grid.3x3",
+          "steps": [
+            {
+              "type": "read",
+              "title": "Kinetic model of matter",
+              "text": "Spacing, order and motion of particles depend on the phase:\n\n**Solid**: close, regular pattern, vibrate in place\n**Liquid**: close, random, slide past each other\n**Gas**: far apart, random, move fast in all directions",
+              "image": "images/ch5-dynamics-statics/d-phases.png",
+              "alt": "Particles in a solid (packed in rows), a liquid (close but random) and a gas (far apart, moving fast)"
+            },
+            {
+              "type": "choice",
+              "prompt": "Particles are far apart and move randomly at high speed. Which phase?",
+              "choices": [
+                "Solid",
+                "Liquid",
+                "Gas"
+              ],
+              "correct": 2,
+              "explain": "**Gas**: big spacing, fast random motion.",
+              "skill": "Kinetic model of matter",
+              "image": "images/ch5-dynamics-statics/d-phases.png",
+              "alt": "Particles in a solid (packed in rows), a liquid (close but random) and a gas (far apart, moving fast)"
+            },
+            {
+              "type": "multi",
+              "prompt": "Which describe a **solid**?",
+              "choices": [
+                "Particles in a regular pattern",
+                "Particles vibrate about fixed positions",
+                "Particles move freely around the container",
+                "Particles are very far apart"
+              ],
+              "answers": [
+                0,
+                1
+              ],
+              "explain": "Solids: **ordered** and **vibrating in place**.",
+              "skill": "Kinetic model of matter",
+              "image": "images/ch5-dynamics-statics/d-phases.png",
+              "alt": "Particles in a solid (packed in rows), a liquid (close but random) and a gas (far apart, moving fast)"
+            },
+            {
+              "type": "read",
+              "title": "Brownian motion",
+              "text": "Smoke particles in air, seen through a microscope, move in **random, jerky, zig-zag** paths.\n\nWhy: they're hit by **fast, randomly moving air molecules** (too small to see) unevenly from different sides.\n\nThis is **evidence** that molecules exist and move randomly.",
+              "image": "images/ch5-dynamics-statics/d-brownian.png",
+              "alt": "Zig-zag random path of a smoke particle seen in a microscope"
+            },
+            {
+              "type": "truefalse",
+              "prompt": "In Brownian motion experiments, we see the air molecules moving.",
+              "isTrue": false,
+              "explain": "Air molecules are far too small to see. We see the **smoke particles** being knocked around by them.",
+              "skill": "Kinetic model of matter",
+              "image": "images/ch5-dynamics-statics/d-brownian.png",
+              "alt": "Zig-zag random path of a smoke particle seen in a microscope"
+            },
+            {
+              "type": "choice",
+              "prompt": "What causes the smoke particle's random motion?",
+              "choices": [
+                "Convection currents",
+                "Collisions with fast, randomly moving air molecules",
+                "Light from the microscope",
+                "Gravity"
+              ],
+              "correct": 1,
+              "explain": "Uneven **collisions** from invisible air molecules.",
+              "skill": "Kinetic model of matter",
+              "image": "images/ch5-dynamics-statics/d-brownian.png",
+              "alt": "Zig-zag random path of a smoke particle seen in a microscope"
+            },
+            {
+              "type": "choice",
+              "prompt": "The air is heated. What happens to the Brownian motion?",
+              "choices": [
+                "It stops",
+                "It becomes faster and more vigorous",
+                "It slows down",
+                "No change"
+              ],
+              "correct": 1,
+              "explain": "Hotter → air molecules move **faster** → harder hits → more vigorous motion.",
+              "skill": "Kinetic model of matter",
+              "image": "images/ch5-dynamics-statics/d-brownian.png",
+              "alt": "Zig-zag random path of a smoke particle seen in a microscope"
+            },
+            {
+              "type": "choice",
+              "prompt": "Why are smoke particles used, rather than larger dust grains?",
+              "choices": [
+                "Dust is invisible",
+                "Small, light particles are knocked about more by molecule collisions",
+                "Smoke is hotter",
+                "Dust absorbs light"
+              ],
+              "correct": 1,
+              "explain": "Small, light particles show bigger, **more visible** random movements.",
+              "skill": "Kinetic model of matter",
+              "image": "images/ch5-dynamics-statics/d-brownian.png",
+              "alt": "Zig-zag random path of a smoke particle seen in a microscope"
+            }
+          ]
+        },
+        {
+          "id": "ch5-dynamics-statics-exam-traps",
+          "title": "Exam traps",
+          "symbol": "exclamationmark.triangle",
+          "steps": [
+            {
+              "type": "read",
+              "title": "Traps examiners love",
+              "text": "These are the mistakes that cost the most marks in this unit. Spot the trap in each one."
+            },
+            {
+              "type": "choice",
+              "prompt": "Which definition of mass gets the mark?",
+              "choices": [
+                "The amount of weight an object has",
+                "The property of an object that resists change in motion",
+                "The force of gravity on an object",
+                "Mass × g"
+              ],
+              "correct": 1,
+              "explain": "**Resists change in motion.** Some notes say 'change in acceleration'. Learn the syllabus version: **change in motion**. Weight is the *force* of gravity.",
+              "skill": "Mass, weight and inertia",
+              "image": "images/ch5-dynamics-statics/d-inertia.png",
+              "alt": "A 1 kg block and a 2000 kg block, each pushed with 50 N"
+            },
+            {
+              "type": "truefalse",
+              "prompt": "A lift moves **upwards at constant speed**. The scale reads more than mg.",
+              "isTrue": false,
+              "explain": "Constant velocity → a = 0 → N = mg. Only **acceleration** changes the reading.",
+              "skill": "Newton's second law",
+              "image": "images/ch5-dynamics-statics/d-lift.png",
+              "alt": "A 60 kg person standing on a scale in a lift accelerating upwards at 2.0 m/s²"
+            },
+            {
+              "type": "choice",
+              "prompt": "Why doesn't the book accelerate?",
+              "choices": [
+                "P and R are a third-law pair",
+                "P and R balance, so the resultant force on the book is zero (first law)",
+                "Q cancels P",
+                "S cancels R"
+              ],
+              "correct": 1,
+              "explain": "P and R both act on the **book**, so they're **not** a third-law pair. They balance → resultant 0 → first law.",
+              "skill": "Newton's third law",
+              "hint": "Third-law pairs act on different objects.",
+              "image": "images/ch5-dynamics-statics/d-n3-book.png",
+              "alt": "Book on a table with four forces: P Earth pulls book, Q book pushes table, R table pushes book, S book pulls Earth"
+            },
+            {
+              "type": "choice",
+              "prompt": "A student says the moment is 40 × 0.50 = 20 N m. What did they miss?",
+              "choices": [
+                "Nothing, it's right",
+                "The force isn't at 90°; they needed × sin 60°",
+                "They should divide by 0.50",
+                "Moments are in N, not N m"
+              ],
+              "correct": 1,
+              "explain": "Use the **perpendicular** distance (or component): 40 × 0.50 × sin 60° = **17.3 N m**.",
+              "skill": "Moment of a force",
+              "image": "images/ch5-dynamics-statics/d-moment-angle.png",
+              "alt": "A 0.50 m bar pivoted at the left; a 40 N force acts at the right end at 60° to the bar"
+            },
+            {
+              "type": "choice",
+              "prompt": "A student finds the steering-wheel torque as 15 × 0.20 = 3.0 N m. Correct answer?",
+              "choices": [
+                "3.0 N m",
+                "6.0 N m",
+                "1.5 N m",
+                "0 N m"
+              ],
+              "correct": 1,
+              "explain": "Torque of a couple = one force × distance **between** the forces = 15 × 0.40 = **6.0 N m**.",
+              "skill": "Couples and torque",
+              "image": "images/ch5-dynamics-statics/tb-steering.png",
+              "alt": "Steering wheel with 15 N up on one side and 15 N down on the other, each 0.20 m from the centre"
+            },
+            {
+              "type": "truefalse",
+              "prompt": "At terminal velocity, drag is bigger than weight.",
+              "isTrue": false,
+              "explain": "**Equal.** Resultant = 0, so velocity is constant. Drag > weight only while slowing down (like right after a parachute opens).",
+              "skill": "Drag and terminal velocity",
+              "image": "images/ch5-dynamics-statics/d-vt-parachute.png",
+              "alt": "Velocity-time graph of a skydiver with points A to E; the parachute opens at C, speed drops at D and levels at E"
+            },
+            {
+              "type": "number",
+              "prompt": "A 12 N force acts on an area of 4.0 cm². Find the pressure.",
+              "value": 30000,
+              "tolerance": 300,
+              "unit": "Pa",
+              "explain": "4.0 cm² = 4.0 × 10⁻⁴ m²\np = 12 ÷ (4.0 × 10⁻⁴) = **3.0 × 10⁴ Pa**\n\nTrap: 1 cm² = 10⁻⁴ m², **not** 10⁻² m².",
+              "skill": "Pressure",
+              "hint": "Convert cm² to m² first.",
+              "image": "images/ch5-dynamics-statics/d-heel-elephant.png",
+              "alt": "A stiletto heel of area 1.0 cm² and an elephant foot of area 0.10 m²"
+            },
+            {
+              "type": "truefalse",
+              "prompt": "A fully submerged stone gets more upthrust the deeper it sinks.",
+              "isTrue": false,
+              "explain": "Deeper → both F_top and F_bottom increase by the **same** amount, so the difference (upthrust) stays the same. U = ρgV doesn't depend on depth.",
+              "skill": "Upthrust",
+              "image": "images/ch5-dynamics-statics/d-top-bottom.png",
+              "alt": "A block under water with a smaller force F_top pushing down and a larger force F_bottom pushing up"
+            },
+            {
+              "type": "choice",
+              "prompt": "In Δp = ρgh for the diver, ρ is the density of:",
+              "choices": [
+                "The diver",
+                "Sea water",
+                "Air",
+                "Steel"
+              ],
+              "correct": 1,
+              "explain": "Always the **fluid** above the point: sea water here.",
+              "skill": "Pressure in a fluid",
+              "image": "images/ch5-dynamics-statics/d-diver.png",
+              "alt": "A diver 25 m below the surface of sea water of density 1030 kg/m³"
+            },
+            {
+              "type": "number",
+              "prompt": "A 2.0 kg ball and a 10 kg ball are dropped in a vacuum. What is the 10 kg ball's acceleration? (g = 9.81 m s⁻²)",
+              "value": 9.81,
+              "tolerance": 0.01,
+              "unit": "m s⁻²",
+              "explain": "Free fall: a = **g = 9.81 m s⁻²** for every mass. More weight, but also more inertia: they cancel.",
+              "skill": "Drag and terminal velocity",
+              "image": "images/ch5-dynamics-statics/d-mass-weight.png",
+              "alt": "A 10 kg box on Earth (g = 9.81 N/kg, weight 98 N) and on the Moon (g = 1.6 N/kg, weight 16 N); mass is 10 kg in both"
+            },
+            {
+              "type": "choice",
+              "prompt": "A student says the tension in the engine-to-carriage coupling is 12 000 N. Why is that wrong?",
+              "choices": [
+                "It should be bigger than 12 000 N",
+                "12 000 N accelerates the whole train; the coupling only pulls the carriages (6000 N)",
+                "Tension is always zero",
+                "They forgot g"
+              ],
+              "correct": 1,
+              "explain": "The coupling only accelerates the **two carriages**: T = 3000 × 2.0 = **6000 N**.",
+              "skill": "Connected bodies",
+              "image": "images/ch5-dynamics-statics/d-train.png",
+              "alt": "An engine of mass 3000 kg pulling two 1500 kg carriages with a 12 000 N driving force"
+            },
+            {
+              "type": "number",
+              "prompt": "The 4.0 kg block stays at rest when the slope is lowered to 15°. What is the friction force now? (g = 9.81 m s⁻²)",
+              "value": 10.16,
+              "tolerance": 0.1,
+              "unit": "N",
+              "explain": "Friction = W sin θ = 4.0 × 9.81 × sin 15° = **10.2 N**\n\nTrap: static friction is only as big as it **needs** to be.",
+              "skill": "Forces on a slope",
+              "image": "images/ch5-dynamics-statics/d-slope-blank.png",
+              "alt": "A 4.0 kg block on a 25° slope"
+            },
+            {
+              "type": "number",
+              "prompt": "Ice has a density of 0.92 g cm⁻³. Write it in kg m⁻³.",
+              "value": 920,
+              "tolerance": 1,
+              "unit": "kg m⁻³",
+              "explain": "× 1000 → **920 kg m⁻³**. (Less than water, so ice floats.)",
+              "skill": "Density",
+              "image": "images/ch5-dynamics-statics/d-cube-gold.png",
+              "alt": "A metal cube of side 2.0 cm with mass 64 g"
+            },
+            {
+              "type": "multi",
+              "prompt": "Which are **vectors**?",
+              "choices": [
+                "Weight",
+                "Mass",
+                "Pressure",
+                "Velocity",
+                "Density",
+                "Upthrust"
+              ],
+              "answers": [
+                0,
+                3,
+                5
+              ],
+              "explain": "Vectors have direction: **weight, velocity, upthrust**.\nMass, pressure and density are scalars.",
+              "skill": "Types of force",
+              "image": "images/ch5-dynamics-statics/d-boat.png",
+              "alt": "A boat floating on water with weight down and upthrust up"
+            }
+          ]
+        },
+        {
+          "id": "ch5-dynamics-statics-challenge-paper2",
+          "title": "Challenge: Paper 2 practice",
+          "symbol": "flag.checkered",
+          "steps": [
+            {
+              "type": "read",
+              "title": "How to use this",
+              "text": "Long, multi-step problems like Paper 2. Work each one **on paper**, then check the solution and grade yourself honestly.\n\nUse g = 9.81 m s⁻² throughout."
+            },
+            {
+              "type": "free",
+              "prompt": "Your test question, with numbers: A (2.0 kg) on a smooth flat surface is tied to B (3.0 kg) on a smooth 30° slope, which is tied over a pulley to C (4.0 kg) hanging. The system is released.\n\n(a) Find the acceleration.\n(b) Find the tension in the A–B string.\n(c) Find the tension in the B–C string.\n(d) Find the normal force on B.",
+              "solution": "**(a)** Forces driving the system: weight of C (down) minus B's component back down the slope.\n\nResultant = 4.0 × 9.81 − 3.0 × 9.81 × sin 30°\n= 39.24 − 14.72 = 24.53 N\n\nTotal mass = 2.0 + 3.0 + 4.0 = 9.0 kg\n**a = 24.53 ÷ 9.0 = 2.73 m s⁻²**\n\n**(b)** Only T₁ pulls A:\nT₁ = 2.0 × 2.73 = **5.45 N**\n\n**(c)** C on its own (accelerating down):\nmg − T₂ = ma\nT₂ = 4.0 × (9.81 − 2.73) = **28.3 N**\n\n(Check on B: 28.3 − 5.45 − 14.72 = 8.18 = 3.0 × 2.73 ✓)\n\n**(d)** N = W cos 30° = 3.0 × 9.81 × 0.866 = **25.5 N**",
+              "skill": "Connected bodies",
+              "hint": "Whole system first, then one block at a time.",
+              "image": "images/ch5-dynamics-statics/d-three-blocks.png",
+              "alt": "Block A 2.0 kg on a smooth flat surface tied to block B 3.0 kg on a smooth 30° slope, tied over a pulley to hanging block C"
+            },
+            {
+              "type": "free",
+              "prompt": "A 75 kg skydiver has drag F = kv² and a terminal velocity of 50 m s⁻¹.\n\n(a) Find k, with units.\n(b) Find her acceleration at 30 m s⁻¹.\n(c) Sketch her velocity-time graph from jumping until terminal velocity, and explain its shape.",
+              "solution": "**(a)** At terminal: kv² = mg\nk = 75 × 9.81 ÷ 50² = 735.75 ÷ 2500 = **0.294 kg m⁻¹**\n\n**(b)** Drag = 0.294 × 30² = 264.9 N\na = (735.75 − 264.9) ÷ 75 = **6.28 m s⁻²**\n\n**(c)** A curve starting at the origin with gradient g, getting less steep, and levelling off at 50 m s⁻¹.\n\nWhy: at first drag = 0, so a = g. As v rises, drag rises, so the resultant (and the gradient) falls. When drag = weight, a = 0 → terminal velocity.",
+              "skill": "Drag and terminal velocity",
+              "hint": "At terminal velocity, what equals what?",
+              "image": "images/ch5-dynamics-statics/d-drag-kv2.png",
+              "alt": "Graph of drag force against speed curving upwards, F = kv²",
+              "solutionImage": "images/ch5-dynamics-statics/d-vt-terminal.png"
+            },
+            {
+              "type": "free",
+              "prompt": "A uniform 5.0 m ladder weighing 200 N leans against a **smooth** wall. Its foot is 3.0 m from the wall, and its top is 4.0 m up the wall.\n\n(a) Find the force R from the wall.\n(b) Find the friction F at the ground.\n(c) Find the normal force N from the ground.",
+              "solution": "**(a)** Moments about the foot (N and F vanish):\nWeight acts at the middle, 1.5 m horizontally from the foot.\nR acts horizontally, 4.0 m above the foot.\n\nR × 4.0 = 200 × 1.5\n**R = 75 N**\n\n**(b)** Horizontal forces balance: **F = R = 75 N** (towards the wall)\n\n**(c)** Vertical forces balance: **N = W = 200 N**",
+              "skill": "Total equilibrium",
+              "hint": "Take moments about the foot of the ladder.",
+              "image": "images/ch5-dynamics-statics/d-ladder.png",
+              "alt": "A ladder leaning on a smooth wall with weight W, wall reaction R, ground normal force N and friction F"
+            },
+            {
+              "type": "free",
+              "prompt": "Exam-style: the asymmetric bar weighs 7.6 N, with its centre of gravity 0.040 m from the wide end, where a 3.3 N load sits. The pivot is 0.060 m from the centre of gravity. Force P acts 0.080 m beyond the pivot.\n\n(a) Calculate P.\n(b) Calculate the force on the bar from the pivot.",
+              "solution": "**(a)** Moments about the pivot:\nLoad: 3.3 × (0.040 + 0.060) = 0.330 N m\nWeight: 7.6 × 0.060 = 0.456 N m\nBoth on the same side: total 0.786 N m\n\nP × 0.080 = 0.786\n**P = 9.8 N**\n\n**(b)** All three act down, so the pivot pushes up:\n3.3 + 7.6 + 9.8 = **20.7 N** upwards",
+              "skill": "Principle of moments",
+              "hint": "Find each force's distance from the pivot.",
+              "image": "images/ch5-dynamics-statics/tb-asym-bar.png",
+              "alt": "Tapered bar: 3.3 N load at the wide end, weight 7.6 N 0.040 m along, pivot 0.060 m further, force P 0.080 m beyond the pivot"
+            },
+            {
+              "type": "free",
+              "prompt": "The floating wooden block has a base of 0.40 m × 0.40 m and a total height of 0.50 m. 0.30 m is under the water.\n\n(a) Find the upthrust.\n(b) Find the block's density.\n(c) What extra mass placed on top would just push it completely under water?",
+              "solution": "**(a)** V under = 0.40 × 0.40 × 0.30 = 0.048 m³\nU = 1000 × 9.81 × 0.048 = **471 N**\n\n**(b)** Floating: weight = U = 471 N → m = 48 kg\nV = 0.40 × 0.40 × 0.50 = 0.080 m³\nρ = 48 ÷ 0.080 = **600 kg m⁻³**\n\n**(c)** Fully under: U = 1000 × 9.81 × 0.080 = 784.8 N\nExtra weight = 784.8 − 470.9 = 313.9 N\nExtra mass = 313.9 ÷ 9.81 = **32 kg**",
+              "skill": "Upthrust",
+              "hint": "Floating means weight = upthrust.",
+              "image": "images/ch5-dynamics-statics/d-floating-block.png",
+              "alt": "A floating wooden block, base 0.40 m × 0.40 m, with 0.30 m below the water and 0.20 m above"
+            },
+            {
+              "type": "free",
+              "prompt": "An 800 kg lift carries a 60 kg person and accelerates **upwards** at 1.5 m s⁻².\n\n(a) Find the tension in the lift cable.\n(b) Find the reading on the scale the person stands on.\n(c) What does the scale read when the lift moves at constant speed?",
+              "solution": "**(a)** Whole system (860 kg):\nT − 860 × 9.81 = 860 × 1.5\nT = 860 × 11.31 = **9730 N**\n\n**(b)** Person only:\nN − 60 × 9.81 = 60 × 1.5\nN = 60 × 11.31 = **679 N**\n\n**(c)** a = 0 → N = mg = 60 × 9.81 = **589 N**",
+              "skill": "Newton's second law",
+              "hint": "Treat the whole lift first, then the person alone.",
+              "image": "images/ch5-dynamics-statics/d-lift.png",
+              "alt": "A 60 kg person standing on a scale in a lift accelerating upwards at 2.0 m/s²"
+            },
+            {
+              "type": "free",
+              "prompt": "Exam-style: a ship is pulled at **constant speed** by two boats. Each cable is at 40° to the ship's centre line, with a tension of 4000 N. The ship's engine is off.\n\n(a) Draw a free-body diagram of the horizontal forces on the ship.\n(b) Find the drag force on the ship.",
+              "solution": "**(a)** Three arrows on the ship: T_A (4000 N, 40° to one side of forward), T_B (4000 N, 40° to the other side), and **drag** straight backwards.\n\n**(b)** Constant speed → equilibrium.\nSideways components cancel (equal and opposite).\nForward: 2 × 4000 × cos 40° = 6130 N\n\n**Drag = 6130 N** backwards",
+              "skill": "Total equilibrium",
+              "hint": "Constant speed means the resultant force is zero.",
+              "image": "images/ch5-dynamics-statics/tb-ship.png",
+              "alt": "A ship towed by two boats, each cable at 40° to the centre line"
+            }
+          ]
+        },
+        {
+          "id": "ch5-dynamics-statics-quiz",
+          "title": "Unit 5 quiz",
+          "kind": "quiz",
+          "steps": [
+            {
+              "type": "blank",
+              "prompt": "Newton's first law: an object remains at rest or moves with constant velocity unless acted on by a resultant ___.",
+              "accept": [
+                "force",
+                "external force",
+                "unbalanced force"
+              ],
+              "explain": "...unless acted on by a resultant **force**.",
+              "skill": "Newton's first law",
+              "image": "images/ch5-dynamics-statics/d-inertia.png",
+              "alt": "A 1 kg block and a 2000 kg block, each pushed with 50 N"
+            },
+            {
+              "type": "choice",
+              "prompt": "Which best describes terminal velocity?",
+              "choices": [
+                "The highest speed in a vacuum",
+                "Constant velocity reached when drag equals weight",
+                "When acceleration equals g",
+                "When drag is zero"
+              ],
+              "correct": 1,
+              "explain": "Drag = weight → resultant 0 → constant (terminal) velocity.",
+              "skill": "Drag and terminal velocity",
+              "image": "images/ch5-dynamics-statics/d-skydiver.png",
+              "alt": "A skydiver falling with weight down and air resistance up"
+            },
+            {
+              "type": "number",
+              "prompt": "A 5.0 kg box is pushed with 25 N against 10 N of friction. Find its acceleration.",
+              "value": 3.0,
+              "tolerance": 0.03,
+              "unit": "m s⁻²",
+              "explain": "(25 − 10) ÷ 5.0 = **3.0 m s⁻²**",
+              "skill": "Newton's second law",
+              "image": "images/ch5-dynamics-statics/d-box-push.png",
+              "alt": "A box pushed right along the floor with friction to the left, weight down and normal force up"
+            },
+            {
+              "type": "choice",
+              "prompt": "Which is a Newton's third law pair?",
+              "choices": [
+                "The weight of a book and the normal force on it",
+                "Earth pulling a book down and the book pulling Earth up",
+                "Drag and weight on a skydiver",
+                "Tension and weight on a lamp"
+              ],
+              "correct": 1,
+              "explain": "Different objects, same type (gravity), equal and opposite ✓. The others act on the same object.",
+              "skill": "Newton's third law",
+              "image": "images/ch5-dynamics-statics/d-n3-book.png",
+              "alt": "Book on a table with four forces: P Earth pulls book, Q book pushes table, R table pushes book, S book pulls Earth"
+            },
+            {
+              "type": "number",
+              "prompt": "The engine's force is 9000 N. Find the tension in the coupling between the two carriages.",
+              "value": 2250,
+              "tolerance": 25,
+              "unit": "N",
+              "explain": "a = 9000 ÷ 6000 = 1.5 m s⁻²\nT = 1500 × 1.5 = **2250 N**",
+              "skill": "Connected bodies",
+              "hint": "Find a first, then use the last carriage only.",
+              "image": "images/ch5-dynamics-statics/d-train.png",
+              "alt": "An engine of mass 3000 kg pulling two 1500 kg carriages with a 12 000 N driving force"
+            },
+            {
+              "type": "number",
+              "prompt": "Block B is replaced by a 4.0 kg block (A is still 4.0 kg). Find the new acceleration. (g = 9.81 m s⁻²)",
+              "value": 4.905,
+              "tolerance": 0.05,
+              "unit": "m s⁻²",
+              "explain": "a = (4.0 × 9.81) ÷ (4.0 + 4.0) = **4.91 m s⁻²**",
+              "skill": "Connected bodies",
+              "image": "images/ch5-dynamics-statics/d-table-pulley.png",
+              "alt": "Block A of 4.0 kg on a smooth table joined by a string over a pulley to hanging block B of 1.0 kg"
+            },
+            {
+              "type": "number",
+              "prompt": "The 1.5 kg block is at rest on the 20° slope. What friction force acts on it? (g = 9.81 m s⁻²)",
+              "value": 5.03,
+              "tolerance": 0.05,
+              "unit": "N",
+              "explain": "F = mg sin 20° = 1.5 × 9.81 × 0.342 = **5.03 N** up the slope",
+              "skill": "Forces on a slope",
+              "image": "images/ch5-dynamics-statics/tb-slope-block.png",
+              "alt": "A block resting on a rough surface inclined at 20°"
+            },
+            {
+              "type": "choice",
+              "prompt": "At point B, how does drag compare with weight?",
+              "choices": [
+                "Drag > weight",
+                "Drag = weight",
+                "Drag < weight",
+                "Drag = 0"
+              ],
+              "correct": 2,
+              "explain": "At B she's still **speeding up** (the graph is rising), so drag **<** weight.",
+              "skill": "Drag and terminal velocity",
+              "image": "images/ch5-dynamics-statics/d-vt-parachute.png",
+              "alt": "Velocity-time graph of a skydiver with points A to E; the parachute opens at C, speed drops at D and levels at E"
+            },
+            {
+              "type": "number",
+              "prompt": "Drag = kv² with k = 0.20 kg m⁻¹. Find the terminal velocity of a 70 kg skydiver. (g = 9.81 m s⁻²)",
+              "value": 58.6,
+              "tolerance": 0.6,
+              "unit": "m s⁻¹",
+              "explain": "v = √(mg ÷ k) = √(70 × 9.81 ÷ 0.20) = √3434 = **58.6 m s⁻¹**",
+              "skill": "Drag and terminal velocity",
+              "hint": "kv² = mg at terminal velocity.",
+              "image": "images/ch5-dynamics-statics/d-drag-kv2.png",
+              "alt": "Graph of drag force against speed curving upwards, F = kv²"
+            },
+            {
+              "type": "choice",
+              "prompt": "The centre of gravity of an object is:",
+              "choices": [
+                "Always at its geometric centre",
+                "The point where its entire weight appears to act",
+                "Where it touches the ground",
+                "Always inside the object"
+              ],
+              "correct": 1,
+              "explain": "**The point where the whole weight appears to act.** (A ring's is in empty space.)",
+              "skill": "Centre of gravity",
+              "image": "images/ch5-dynamics-statics/d-cg-shapes.png",
+              "alt": "Centre of gravity of a uniform rod, a uniform disc and a ring (at the empty centre)"
+            },
+            {
+              "type": "number",
+              "prompt": "A 50 N force acts at 30° to a 0.80 m spanner, at its end. Find the moment about the nut.",
+              "value": 20,
+              "tolerance": 0.2,
+              "unit": "N m",
+              "explain": "50 × 0.80 × sin 30° = **20 N m**",
+              "skill": "Moment of a force",
+              "hint": "Use F d sin θ.",
+              "image": "images/ch5-dynamics-statics/tb-moment-angle.png",
+              "alt": "Lever with force F1 at perpendicular distance x1 from the pivot, and force F2 at angle θ with perpendicular distance x2"
+            },
+            {
+              "type": "number",
+              "prompt": "On the uniform beam, the 200 N load is moved to the **centre**. Find the new R₂.",
+              "value": 250,
+              "tolerance": 2.5,
+              "unit": "N",
+              "explain": "Moments about R₁: R₂ × 6.0 = 300 × 3.0 + 200 × 3.0 = 1500\nR₂ = **250 N** (symmetric, so R₁ = R₂)",
+              "skill": "Principle of moments",
+              "image": "images/ch5-dynamics-statics/d-uniform-beam.png",
+              "alt": "Uniform 6.0 m beam of weight 300 N on supports at each end, with a 200 N load 5.0 m from the left end"
+            },
+            {
+              "type": "number",
+              "prompt": "A 0.50 m diameter steering wheel is turned by two 20 N forces on opposite sides of the rim. Find the torque.",
+              "value": 10,
+              "tolerance": 0.1,
+              "unit": "N m",
+              "explain": "Distance between forces = 0.50 m\nTorque = 20 × 0.50 = **10 N m**",
+              "skill": "Couples and torque",
+              "image": "images/ch5-dynamics-statics/tb-steering.png",
+              "alt": "Steering wheel with 15 N up on one side and 15 N down on the other, each 0.20 m from the centre"
+            },
+            {
+              "type": "number",
+              "prompt": "If both strings were at 60° to the ceiling, what would the tension in each be? (W = 12 N)",
+              "value": 6.93,
+              "tolerance": 0.07,
+              "unit": "N",
+              "explain": "2T sin 60° = 12 → T = 6 ÷ 0.866 = **6.93 N**",
+              "skill": "Total equilibrium",
+              "image": "images/ch5-dynamics-statics/d-lamp-two-strings.png",
+              "alt": "A 12 N lamp hanging from two strings, each at 40° to the ceiling"
+            },
+            {
+              "type": "choice",
+              "prompt": "A couple acts on a rod pivoted at its centre. Is the rod in total equilibrium?",
+              "choices": [
+                "Yes, the forces cancel",
+                "No, the resultant moment isn't zero",
+                "No, the resultant force isn't zero",
+                "Only if it's at rest"
+              ],
+              "correct": 1,
+              "explain": "Resultant force = 0 ✓, but resultant moment ≠ 0 ✗, so it starts spinning. **Not** in equilibrium.",
+              "skill": "Total equilibrium",
+              "image": "images/ch5-dynamics-statics/d-couple-rod.png",
+              "alt": "A rod pivoted at its centre with 6.0 N up at one end and 6.0 N down at the other end, 0.30 m apart"
+            },
+            {
+              "type": "number",
+              "prompt": "A 5.0 cm × 4.0 cm × 2.0 cm block has a mass of 108 g. Find its density in kg m⁻³.",
+              "value": 2700,
+              "tolerance": 27,
+              "unit": "kg m⁻³",
+              "explain": "V = 40 cm³\nρ = 108 ÷ 40 = 2.7 g cm⁻³ = **2700 kg m⁻³**",
+              "skill": "Density",
+              "image": "images/ch5-dynamics-statics/d-cube-gold.png",
+              "alt": "A metal cube of side 2.0 cm with mass 64 g"
+            },
+            {
+              "type": "number",
+              "prompt": "The 20 N brick rests on a 20 cm × 5 cm face. Find the pressure on the floor.",
+              "value": 2000,
+              "tolerance": 20,
+              "unit": "Pa",
+              "explain": "A = 0.20 × 0.05 = 0.010 m²\np = 20 ÷ 0.010 = **2000 Pa**",
+              "skill": "Pressure",
+              "image": "images/ch5-dynamics-statics/d-brick.png",
+              "alt": "The same 20 N brick (20 cm × 10 cm × 5 cm) lying flat, on its side and on its end"
+            },
+            {
+              "type": "number",
+              "prompt": "Find the **total** pressure 10 m below the surface of water. (Atmospheric pressure = 1.01 × 10⁵ Pa, g = 9.81 m s⁻²)",
+              "value": 199100,
+              "tolerance": 2000,
+              "unit": "Pa",
+              "explain": "1.01 × 10⁵ + 1000 × 9.81 × 10 = 101 000 + 98 100 = **1.99 × 10⁵ Pa**",
+              "skill": "Pressure in a fluid",
+              "image": "images/ch5-dynamics-statics/d-tank-depth.png",
+              "alt": "Tank of water with point X 4.0 m below the surface"
+            },
+            {
+              "type": "number",
+              "prompt": "A 2.0 × 10⁻³ m³ object is fully under water. Find the upthrust. (g = 9.81 m s⁻²)",
+              "value": 19.62,
+              "tolerance": 0.2,
+              "unit": "N",
+              "explain": "U = ρgV = 1000 × 9.81 × 2.0 × 10⁻³ = **19.6 N**",
+              "skill": "Upthrust",
+              "image": "images/ch5-dynamics-statics/d-top-bottom.png",
+              "alt": "A block under water with a smaller force F_top pushing down and a larger force F_bottom pushing up"
+            },
+            {
+              "type": "choice",
+              "prompt": "What do you see in a Brownian motion smoke-cell experiment?",
+              "choices": [
+                "Air molecules moving in straight lines",
+                "Smoke particles moving in random zig-zags",
+                "Smoke particles falling steadily",
+                "Smoke particles standing still"
+              ],
+              "correct": 1,
+              "explain": "Bright specks of smoke moving **randomly and jerkily**.",
+              "skill": "Kinetic model of matter",
+              "image": "images/ch5-dynamics-statics/d-brownian.png",
+              "alt": "Zig-zag random path of a smoke particle seen in a microscope"
             }
           ]
         }
